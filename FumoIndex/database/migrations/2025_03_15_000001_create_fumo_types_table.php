@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('fumo_types', function (Blueprint $table) {
             $table->id();
             $table->string('fumo_type', 45);
-            $table->timestamps();
         });
     }    
 
