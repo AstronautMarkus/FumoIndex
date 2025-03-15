@@ -12,18 +12,19 @@ class FumoTypesController extends Controller
     public function getFumoTypesList()
     {
         $fumoTypes = FumoType::all();
-
+    
         $result = [];
         foreach ($fumoTypes as $fumoType) {
             $result[] = [
                 'id' => $fumoType->id,
                 'fumo_type' => $fumoType->fumo_type,
-                'type_description' => $fumoType->type_description
+                'type_description' => $fumoType->type_description,
+                'image_url' => asset('images/fumo_types/' . $fumoType->type_image)
             ];
         }
-
+    
         return response()->json($result);
-    }
+    }    
 
     public function getFumoTypeById($fumoTypeId)
     {

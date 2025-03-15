@@ -16,6 +16,7 @@ class FumoTypeSeeder extends Seeder
             DB::table('fumo_types')->insert([
                 'fumo_type' => $fumo_type['fumo_type'],
                 'type_description' => $fumo_type['type_description'],
+                'type_image' => $fumo_type['type_image'],
             ]);
         }
     }
