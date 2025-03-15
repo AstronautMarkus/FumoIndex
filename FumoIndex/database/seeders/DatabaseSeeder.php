@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             FranchiseSeeder::class,
             FumoTypeSeeder::class,
+            CharacterSeeder::class,
         ]);
     }
     
