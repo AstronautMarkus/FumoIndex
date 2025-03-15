@@ -34,7 +34,8 @@ class FumoTypesController extends Controller
             return response()->json([
                 'id' => $fumoType->id,
                 'fumo_type' => $fumoType->fumo_type,
-                'type_description' => $fumoType->type_description
+                'type_description' => $fumoType->type_description,
+                'image_url' => asset('images/fumo_types/' . $fumoType->type_image)
             ]);
         } else {
             return response()->json([
