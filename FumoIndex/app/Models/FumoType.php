@@ -9,7 +9,7 @@ class FumoType extends Model
 {
     use HasFactory;
     
-    protected $fillable = ['fumo_type'];
+    protected $fillable = ['fumo_type', 'type_description'];
 
     public function fumos()
     {

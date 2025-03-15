@@ -14,12 +14,14 @@ return new class extends Migration
         Schema::create('fumo_types', function (Blueprint $table) {
             $table->id();
             $table->string('fumo_type', 45);
+            $table->string('type_description', 255);
         });
     }    
 
     /**
      * Reverse the migrations.
-     */
+    */
+
     public function down(): void
     {
         Schema::dropIfExists('fumo_types');
