@@ -182,5 +182,21 @@
     {
         "name":"Utsuho Reiuji",
         "franchise_id":1
+    },
+    {
+        "name": "Hitori Gotoh",
+        "franchise_id": 2
+    },
+    {
+        "name": "Nijika Ijichi",
+        "franchise_id": 2
+    },
+    {
+        "name":"Ikuyo Kita",
+        "franchise_id": 2
+    },
+    {
+        "name":"Ryo Yamada",
+        "franchise_id": 2
     }
 ]
