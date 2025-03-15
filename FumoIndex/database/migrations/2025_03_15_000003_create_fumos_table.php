@@ -9,19 +9,22 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('characters', function (Blueprint $table) {
+        Schema::create('fumos', function (Blueprint $table) {
             $table->id();
+            $table->string('fumo_name', 45);
+            $table->foreignId('character_id')->constrained()->onDelete('cascade');
+            $table->foreignId('type_id')->constrained('fumo_types')->onDelete('cascade');
             $table->timestamps();
         });
-    }
+    }    
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('characters');
+        Schema::dropIfExists('fumos');
     }
 };
