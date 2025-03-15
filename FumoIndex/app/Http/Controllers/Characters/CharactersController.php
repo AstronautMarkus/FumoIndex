@@ -22,8 +22,6 @@ class CharactersController extends Controller
                         'id' => $char->id,
                         'character_name' => $char->character_name,
                         'character_image' => env('IMAGE_CDN_URL') . '/' . $char->character_image,
-                        'created_at' => $char->created_at,
-                        'updated_at' => $char->updated_at,
                     ];
                 })->values()
             ];
@@ -44,8 +42,6 @@ class CharactersController extends Controller
                 'id' => $char->id,
                 'character_name' => $char->character_name,
                 'character_image' => env('IMAGE_CDN_URL') . '/' . $char->character_image,
-                'created_at' => $char->created_at,
-                'updated_at' => $char->updated_at,
             ];
         });
 
