@@ -4,19 +4,18 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 class FumoTypeSeeder extends Seeder
 {
-
-    public function run(): void
+    public function run()
     {
-        DB::table('fumo_types')->insert([
-            ['fumo_type' => 'Standard Type'],
-            ['fumo_type' => 'Nendoroid Type'],
-            ['fumo_type' => 'Plush Strap Type'],
-            ['fumo_type' => 'Mannaka (Medium) Type'],
-            ['fumo_type' => 'Deka Type'],
-            ['fumo_type' => 'Puppet Type']
-        ]);
+        $fumo_types = json_decode(File::get(database_path('data/fumo_types.json')), true);
+
+        foreach ($fumo_types as $fumo_type) {
+            DB::table('fumo_types')->insert([
+                'fumo_type' => $fumo_type['fumo_type']
+            ]);
+        }
     }
 }
