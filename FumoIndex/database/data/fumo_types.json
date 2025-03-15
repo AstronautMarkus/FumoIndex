@@ -1,20 +1,26 @@
 [
     {
-        "fumo_type":"Standard Type"
+        "fumo_type":"Standard Type",
+        "type_description":"Original Fumos, the most common type of Fumo."
     },
     {
-        "fumo_type":"Nendoroid Type"
+        "fumo_type":"Nendoroid Type",
+        "type_description":"Fumos based on Nendoroid figures, are twice as big as Standard Type."
     },
     {
-        "fumo_type":"Plush Strap Type"
+        "fumo_type":"Plush Strap Type",
+        "type_description":"Fumos that are small enough to be used as keychains."
     },
     {
-        "fumo_type":"Mannaka (Medium) Type"
+        "fumo_type":"Mannaka (Medium) Type",
+        "type_description":"Fumos that are larger than Standard Type but smaller than Deka Type."
     },
     {
-        "fumo_type":"Deka Type"
+        "fumo_type":"Deka Type",
+        "type_description":"The Biggest Fumos, more larger than Mannaka Type."
     },
     {
-        "fumo_type":"Puppet Type"
+        "fumo_type":"Puppet Type",
+        "type_description":"Limited edition for Fumos that are made to be used as puppets."
     }
 ]
