@@ -24,4 +24,21 @@ class FumoTypesController extends Controller
 
         return response()->json($result);
     }
+
+    public function getFumoTypeById($fumoTypeId)
+    {
+        $fumoType = FumoType::find($fumoTypeId);
+
+        if ($fumoType) {
+            return response()->json([
+                'id' => $fumoType->id,
+                'fumo_type' => $fumoType->fumo_type,
+                'type_description' => $fumoType->type_description
+            ]);
+        } else {
+            return response()->json([
+                'error' => 'Fumo type not found'
+            ], 404);
+        }
+    }
 }
