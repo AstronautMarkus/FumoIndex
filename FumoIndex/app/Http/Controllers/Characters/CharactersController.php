@@ -18,12 +18,12 @@ class CharactersController extends Controller
             $franchiseImage = $chars->first()->franchise->franchise_image ?? null;
             $result[] = [
                 'franchise' => $franchiseName,
-                'franchise_image' => env('IMAGE_CDN_URL') . '/' . $franchiseImage,
+                'franchise_image' => url('/assets/franchises/' . $franchiseImage),
                 'characters' => $chars->map(function ($char) {
                     return [
                         'id' => $char->id,
                         'character_name' => $char->character_name,
-                        'character_image' => env('IMAGE_CDN_URL') . '/' . $char->character_image,
+                        'character_image' => url('/assets/characters/' . $char->character_image),
                     ];
                 })->values()
             ];
@@ -43,13 +43,13 @@ class CharactersController extends Controller
             return [
                 'id' => $char->id,
                 'character_name' => $char->character_name,
-                'character_image' => env('IMAGE_CDN_URL') . '/' . $char->character_image,
+                'character_image' => url('/assets/characters/' . $char->character_image),
             ];
         });
 
         return response()->json([
             'franchise' => $franchise->franchise_name,
-            'franchise_image' => env('IMAGE_CDN_URL') . '/' . $franchise->franchise_image,
+            'franchise_image' => url('/assets/franchises/' . $franchise->franchise_image),
             'characters' => $characters
         ]);
     }
