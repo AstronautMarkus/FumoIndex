@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('franchises', function (Blueprint $table) {
             $table->id();
             $table->string('franchise_name', 255);
+            $table->string('franchise_image', 255)->nullable();
         });
     }    
 

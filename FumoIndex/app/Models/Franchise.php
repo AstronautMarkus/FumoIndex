@@ -9,7 +9,7 @@ class Franchise extends Model
 {
     use HasFactory;
     
-    protected $fillable = ['franchise_name'];
+    protected $fillable = ['franchise_name', 'franchise_image'];
 
     public function characters()
     {
