@@ -15,8 +15,10 @@ class CharactersController extends Controller
 
         $result = [];
         foreach ($characters as $franchiseName => $chars) {
+            $franchiseImage = $chars->first()->franchise->franchise_image ?? null;
             $result[] = [
                 'franchise' => $franchiseName,
+                'franchise_image' => env('IMAGE_CDN_URL') . '/' . $franchiseImage,
                 'characters' => $chars->map(function ($char) {
                     return [
                         'id' => $char->id,
@@ -47,6 +49,7 @@ class CharactersController extends Controller
 
         return response()->json([
             'franchise' => $franchise->franchise_name,
+            'franchise_image' => env('IMAGE_CDN_URL') . '/' . $franchise->franchise_image,
             'characters' => $characters
         ]);
     }
