@@ -9,43 +9,23 @@ use App\Models\Franchise;
 
 class CharactersController extends Controller
 {
-    public function getCharactersList()
-    {
-        $characters = Character::with('franchise')->get()->groupBy('franchise.franchise_name');
-
-        $result = [];
-        foreach ($characters as $franchiseName => $chars) {
-            $franchiseImage = $chars->first()->franchise->franchise_image ?? null;
-            $result[] = [
-                'franchise' => $franchiseName,
-                'franchise_image' => url('/assets/franchises/' . $franchiseImage),
-                'characters' => $chars->map(function ($char) {
-                    return [
-                        'id' => $char->id,
-                        'character_name' => $char->character_name,
-                        'character_image' => url('/assets/characters/' . $char->character_image),
-                    ];
-                })->values()
-            ];
-        }
-
-        return response()->json($result);
-    }
-
-    public function getCharactersByFranchise($franchiseId)
+    public function getCharactersByFranchise($franchiseId, Request $request)
     {
         $franchise = Franchise::where('id', $franchiseId)->first();
         if (!$franchise) {
             return response()->json(['error' => 'Franchise not found'], 404);
         }
 
-        $characters = Character::where('franchise_id', $franchise->id)->get()->map(function ($char) {
-            return [
-                'id' => $char->id,
-                'character_name' => $char->character_name,
-                'character_image' => url('/assets/characters/' . $char->character_image),
-            ];
-        });
+        $perPage = $request->query('per_page', 10);
+        $characters = Character::where('franchise_id', $franchise->id)
+            ->paginate($perPage)
+            ->through(function ($char) {
+                return [
+                    'id' => $char->id,
+                    'character_name' => $char->character_name,
+                    'character_image' => url('/assets/characters/' . $char->character_image),
+                ];
+            });
 
         return response()->json([
             'franchise' => $franchise->franchise_name,
