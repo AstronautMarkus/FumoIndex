@@ -226,5 +226,25 @@
     {
         "name":"Amico",
         "franchise_id": 4
+    },
+    {
+        "name":"Taihou",
+        "franchise_id": 5
+    },
+    {
+        "name":"Shimakaze",
+        "franchise_id": 5
+    },
+    {
+        "name":"Agir",
+        "franchise_id": 5
+    },
+    {
+        "name":"Azuma",
+        "franchise_id": 5
+    },
+    {
+        "name":"Sheffield",
+        "franchise_id": 5
     }
 ]
