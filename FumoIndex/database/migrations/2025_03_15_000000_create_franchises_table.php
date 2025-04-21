@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('franchise_name', 255);
             $table->string('franchise_image', 255)->nullable();
+            $table->string('slug_name', 255);
         });
     }    
 

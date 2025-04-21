@@ -14,6 +14,7 @@ class FranchisesController extends Controller
             return [
                 'id' => $franchise->id,
                 'franchise_name' => $franchise->franchise_name,
+                'slug_name' => $franchise->slug_name,
                 'franchise_image' => url('/assets/franchises/' . $franchise->franchise_image),
             ];
         });

@@ -17,6 +17,7 @@ class FranchiseSeeder extends Seeder
         foreach ($franchises as &$franchise) {
             $franchiseSlug = Str::slug($franchise['franchise_name'], '_');
             $franchise['franchise_image'] = "$franchiseSlug.png";
+            $franchise['slug_name'] = $franchiseSlug;
         }
 
         DB::table('franchises')->insert($franchises);
