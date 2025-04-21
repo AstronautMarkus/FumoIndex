@@ -198,5 +198,29 @@
     {
         "name":"Ryo Yamada",
         "franchise_id": 2
+    },
+    {
+        "name":"Hatsune Miku NT",
+        "franchise_id": 3
+    },
+    {
+        "name":"Kagamine Rin V4X",
+        "franchise_id": 3
+    },
+    {
+        "name":"Kagamine Len V4X",
+        "franchise_id": 3
+    },
+    {
+        "name":"Megurine Luka V4X",
+        "franchise_id": 3
+    },
+    {
+        "name":"KAITO V3",
+        "franchise_id": 3
+    },
+    {
+        "name":"MEIKO V3",
+        "franchise_id": 3
     }
 ]
