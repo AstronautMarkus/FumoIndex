@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class FumoTypeSeeder extends Seeder
 {
@@ -16,7 +17,8 @@ class FumoTypeSeeder extends Seeder
             DB::table('fumo_types')->insert([
                 'fumo_type' => $fumo_type['fumo_type'],
                 'type_description' => $fumo_type['type_description'],
-                'type_image' => $fumo_type['type_image'],
+                'type_image' => Str::slug($fumo_type['fumo_type'], '_') . '.png',
+                'is_primary' => $fumo_type['is_primary'] ?? true,
             ]);
         }
     }
