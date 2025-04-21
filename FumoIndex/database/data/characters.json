@@ -290,5 +290,9 @@
     {
         "name":"Nobeta",
         "franchise_id": 6
+    },
+    {
+        "name":"Saya",
+        "franchise_id": 7
     }
 ]
