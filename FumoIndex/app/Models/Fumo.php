@@ -8,8 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Fumo extends Model
 {
     use HasFactory;
-    
-    protected $fillable = ['fumo_name', 'character_id', 'type_id'];
+
+    protected $fillable = [
+        'fumo_name', 
+        'character_id', 
+        'type_id', 
+        'franchise_id', 
+        'release_year', 
+        'release_month', 
+        're_release_year', 
+        're_release_month', 
+        'price_jpy', 
+        'notes', 
+        'product_url'
+    ];
 
     public function character()
     {
@@ -19,6 +31,11 @@ class Fumo extends Model
     public function fumoType()
     {
         return $this->belongsTo(FumoType::class, 'type_id');
+    }
+
+    public function franchise()
+    {
+        return $this->belongsTo(Franchise::class);
     }
 }
 

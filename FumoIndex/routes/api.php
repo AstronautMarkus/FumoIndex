@@ -9,4 +9,3 @@ use App\Http\Controllers\Franchises\FranchisesController;
 Route::get('/characters/franchise/{franchiseId}', [CharactersController::class, 'getCharactersByFranchise']);
 Route::get('/franchises', [FranchisesController::class, 'getFranchises']);
 Route::get('/fumo-types', [FumoTypesController::class, 'getFumoTypesList']);
-Route::get('/fumo-types/{fumoTypeId}', [FumoTypesController::class, 'getFumoTypeById']);
