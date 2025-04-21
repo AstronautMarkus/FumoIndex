@@ -13,18 +13,29 @@ class FumoTypesController extends Controller
     {
         $fumoTypes = FumoType::all();
     
-        $result = [];
+        $primaryTypes = [];
+        $secondaryTypes = [];
+    
         foreach ($fumoTypes as $fumoType) {
-            $result[] = [
+            $typeData = [
                 'id' => $fumoType->id,
                 'fumo_type' => $fumoType->fumo_type,
                 'type_description' => $fumoType->type_description,
                 'image_url' => asset('images/fumo_types/' . $fumoType->type_image)
             ];
+    
+            if ($fumoType->is_primary) {
+                $primaryTypes[] = $typeData;
+            } else {
+                $secondaryTypes[] = $typeData;
+            }
         }
     
-        return response()->json($result);
-    }    
+        return response()->json([
+            'primary_types' => $primaryTypes,
+            'secondary_types' => $secondaryTypes
+        ]);
+    }
 
     public function getFumoTypeById($fumoTypeId)
     {
