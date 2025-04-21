@@ -14,10 +14,6 @@ class Fumo extends Model
         'character_id', 
         'type_id', 
         'franchise_id', 
-        'release_year', 
-        'release_month', 
-        're_release_year', 
-        're_release_month', 
         'price_jpy', 
         'notes', 
         'product_url'
