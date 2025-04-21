@@ -33,5 +33,10 @@ class Fumo extends Model
     {
         return $this->belongsTo(Franchise::class);
     }
+
+    public function releases()
+    {
+        return $this->hasMany(Releases::class, 'fumo_id');
+    }
 }
 
