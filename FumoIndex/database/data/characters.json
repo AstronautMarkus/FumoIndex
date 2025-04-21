@@ -286,5 +286,9 @@
     {
         "name":"Belfast",
         "franchise_id": 5
+    },
+    {
+        "name":"Nobeta",
+        "franchise_id": 6
     }
 ]
