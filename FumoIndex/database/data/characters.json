@@ -246,5 +246,45 @@
     {
         "name":"Sheffield",
         "franchise_id": 5
+    },
+    {
+        "name":"Formidable",
+        "franchise_id": 5
+    },
+    {
+        "name":"Shinano",
+        "franchise_id": 5
+    },
+    {
+        "name":"Le Malin",
+        "franchise_id": 5
+    },
+    {
+        "name":"Cheshire",
+        "franchise_id": 5
+    },
+    {
+        "name":"Noshiro",
+        "franchise_id": 5
+    },
+    {
+        "name":"Prinz Eugen",
+        "franchise_id": 5
+    },
+    {
+        "name":"New Jersey",
+        "franchise_id": 5
+    },
+    {
+        "name":"Kaga",
+        "franchise_id": 5
+    },
+    {
+        "name":"Akagi",
+        "franchise_id": 5
+    },
+    {
+        "name":"Belfast",
+        "franchise_id": 5
     }
 ]
