@@ -222,5 +222,9 @@
     {
         "name":"MEIKO V3",
         "franchise_id": 3
+    },
+    {
+        "name":"Amico",
+        "franchise_id": 4
     }
 ]
