@@ -49,7 +49,7 @@
         "is_primary": false
     },
     {
-        "fumo_type": "Decoration Jacket Type",
+        "fumo_type": "Card Decoration Jacket Type",
         "type_description": "This is a customization sticker for decorating the top surface of IC cards such as suica, PASMO and taspo cards.",
         "is_primary": false
     },
@@ -64,7 +64,7 @@
         "is_primary": false
     },
     {
-        "fumo_type": "Japanese Teacup Type",
+        "fumo_type": "Tea Cup Type",
         "type_description": "A Japanese-style teacup with a Fumo design, part of Gift's official accessory line.",
         "is_primary": false
     },
