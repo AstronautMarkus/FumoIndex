@@ -1,10 +1,15 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import TestComponents from "./components/templates/TestComponents";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <>
-        </>,
+        element: <></>,
+    },
+    // TODO: remove this route!
+    {
+        path: "/test",
+        element: <TestComponents />,
     }
 ]);
 
