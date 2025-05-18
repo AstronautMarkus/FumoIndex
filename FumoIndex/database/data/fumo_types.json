@@ -77,11 +77,8 @@
         "fumo_type": "Cushion Type",
         "type_description": "A cushion with a Fumo design, part of Gift's official accessory line.",
         "is_primary": false
-    },    {
-        "fumo_type": "Acrylic Stand Type",
-        "type_description": "An acrylic figure with a Fumo design that can be displayed on a stand or used as a keychain.",
-        "is_primary": false
-    },    {
+    },    
+    {
         "fumo_type": "Big Tin Badge Type",
         "type_description": "A large tin badge with a Fumo design, part of Gift's official accessory line.",
         "is_primary": false
