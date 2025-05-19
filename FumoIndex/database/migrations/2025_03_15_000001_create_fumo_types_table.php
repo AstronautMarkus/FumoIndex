@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('type_description', 255);
             $table->string('type_image', 255);
             $table->boolean('is_primary')->default(true);
+            $table->integer('width')->nullable();
+            $table->integer('height')->nullable();
         });
     }    
 
