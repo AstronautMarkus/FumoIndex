@@ -1,27 +1,34 @@
 [
     {
         "fumo_type": "Standard Type",
-        "type_description": "Original Fumos, the most common type of Fumo."
+        "type_description": "Original Fumos, the most common type of Fumo.",
+        "height": 20
     },
     {
         "fumo_type": "Nendoroid Type",
-        "type_description": "Fumos based on Nendoroid figures, are twice as big as Standard Type."
+        "type_description": "Fumos based on Nendoroid figures, are twice as big as Standard Type.",
+        "height": 40
     },
     {
         "fumo_type": "Plush Strap Type",
-        "type_description": "Fumos that are small enough to be used as keychains."
+        "type_description": "Fumos that are small enough to be used as keychains.",
+        "height": 16
     },
     {
         "fumo_type": "Mannaka (Medium) Type",
-        "type_description": "Fumos that are larger than Standard Type but smaller than Deka Type."
+        "type_description": "Fumos that are larger than Standard Type but smaller t| Deka Type.",
+        "height":40
     },
     {
         "fumo_type": "Deka Type",
-        "type_description": "The Biggest Fumos, more larger than Mannaka Type."
+        "type_description": "The Biggest Fumos, more larger than Mannaka Type.",
+        "height": 70
     },
     {
         "fumo_type": "Puppet Type",
-        "type_description": "Limited edition for Fumos that are made to be used as puppets."
+        "type_description": "Limited edition for Fumos that are made to be used as puppets.",
+        "height":40
+
     },
     {
         "fumo_type": "Clear Bookmarker Type",
@@ -56,7 +63,8 @@
     {
         "fumo_type": "Rubber Keychain Type",
         "type_description": "A rubber keychain with a Fumo design, featuring a sturdy metal clip. Part of Gift's official accessory line.",
-        "is_primary": false
+        "is_primary": false,
+        "height":55
     },
     {
         "fumo_type": "Mechanical Pencil Type",
@@ -76,7 +84,9 @@
     {
         "fumo_type": "Cushion Type",
         "type_description": "A cushion with a Fumo design, part of Gift's official accessory line.",
-        "is_primary": false
+        "is_primary": false,
+        "width": 450,
+        "height": 450
     },    
     {
         "fumo_type": "Big Tin Badge Type",
