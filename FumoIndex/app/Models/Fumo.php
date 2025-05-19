@@ -29,11 +29,6 @@ class Fumo extends Model
         return $this->belongsTo(FumoType::class, 'type_id');
     }
 
-    public function franchise()
-    {
-        return $this->belongsTo(Franchise::class);
-    }
-
     public function releases()
     {
         return $this->hasMany(Releases::class, 'fumo_id');

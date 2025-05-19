@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('fumo_name', 45);
             $table->foreignId('character_id')->constrained()->onDelete('cascade');
             $table->foreignId('type_id')->constrained('fumo_types')->onDelete('cascade');
-            $table->foreignId('franchise_id')->constrained()->onDelete('cascade');
             $table->integer('price_jpy');
             $table->text('notes')->nullable();
             $table->text('product_url')->nullable();
