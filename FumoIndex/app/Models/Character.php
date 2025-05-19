@@ -18,6 +18,8 @@ class Character extends Model
 
     public function fumos()
     {
-        return $this->hasMany(Fumo::class);
+        return $this->belongsToMany(Fumo::class, 'fumo_character');
     }
+
+    
 }

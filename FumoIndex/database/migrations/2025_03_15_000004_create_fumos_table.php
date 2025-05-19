@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('fumos', function (Blueprint $table) {
             $table->id();
             $table->string('fumo_name', 45);
-            $table->foreignId('character_id')->constrained()->onDelete('cascade');
             $table->foreignId('type_id')->constrained('fumo_types')->onDelete('cascade');
             $table->integer('price_jpy');
             $table->text('notes')->nullable();

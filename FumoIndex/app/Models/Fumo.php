@@ -21,7 +21,7 @@ class Fumo extends Model
 
     public function character()
     {
-        return $this->belongsTo(Character::class);
+        return $this->belongsToMany(Character::class, 'fumo_character');
     }
 
     public function fumoType()
@@ -33,5 +33,8 @@ class Fumo extends Model
     {
         return $this->hasMany(Releases::class, 'fumo_id');
     }
+
+
+
 }
 
