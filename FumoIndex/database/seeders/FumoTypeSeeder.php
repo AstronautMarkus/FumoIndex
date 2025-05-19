@@ -19,6 +19,8 @@ class FumoTypeSeeder extends Seeder
                 'type_description' => $fumo_type['type_description'],
                 'type_image' => Str::slug($fumo_type['fumo_type'], '_') . '.png',
                 'is_primary' => $fumo_type['is_primary'] ?? true,
+                'height' => $fumo_type['height'] ?? null,
+                'width' => $fumo_type['width'] ?? null,
             ]);
         }
     }
