@@ -1,0 +1,96 @@
+[
+    {
+        "fumo_type": "Standard Type",
+        "type_description": "Original Fumos, the most common type of Fumo.",
+        "height": 200
+    },
+    {
+        "fumo_type": "Nendoroid Type",
+        "type_description": "Fumos based on Nendoroid figures, are twice as big as Standard Type.",
+        "height": 400
+    },
+    {
+        "fumo_type": "Plush Strap Type",
+        "type_description": "Fumos that are small enough to be used as keychains.",
+        "height": 160
+    },
+    {
+        "fumo_type": "Mannaka (Medium) Type",
+        "type_description": "Fumos that are larger than Standard Type but smaller t| Deka Type.",
+        "height": 400
+    },
+    {
+        "fumo_type": "Deka Type",
+        "type_description": "The Biggest Fumos, more larger than Mannaka Type.",
+        "height": 700
+    },
+    {
+        "fumo_type": "Puppet Type",
+        "type_description": "Limited edition for Fumos that are made to be used as puppets.",
+        "height": 400
+
+    },
+    {
+        "fumo_type": "Clear Bookmarker Type",
+        "type_description": "Laminated book dividers with Fumos designs.",
+        "is_primary": false
+    },
+    {
+        "fumo_type": "Acrylic Keychain Type",
+        "type_description": "Acrylic keychain with Fumo-style artwork, featuring a chibi character and a sturdy metal clip. Part of Gift's official accessory line.",
+        "is_primary": false
+    },
+    {
+        "fumo_type": "Can Strap Type",
+        "type_description": "A Japanese-style keychain with a metal plate and chibi Fumo art, featuring a lanyard for attaching to devices. Part of a numbered series by Gift with Touhou characters.",
+        "is_primary": false
+    },
+    {
+        "fumo_type": "Acrylic Stand Type",
+        "type_description": "An acrylic figure with a Fumo design that can be displayed on a stand or used as a keychain.",
+        "is_primary": false
+    },
+    {
+        "fumo_type": "MousePad Type",
+        "type_description": "A mousepad featuring a Fumo design, providing a comfortable surface for mouse movement.",
+        "is_primary": false
+    },
+    {
+        "fumo_type": "Card Decoration Jacket Type",
+        "type_description": "This is a customization sticker for decorating the top surface of IC cards such as suica, PASMO and taspo cards.",
+        "is_primary": false
+    },
+    {
+        "fumo_type": "Rubber Keychain Type",
+        "type_description": "A rubber keychain with a Fumo design, featuring a sturdy metal clip. Part of Gift's official accessory line.",
+        "is_primary": false,
+        "height": 55
+    },
+    {
+        "fumo_type": "Mechanical Pencil Type",
+        "type_description": "A mechanical pencil with a Fumo design, part of Gift's official accessory line.",
+        "is_primary": false
+    },
+    {
+        "fumo_type": "Tea Cup Type",
+        "type_description": "A Japanese-style teacup with a Fumo design, part of Gift's official accessory line.",
+        "is_primary": false
+    },
+    {
+        "fumo_type": "Mug Type",
+        "type_description": "A mug with a Fumo design, part of Gift's official accessory line.",
+        "is_primary": false
+    },
+    {
+        "fumo_type": "Cushion Type",
+        "type_description": "A cushion with a Fumo design, part of Gift's official accessory line.",
+        "is_primary": false,
+        "width": 450,
+        "height": 450
+    },    
+    {
+        "fumo_type": "Big Tin Badge Type",
+        "type_description": "A large tin badge with a Fumo design, part of Gift's official accessory line.",
+        "is_primary": false
+    }
+]
