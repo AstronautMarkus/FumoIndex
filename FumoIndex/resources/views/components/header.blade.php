@@ -6,6 +6,7 @@
         <ul class="hidden md:flex space-x-8 text-white text-lg">
             <li><a href="{{ route('home') }}" class="hover:underline">Home</a></li>
             <li><a href="#" class="hover:underline">Fumo List</a></li>
+            <li><a href="{{ route('characters.list') }}" class="hover:underline">Characters</a></li>
             <li><a href="#" class="hover:underline">What is a Fumo?</a></li>
             <li><a href="#" class="hover:underline">The Fumo Origins</a></li>
         </ul>

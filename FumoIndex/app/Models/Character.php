@@ -9,7 +9,7 @@ class Character extends Model
 {
     use HasFactory;
     
-    protected $fillable = ['character_name', 'character_image', 'franchise_id'];
+    protected $fillable = ['character_name', 'slug_name', 'character_image', 'franchise_id', 'character_description', 'description_source'];
 
     public function franchise()
     {

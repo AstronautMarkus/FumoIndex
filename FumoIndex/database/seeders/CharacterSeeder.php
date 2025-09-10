@@ -21,6 +21,7 @@ class CharacterSeeder extends Seeder
             DB::table('characters')->insert([
                 'character_name' => $character['name'],
                 'character_image' => "$franchiseSlug/$characterSlug.png",
+                'slug_name' => $characterSlug,
                 'franchise_id' => $character['franchise_id'],
                 'created_at' => now(),
                 'updated_at' => now(),

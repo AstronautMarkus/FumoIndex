@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('characters', function (Blueprint $table) {
             $table->id();
             $table->string('character_name', 45);
+            $table->string('slug_name', 45)->unique();
+            $table->text('character_description')->nullable();
+            $table->string('description_source', 100)->nullable();
             $table->string('character_image', 45);
             $table->foreignId('franchise_id')->constrained()->onDelete('cascade');
             $table->timestamps();
