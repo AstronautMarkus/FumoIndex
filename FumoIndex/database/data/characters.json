@@ -5,7 +5,9 @@
     },
     {
         "name":"Reimu Hakurei",
-        "franchise_id":1
+        "franchise_id":1,
+        "description":"Reimu Hakurei (博麗霊夢 Hakurei Reimu) is the Main Character of the Touhou Project series, having appeared in all of the main games and in almost every game in the series. As the sole maiden of the Hakurei Shrine, she is commonly called upon (or calls it upon herself) to investigate strange occurrences throughout Gensokyo. ",
+        "description_source":"https://touhou.fandom.com/wiki/Reimu_Hakurei"
     },
     {
         "name":"Marisa Kirisame",
