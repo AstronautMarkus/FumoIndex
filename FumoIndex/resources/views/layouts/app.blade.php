@@ -12,5 +12,6 @@
     <body class="bg-background">
         @include('components.header')
         @yield('content')
+        @stack('scripts')
     </body>
 </html>
