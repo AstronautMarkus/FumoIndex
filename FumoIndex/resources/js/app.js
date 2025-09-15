@@ -1,4 +1,6 @@
 import './bootstrap';
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const decoration = document.getElementById('decoration-animation');

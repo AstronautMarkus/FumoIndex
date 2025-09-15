@@ -14,6 +14,7 @@
         "vite": "^6.0.11"
     },
     "dependencies": {
-        "@fontsource/koho": "^5.2.7"
+        "@fontsource/koho": "^5.2.7",
+        "@fortawesome/fontawesome-free": "^7.0.1"
     }
 }

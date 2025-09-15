@@ -92,7 +92,7 @@
                         </div>
                     </div>
                     <div class="text-xl flex flex-col justify-center">
-                        <h2 class="text-2xl font-semibold mt-2 text-primary">The definitive Fumo Index</h2>
+                        <h2 class="text-2xl font-semibold mt-2 text-primary">The definitive Fumo Index <i class="fa-solid fa-book"></i></h2>
                         <p class="my-5">
                             We are a page created to guide you and compile all the FumoFumo plush toys ever created.
                         </p>
