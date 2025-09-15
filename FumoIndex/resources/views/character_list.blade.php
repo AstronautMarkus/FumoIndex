@@ -8,7 +8,7 @@
 
             @if(!$selectedFranchise)
                 <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 mt-10 mb-10">
-                    <h2 class="text-2xl font-bold mb-2 text-center text-tertiary">Select a Character Franchise</h2>
+                    <h2 class="text-2xl font-bold mb-2 text-center text-primary">Select a Character Franchise</h2>
                     <p class="text-center text-tertiary mb-4">
                         <button id="whyFranchisesBtn" class="underline text-tertiary hover:text-tertiary-light focus:outline-none cursor-pointer">
                             Why Franchises? Aren't Fumos originally from the Touhou Project?
@@ -85,7 +85,7 @@
 
     <div id="whyFranchisesModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
         <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 max-w-2xl w-full">
-            <h3 class="text-2xl font-bold mb-6 text-tertiary text-center">Why Franchises?</h3>
+            <h3 class="text-2xl font-bold mb-6 text-primary text-center">Why Franchises?</h3>
             
             <p class="text-gray-700 mb-4 text-base leading-relaxed">
                 Yes, Fumos were originally born from the <span class="font-semibold">Touhou Project</span>. 

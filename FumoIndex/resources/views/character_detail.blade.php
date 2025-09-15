@@ -9,7 +9,7 @@
                 <img src="{{ asset('assets/characters/' . $character->character_image) }}" alt="{{ $character->character_name }}" class="w-full h-full object-cover pointer-events-none" />
             </div>
             <div class="flex flex-col flex-1 items-center md:items-start w-full">
-                <h1 class="text-3xl md:text-5xl font-bold mb-2 text-center md:text-left text-tertiary">{{ $character->character_name }}</h1>
+                <h1 class="text-3xl md:text-5xl font-bold mb-2 text-center md:text-left text-primary">{{ $character->character_name }}</h1>
                 <h2 class="text-xl md:text-3xl mb-4 text-center md:text-left text-tertiary">{{ $franchise->franchise_name }}</h2>
                 <div class="border-2 border-gray-300 rounded p-4 md:p-6 mb-4 w-full max-w-xl bg-white">
                     <span class="text-xl md:text-2xl font-semibold mb-2 block text-tertiary">Description:</span>
@@ -39,8 +39,8 @@
         </div>
 
         <div class="w-full max-w-6xl mt-12">
-            <h3 class="text-2xl font-bold mb-4 text-tertiary text-center">
-                Fumos de {{ explode(' ', trim($character->character_name))[0] }}
+            <h3 class="text-2xl font-bold mb-4 text-primary text-center">
+                {{ explode(' ', trim($character->character_name))[0] }}'s Fumos
             </h3>
             <div class="flex flex-wrap justify-center gap-6">
                 <div class="relative bg-white rounded-2xl shadow-lg border-4 border-gray-300 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-red-500 flex flex-col items-center w-64 group">

@@ -6,7 +6,7 @@
 <div class="flex flex-col items-center justify-center py-8">
     <div class="bg-container border-4 border-secondary rounded-3xl shadow-md w-[95%] max-w-5xl mx-auto px-6 py-8 flex flex-col items-center">
 
-        <h1 class="text-4xl font-bold mb-8 text-center text-tertiary">What is a Fumo?</h1>
+        <h1 class="text-4xl font-bold mb-8 text-center text-primary">What is a Fumo?</h1>
         <div class="flex flex-col md:flex-row items-start gap-8 w-[95%] max-w-3xl mb-6 px-4 md:px-0">
             <div class="flex-1">
                 <p class="text-lg mb-2">
@@ -20,7 +20,7 @@
                 <span class="text-sm italic mt-2">- Marisa Kirisame Fumo (2008)</span>
             </div>
         </div>
-        <h2 class="text-2xl md:text-3xl font-semibold mb-2 text-center text-tertiary">These plushies have the following qualities:</h2>
+        <h2 class="text-2xl md:text-3xl font-semibold mb-2 text-center text-primary">These plushies have the following qualities:</h2>
         <ul class="list-disc pl-6 text-lg mb-6 text-left max-w-2xl px-4 md:px-0 w-[95%]">
             <li>Soft, high-quality fabric.</li>
             <li>Chibi proportions.</li>

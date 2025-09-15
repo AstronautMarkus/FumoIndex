@@ -80,36 +80,38 @@
     </div>
 
     <div class="overflow-hidden mt-4">
-        <div class="container mx-auto py-20 flex flex-col gap-10 justify-between w-200 items-center">
-            <div class="flex justify-center mx-10 gap-6 items-stretch">
-                <div class="grow hidden md:flex items-stretch">
-                    <div class="flex mx-4 transform-origin-top h-full">
-                        <div class="decoration-line decoration-animate" id="decoration-animation">
-                            <div class="decoration-head"></div>
-                            <div class="decoration-head"></div>
+        <div class="container mx-auto flex flex-col items-center justify-center">
+            <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 mt-10 mb-10 w-full max-w-4xl">
+                <div class="flex justify-center mx-10 gap-6 items-stretch">
+                    <div class="grow hidden md:flex items-stretch">
+                        <div class="flex mx-4 transform-origin-top h-full">
+                            <div class="decoration-line decoration-animate" id="decoration-animation">
+                                <div class="decoration-head"></div>
+                                <div class="decoration-head"></div>
+                            </div>
                         </div>
                     </div>
+                    <div class="text-xl flex flex-col justify-center">
+                        <h2 class="text-2xl font-semibold mt-2 text-primary">The definitive Fumo Index</h2>
+                        <p class="my-5">
+                            We are a page created to guide you and compile all the FumoFumo plush toys ever created.
+                        </p>
+                        <p class="my-5">
+                            Originally, the FumoFumo plush toys belonged exclusively to Touhou Project series,
+                            but times have changed, and now we have other collaborations from different franchises.
+                        </p>
+                        <p class="my-5">
+                            On this page you’ll primarily find information and images about Fumos,
+                            but we’ll also publish other articles from time to time.
+                        </p>
+                    </div>
                 </div>
-                <div class="text-xl flex flex-col justify-center">
-                    <h2 class="text-2xl font-semibold mt-2 text-primary">The definitive Fumo Index</h2>
-                    <p class="my-5">
-                        We are a page created to guide you and compile all the FumoFumo plush toys ever created.
-                    </p>
-                    <p class="my-5">
-                        Originally, the FumoFumo plush toys belonged exclusively to Touhou Project series,
-                        but times have changed, and now we have other collaborations from different franchises.
-                    </p>
-                    <p class="my-5">
-                        On this page you’ll primarily find information and images about Fumos,
-                        but we’ll also publish other articles from time to time.
-                    </p>
-                </div>
+                <a href="#" class="btn flex items-center justify-center text-nowrap btn-primary text-2xl gap-2 p-3 mt-10">
+                    <div class="flex w-full justify-center text-center">
+                        The Fumo Origins
+                    </div>
+                </a>
             </div>
-            <a href="#" class="btn flex items-center justify-center text-nowrap btn-primary text-2xl gap-2 p-3">
-                <div class="flex w-full justify-center text-center">
-                    The Fumo Origins
-                </div>
-            </a>
         </div>
     </div>
 
