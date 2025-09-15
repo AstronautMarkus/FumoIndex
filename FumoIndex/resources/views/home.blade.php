@@ -4,12 +4,11 @@
 
 @section('content')
     <div class="overflow-hidden relative">
-
         <div class="absolute inset-0 -z-10">
             <img src="/img/background/gensokyo.jpg"  alt="Gensokyo Background" class="w-full h-full object-cover header-image"/>
         </div>
 
-        <div class="container mx-auto flex relative justify-center items-center flex-col gap-10 h-[850px]">
+        <div class="container mx-auto flex relative justify-center items-center flex-col gap-10 h-[850px] hidden md:flex">
             <div class="absolute hidden w-50 h-50 rotate-[6deg] r-chibi-breakpoints">
                 <img src="/img/home/fumo_reimu.png" class="pointer-events-none" alt="Reimu Hakurei Fumo" />
             </div>
@@ -38,5 +37,46 @@
                 <img src="/img/home/fumo_marisa.png" class="pointer-events-none" alt="Marisa Kirisame Fumo" />
             </div>
         </div>
+
+        <div class="flex md:hidden relative items-center justify-center h-[450px]">
+            <div class="absolute inset-0 -z-10">
+                <img src="/img/background/gensokyo.jpg" alt="Gensokyo Background" class="w-full h-full object-cover header-image"/>
+            </div>
+            <div class="flex flex-col w-full h-full items-center justify-center px-4">
+                <div class="flex w-full items-center justify-center gap-4 mt-8">
+                    <div class="flex flex-col gap-2 text-center flex-1">
+                        <div class="text-3xl font-bold text-white">The Fumo Index</div>
+                        <div class="text-lg text-white">The ultimate guide to all things Fumo!</div>
+                    </div>
+                    <div class="flex items-center justify-end flex-none">
+                        <img src="/img/home/fumo_reimu.png" class="pointer-events-none w-24 h-24" alt="Reimu Hakurei Fumo" />
+                    </div>
+                </div>
+                <div class="flex flex-row w-full items-center justify-center mt-6 gap-2">
+                    <div class="flex items-center justify-center flex-none">
+                        <img src="/img/home/fumo_marisa.png" class="pointer-events-none w-24 h-24 scale-x-[-100%]" alt="Marisa Kirisame Fumo" />
+                    </div>
+                    <div class="flex flex-col gap-2 w-8/12">
+                        <a href="{{ route('what_is_a_fumo') }}" class="btn flex items-center justify-center text-nowrap btn-outline text-sm gap-2 p-2 w-full">
+                            <div class="flex w-full justify-center text-center">
+                                What's a Fumo?
+                            </div>
+                        </a>
+                        <a href="#" class="btn flex items-center justify-center text-nowrap btn-primary text-sm gap-2 p-2 w-full">
+                            <div class="flex w-full justify-center text-center">
+                                Explore Fumos List
+                            </div>
+                        </a>
+                        <a href="#" class="btn flex items-center justify-center text-nowrap btn-outline text-sm gap-2 p-2 w-full">
+                            <div class="flex w-full justify-center text-center">
+                                How to get Fumos
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
     </div>
 @endsection
