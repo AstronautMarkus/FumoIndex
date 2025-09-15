@@ -15,7 +15,7 @@
                     @foreach($characters->where('franchise_id', $franchise->id) as $character)
                         <a href="{{ url('characters/' . $character->slug_name) }}">
                             <div class="flex flex-col items-center">
-                                <div class="w-32 h-32 rounded-full border-2 border-gray-300 mb-2 flex items-center justify-center overflow-hidden transition-transform transition-colors duration-300 ease-in-out hover:scale-110 hover:border-[#a52a1a]">
+                                <div class="w-32 h-32 rounded-full border-2 border-gray-300 mb-2 flex items-center justify-center overflow-hidden transition-transform transition-colors duration-300 ease-in-out hover:scale-110 hover:border-primary">
                                     <img src="{{ asset('assets/characters/' . $character->character_image) }}" alt="{{ $character->character_name }}" class="w-full h-full object-cover pointer-events-none" />
                                 </div>
                                 <span>{{ $character->character_name }}</span>

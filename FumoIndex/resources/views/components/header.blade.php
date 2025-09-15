@@ -1,4 +1,4 @@
-<header class="bg-[#a52a1a] py-2 flex justify-between items-center sticky top-0 z-50">
+<header class="bg-primary py-2 flex justify-between items-center sticky top-0 z-50">
     <nav class="container mx-auto px-4 md:px-20 flex justify-between items-center">
         <a href="{{ route('home') }}">
             <img src="{{ asset('img/FUMO_INDEX.svg') }}" class="pointer-events-none" alt="FumoIndexLogo" width="100" height="100" />
