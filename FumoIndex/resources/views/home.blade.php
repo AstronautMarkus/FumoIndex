@@ -24,12 +24,12 @@
                 </a>
                 <a href="#" class="btn flex items-center justify-center text-nowrap btn-primary text-2xl gap-2 p-3">
                     <div class="flex w-full justify-center text-center">
-                        Explore Fumos List
+                        Explore Fumo List
                     </div>
                 </a>
                 <a href="#" class="btn flex items-center justify-center text-nowrap btn-outline text-2xl gap-2 p-3">
                     <div class="flex w-full justify-center text-center">
-                        How to get Fumos
+                        The Fumo Origins
                     </div>
                 </a>
             </div>
