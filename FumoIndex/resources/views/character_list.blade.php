@@ -62,6 +62,7 @@
                                                 <div class="absolute inset-0 bg-gradient-to-r from-gray-800 to-black opacity-80"></div>
                                             </div>
                                         </div>
+                                        <div class="absolute inset-0 bg-gradient-to-t from-red-500/30 to-red-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                                     </div>
                                 </a>
                             @endforeach
