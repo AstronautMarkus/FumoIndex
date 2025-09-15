@@ -3,9 +3,40 @@
 @section('title', 'The Fumo Index')
 
 @section('content')
-    <div class="flex flex-col items-center justify-center">
-        <h1 class="text-3xl font-bold mb-4">Hello world!</h1>
-        <p class="mb-2">Welcome to The Fumo Index.</p>
-        <strong>Programmed to work and not to feel.</strong>
+    <div class="overflow-hidden relative">
+
+        <div class="absolute inset-0 -z-10">
+            <img src="/img/background/gensokyo.jpg"  alt="Gensokyo Background" class="w-full h-full object-cover header-image"/>
+        </div>
+
+        <div class="container mx-auto flex relative justify-center items-center flex-col gap-10 h-[850px]">
+            <div class="absolute hidden w-50 h-50 rotate-[6deg] r-chibi-breakpoints">
+                <img src="/img/home/fumo_reimu.png" class="pointer-events-none" alt="Reimu Hakurei Fumo" />
+            </div>
+            <div class="flex flex-col gap-2 text-center mt-24">
+                <div class="text-5xl text-nowrap md:text-6xl font-bold text-white">The Fumo Index</div>
+                <div class="text-2xl text-white">The ultimate guide to all things Fumo!</div>
+            </div>
+            <div class="flex w-full md:w-auto justify-between flex-col md:flex-row gap-10 mt-16">
+                <a href="{{ route('what_is_a_fumo') }}" class="btn flex items-center justify-center text-nowrap btn-outline text-2xl gap-2 p-3">
+                    <div class="flex w-full justify-center text-center">
+                        What's a Fumo?
+                    </div>
+                </a>
+                <a href="#" class="btn flex items-center justify-center text-nowrap btn-primary text-2xl gap-2 p-3">
+                    <div class="flex w-full justify-center text-center">
+                        Explore Fumos List
+                    </div>
+                </a>
+                <a href="#" class="btn flex items-center justify-center text-nowrap btn-outline text-2xl gap-2 p-3">
+                    <div class="flex w-full justify-center text-center">
+                        How to get Fumos
+                    </div>
+                </a>
+            </div>
+            <div class="absolute hidden w-50 h-50 scale-x-[-100%] rotate-[-6deg] l-chibi-breakpoints">
+                <img src="/img/home/fumo_marisa.png" class="pointer-events-none" alt="Marisa Kirisame Fumo" />
+            </div>
+        </div>
     </div>
 @endsection

@@ -97,3 +97,8 @@ h6 {
     @apply text-base;
     @apply font-bold;
 }
+
+.header-image {
+    filter: blur(4px);
+    transform: scale(1.1);
+}
