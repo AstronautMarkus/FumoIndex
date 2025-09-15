@@ -14,6 +14,17 @@
     @apply hover:bg-primary-light;
 }
 
+.btn-secondary {
+    @apply bg-secondary;
+    @apply text-white;
+    @apply hover:bg-secondary-light;
+}
+.btn-tertiary {
+    @apply bg-tertiary;
+    @apply text-white;
+    @apply hover:bg-tertiary-light;
+}
+
 .btn-outline {
     @apply bg-white;
     @apply text-primary;
