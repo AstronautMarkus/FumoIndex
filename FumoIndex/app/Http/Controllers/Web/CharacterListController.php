@@ -9,10 +9,21 @@ use App\Models\Franchise;
 
 class CharacterListController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $characters = Character::all();
         $franchises = Franchise::all();
-        return view('character_list', compact('characters', 'franchises'));
+        $selectedFranchise = null;
+        $characters = null;
+
+        $franchiseSlug = $request->query('franchise');
+        if ($franchiseSlug) {
+            $selectedFranchise = Franchise::where('slug_name', $franchiseSlug)->first();
+            if ($selectedFranchise) {
+                $characters = Character::where('franchise_id', $selectedFranchise->id)
+                    ->paginate(20);
+            }
+        }
+
+        return view('character_list', compact('franchises', 'selectedFranchise', 'characters'));
     }
 }
