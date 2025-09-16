@@ -15,6 +15,7 @@
     },
     "dependencies": {
         "@fontsource/koho": "^5.2.7",
-        "@fortawesome/fontawesome-free": "^7.0.1"
+        "@fortawesome/fontawesome-free": "^7.0.1",
+        "aos": "^2.3.4"
     }
 }
