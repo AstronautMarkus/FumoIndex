@@ -52,7 +52,7 @@
 </div>
 
 <div class="flex justify-center mb-8 px-4 md:px-0 w-[95%]">
-    <a href="{{ route('home') }}" class="btn flex items-center justify-center text-nowrap btn-tertiary text-2xl gap-2 p-3">Back Home</a>
+    <a href="{{ route('home') }}" class="btn flex items-center justify-center text-nowrap btn-tertiary text-2xl gap-2 p-3">Back Home <i class="fa-solid fa-home"></i></a>
 </div>
 
 @endsection
