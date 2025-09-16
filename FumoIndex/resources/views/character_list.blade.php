@@ -59,7 +59,7 @@
                                 <a href="{{ url('characters/' . $character->slug_name) }}" class="group cursor-pointer">
                                     <div class="relative bg-white rounded-2xl shadow-lg border-4 border-gray-300 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-red-500 flex flex-col items-center">
                                         <div class="aspect-square p-2 w-40 flex items-center justify-center"> 
-                                            <img src="{{ asset('assets/characters/' . $character->character_image) }}" alt="{{ $character->character_name }}" class="w-full h-full object-cover {{ $loop->first ? 'rounded-xl' : '' }} pointer-events-none" />
+                                            <img src="{{ asset('assets/characters/' . $character->character_image) }}" alt="{{ $character->character_name }}" class="w-full h-full object-cover rounded-t-xl pointer-events-none" />
                                         </div>
                                         <div class="relative -mt-2 mx-2 mb-2 w-full">
                                             <div class="bg-black text-white text-xs font-bold py-2 px-3 rounded-lg text-center relative overflow-hidden">
