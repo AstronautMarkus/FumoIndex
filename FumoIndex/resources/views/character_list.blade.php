@@ -121,7 +121,7 @@
                         <img src="/img/helpers/non_fumo_example.png" alt="Rumia Non-Fumo Example" class="object-contain pointer-events-none w-full h-full scale-110" />
                     </div>
                 </div>
-                <p class="text-gray-600 text-sm text-center">Both plushies are related by being from Touhou Project and of the same character, but the right photo does not show the <strong>ふもふも (fumofumo)</strong> style, meaning it is not considered a Fumo.</p>
+                <p class="text-gray-600 text-sm text-center">Both plushies are related by being from <strong>Touhou Project (東方)</strong> and of the same character, but the right photo does not show the <strong>ふもふも (fumofumo)</strong> in the description, the second image has <strong>東方 (Touhou)</strong> in the description but does not mention <strong>ふもふも (fumofumo)</strong>.</p>
             </div>
             <p class="text-gray-500 text-xs mt-6 text-center">
                 For more details about what defines an authentic Fumo, check the <span class="italic"><a href="#" class="text-primary hover:underline">What is a Fumo?</a></span> section.
