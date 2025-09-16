@@ -10,17 +10,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // IMPORTANT! Don't change names of this array without updating the seeder and the JSON file.
-        $allowed_types = [
-            'Standard Type',
-            'Nendoroid Type',
-            'Plush Strap Type',
-            'Mannaka (Medium) Type',
-            'Deka Type',
-            'Puppet Type',
-        ];
-
-        $categories = FumoType::whereIn('fumo_type', $allowed_types)->get();
+        // Get only primary categories, evite hardcoding hehehe
+        $categories = FumoType::where('is_primary', true)->get();
         return view('home', compact('categories'));
     }
 }
