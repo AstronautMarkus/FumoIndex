@@ -9,9 +9,12 @@
         <link rel="shortcut icon" href="{{ asset('img/FumoIndex.svg') }}" type="image/x-icon">
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="bg-background">
+    <body class="bg-background min-h-screen flex flex-col">
         @include('components.header')
-        @yield('content')
+        <main class="flex-1">
+            @yield('content')
+        </main>
+        @include('components.footer')
         @stack('scripts')
     </body>
 </html>
