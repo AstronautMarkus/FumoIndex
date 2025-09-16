@@ -1,25 +1,39 @@
 [
     {
-        "name":"Flandre Scarlet",
-        "franchise_id":1
-    },
-    {
         "name":"Reimu Hakurei",
         "franchise_id":1,
-        "description":"Reimu Hakurei (博麗霊夢 Hakurei Reimu) is the Main Character of the Touhou Project series, having appeared in all of the main games and in almost every game in the series. As the sole maiden of the Hakurei Shrine, she is commonly called upon (or calls it upon herself) to investigate strange occurrences throughout Gensokyo. ",
+        "description":"Reimu Hakurei (博麗 霊夢 Hakurei Reimu) is the Main Character of the Touhou Project series, having appeared in all of the main games and in almost every game in the series. As the sole maiden of the Hakurei Shrine, she is commonly called upon (or calls it upon herself) to investigate strange occurrences throughout Gensokyo. ",
         "description_source":"https://touhou.fandom.com/wiki/Reimu_Hakurei"
     },
     {
         "name":"Marisa Kirisame",
-        "franchise_id":1
+        "franchise_id":1,
+        "description":"Marisa Kirisame (霧雨 魔理沙 Kirisame Marisa) is a human magician, and is one of the most important sub-characters of the series (according to series producer ZUN). Her personality is sometimes described as disagreeable, but in some other titles, straightforward. Either way, she is a very self-confident person that likes to stick her nose into every trouble out of curiosity. ",
+        "description_source":"https://touhou.fandom.com/wiki/Marisa_Kirisame"
     },
     {
         "name":"Remilia Scarlet",
-        "franchise_id":1
+        "franchise_id":1,
+        "description":"Remilia Scarlet (レミリア・スカーレット Remiria Sukāretto) is the owner and head of the Scarlet Devil Mansion, the mistress of Sakuya Izayoi and Hong Meiling, and the older sister (and guardian) of Flandre Scarlet. Though her appearance (and often behavior) is childlike, and seems nonthreatening, She has fearsome magical powers and a reputation to match, being known throughout Gensokyo as the dangerous \"Scarlet Devil.\"",
+        "description_source":"https://touhou.fandom.com/wiki/Remilia_Scarlet"
+    },
+    {
+        "name":"Flandre Scarlet",
+        "franchise_id":1,
+        "description":"Flandre Scarlet (フランドール・スカーレット Furandooru Sukaaretto) is the younger sister of Remilia Scarlet and a vampire who has lived at the Scarlet Devil Mansion for over 495 years. Flandre first appeared as the Extra Stage boss of Embodiment of Scarlet Devil.",
+        "description_source":"https://touhou.fandom.com/wiki/Flandre_Scarlet"
+    },
+    {
+        "name":"Cirno",
+        "franchise_id":1,
+        "description":"Cirno (チルノ Chiruno) is an ice fairy. While she is described as a weak boss in the Touhou series, her powers are not to be underestimated, and that is implied to be so in Phantasmagoria of Flower View by Eiki Shiki. Her personality is childish and rather incompetent, as you and many others might expect from her appearance.",
+        "description_source":"https://touhou.fandom.com/wiki/Cirno"
     },
     {
         "name":"Satori Komeiji",
-        "franchise_id":1
+        "franchise_id":1,
+        "description":"",
+        "description_source":""
     },
     {
         "name":"Ran Yakumo",
@@ -39,10 +53,6 @@
     },
     {
         "name":"Kaguya Houraisan",
-        "franchise_id":1
-    },
-    {
-        "name":"Cirno",
         "franchise_id":1
     },
     {
