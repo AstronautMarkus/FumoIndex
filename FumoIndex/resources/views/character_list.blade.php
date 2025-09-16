@@ -89,7 +89,12 @@
     </div>
 
     <div id="whyFranchisesModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
-        <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 max-w-2xl w-full">
+        <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 max-w-2xl w-full relative">
+
+            <button id="closeWhyFranchisesModal" class="absolute top-4 right-4 text-primary hover:text-primary-light text-2xl focus:outline-none cursor-pointer" aria-label="Close">
+                <i class="fa fa-times"></i>
+            </button>
+
             <h3 class="text-2xl font-bold mb-6 text-primary text-center">Why Franchises?</h3>
             
             <p class="text-gray-700 mb-4 text-base leading-relaxed">
@@ -126,7 +131,7 @@
             <p class="text-gray-500 text-xs mt-6 text-center">
                 For more details about what defines an authentic Fumo, check the <span class="italic"><a href="{{ route('what_is_a_fumo') }}" target="_blank" class="text-primary hover:underline">What is a Fumo?</a></span> section.
             </p>
-            <button id="closeWhyFranchisesModal" class="mt-6 btn btn-primary w-full p-3 text-lg">
+            <button id="closeWhyFranchisesModalBtn" class="mt-6 btn btn-primary w-full p-3 text-lg">
                 Got it!
             </button>
         </div>
