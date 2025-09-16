@@ -35,7 +35,7 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="block px-4 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105">
+                <a href="{{ route('the_fumo_origins') }}" class="block px-4 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105">
                     The Fumo Origins
                     <i class="fa-solid fa-book"></i>
                 </a>

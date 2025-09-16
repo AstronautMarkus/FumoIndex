@@ -94,7 +94,7 @@
             
             <p class="text-gray-700 mb-4 text-base leading-relaxed">
                 Yes, Fumos were originally born from the <span class="font-semibold">Touhou Project</span>. 
-                (For more details, see the <span class="italic"><a href="#" class="text-primary hover:underline">Fumo Origins</a></span> section.)
+                (For more details, see the <span class="italic"><a href="{{ route('the_fumo_origins') }}" target="_blank" class="text-primary hover:underline">Fumo Origins</a></span> section.)
                 The first designs were created by <span class="font-semibold">AngelType</span>, and later official production was taken over by <span class="font-semibold">Gift</span>.
             </p>
             
@@ -124,7 +124,7 @@
                 <p class="text-gray-600 text-sm text-center">Both plushies are related by being from <strong>Touhou Project (東方)</strong> and of the same character, but the right photo does not show the <strong>ふもふも (fumofumo)</strong> in the description, the second image has <strong>東方 (Touhou)</strong> in the description but does not mention <strong>ふもふも (fumofumo)</strong>.</p>
             </div>
             <p class="text-gray-500 text-xs mt-6 text-center">
-                For more details about what defines an authentic Fumo, check the <span class="italic"><a href="#" class="text-primary hover:underline">What is a Fumo?</a></span> section.
+                For more details about what defines an authentic Fumo, check the <span class="italic"><a href="{{ route('what_is_a_fumo') }}" target="_blank" class="text-primary hover:underline">What is a Fumo?</a></span> section.
             </p>
             <button id="closeWhyFranchisesModal" class="mt-6 btn btn-primary w-full p-3 text-lg">
                 Got it!
