@@ -39,42 +39,42 @@
             </div>
         </div>
 
-        <div class="flex md:hidden relative items-center justify-center h-[450px]">
+        <div class="flex md:hidden relative items-center justify-center h-[450px]" data-aos="fade-up" data-aos-duration="1200">
             <div class="absolute inset-0 -z-10">
-                <img src="/img/background/gensokyo.jpg" alt="Gensokyo Background" class="w-full h-full object-cover header-image"/>
+            <img src="/img/background/gensokyo.jpg" alt="Gensokyo Background" class="w-full h-full object-cover header-image"/>
             </div>
             <div class="flex flex-col w-full h-full items-center justify-center px-4">
-                <div class="flex w-full items-center justify-center gap-4 mt-8">
-                    <div class="flex flex-col gap-2 text-center flex-1">
-                        <div class="text-3xl font-bold text-white">The Fumo Index</div>
-                        <div class="text-lg text-white">The ultimate guide to all things Fumo!</div>
-                    </div>
-                    <div class="flex items-center justify-end flex-none">
-                        <img src="/img/home/fumo_reimu.png" class="pointer-events-none w-24 h-24" alt="Reimu Hakurei Fumo" />
-                    </div>
+            <div class="flex w-full items-center justify-center gap-4 mt-8" data-aos="fade-up" data-aos-delay="600">
+                <div class="flex flex-col gap-2 text-center flex-1">
+                <div class="text-3xl font-bold text-white">The Fumo Index</div>
+                <div class="text-lg text-white">The ultimate guide to all things Fumo!</div>
                 </div>
-                <div class="flex flex-row w-full items-center justify-center mt-6 gap-2">
-                    <div class="flex items-center justify-center flex-none">
-                        <img src="/img/home/fumo_marisa.png" class="pointer-events-none w-24 h-24 scale-x-[-100%]" alt="Marisa Kirisame Fumo" />
-                    </div>
-                    <div class="flex flex-col gap-2 w-8/12">
-                        <a href="{{ route('what_is_a_fumo') }}" class="btn flex items-center justify-center text-nowrap btn-outline text-sm gap-2 p-2 w-full">
-                            <div class="flex w-full justify-center text-center">
-                                What's a Fumo?
-                            </div>
-                        </a>
-                        <a href="#" class="btn flex items-center justify-center text-nowrap btn-primary text-sm gap-2 p-2 w-full">
-                            <div class="flex w-full justify-center text-center">
-                                Explore Fumos List
-                            </div>
-                        </a>
-                        <a href="#" class="btn flex items-center justify-center text-nowrap btn-outline text-sm gap-2 p-2 w-full">
-                            <div class="flex w-full justify-center text-center">
-                                How to get Fumos
-                            </div>
-                        </a>
-                    </div>
+                <div class="flex items-center justify-end flex-none" data-aos="zoom-in" data-aos-delay="100">
+                <img src="/img/home/fumo_reimu.png" class="pointer-events-none w-24 h-24" alt="Reimu Hakurei Fumo" />
                 </div>
+            </div>
+            <div class="flex flex-row w-full items-center justify-center mt-6 gap-2" data-aos="fade-up" data-aos-delay="1200">
+                <div class="flex items-center justify-center flex-none" data-aos="zoom-in" data-aos-delay="100">
+                <img src="/img/home/fumo_marisa.png" class="pointer-events-none w-24 h-24 scale-x-[-100%]" alt="Marisa Kirisame Fumo" />
+                </div>
+                <div class="flex flex-col gap-2 w-8/12">
+                <a href="{{ route('what_is_a_fumo') }}" class="btn flex items-center justify-center text-nowrap btn-outline text-sm gap-2 p-2 w-full">
+                    <div class="flex w-full justify-center text-center">
+                    What's a Fumo?
+                    </div>
+                </a>
+                <a href="#" class="btn flex items-center justify-center text-nowrap btn-primary text-sm gap-2 p-2 w-full">
+                    <div class="flex w-full justify-center text-center">
+                    Explore Fumos List
+                    </div>
+                </a>
+                <a href="#" class="btn flex items-center justify-center text-nowrap btn-outline text-sm gap-2 p-2 w-full">
+                    <div class="flex w-full justify-center text-center">
+                    How to get Fumos
+                    </div>
+                </a>
+                </div>
+            </div>
             </div>
         </div>
 
@@ -82,7 +82,7 @@
 
     <div class="overflow-hidden mt-4">
         <div class="container mx-auto flex flex-col items-center justify-center">
-            <div class="bg-container backdrop-blur-sm rounded-3xl shadow-xl border-4 border-secondary p-8 mt-10 mb-10 w-full max-w-5xl">
+            <div class="bg-container backdrop-blur-sm rounded-3xl shadow-xl border-4 border-secondary p-8 mt-10 mb-10 w-full max-w-7xl">
                 <div class="flex justify-center mx-10 gap-6 items-stretch">
                     <div class="grow hidden md:flex items-stretch">
                         <div class="flex mx-4 transform-origin-top h-full">
@@ -118,7 +118,7 @@
 
     <div class="container mx-auto flex flex-col items-center justify-center mt-8">
         <div class="bg-container backdrop-blur-sm rounded-3xl shadow-xl border-4 border-secondary p-8 w-full max-w-7xl">
-            <h2 class="text-3xl font-bold text-center mb-4 text-primary">FumoFumo Categories</h2>
+            <h2 class="text-3xl font-bold text-center mb-4 text-primary">FumoFumo Categories <i class="fa-solid fa-yin-yang"></i></h2>
             <p class="text-lg text-center mb-8">
                 Originally, there were only two Fumos: Reimu and Marisa, but over time and with increasing popularity, more characters and, with them, more versions began to appear, thus giving rise to the Fumo categories.
             </p>
@@ -172,6 +172,32 @@
                     </div>
                 </div>
                 
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto flex flex-col items-center justify-center mt-8">
+        <div class="bg-container backdrop-blur-sm rounded-3xl shadow-xl border-4 border-secondary p-8 w-full max-w-7xl">
+            <h2 class="text-2xl font-bold text-center mb-4 text-primary">About This Project <i class="fa-solid fa-circle-info"></i></h2>
+            <ul class="list-disc pl-6 text-lg text-gray-800 space-y-4">
+                <li>
+                    <span class="font-semibold text-primary">By a fan, for the fans:</span> This site is made with love by Touhou and Fumo enthusiasts for the whole community.
+                </li>
+                <li>
+                    <span class="font-semibold text-primary">Open Source:</span> All code is open source, and we welcome contributions and improvements from anyone in the community.
+                </li>
+                <li>
+                    <span class="font-semibold text-primary">No content belongs to us:</span> All images, information, and resources are property of their respective creators and rights holders.
+                </li>
+                <li>
+                    <strong><span class="font-semibold text-primary">We do not sell merchandise:</span> This is a fan project, NOT a store. Like a... Wiki? We do not sell or trade any Fumos or related merchandise. XD</strong>
+                </li>
+            </ul>
+            <div class="flex justify-center mt-8">
+                <a href="https://github.com/AstronautMarkus/FumoIndex" target="_blank" class="btn btn-primary flex items-center gap-2 text-lg px-6 py-3">
+                    <i class="fa-brands fa-github"></i>
+                    View source code on GitHub
+                </a>
             </div>
         </div>
     </div>
