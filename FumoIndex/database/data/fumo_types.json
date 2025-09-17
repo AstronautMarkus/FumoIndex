@@ -5,30 +5,19 @@
         "height": 200
     },
     {
-        "fumo_type": "Nendoroid Type",
-        "type_description": "Fumos based on Nendoroid figures, are twice as big as Standard Type.",
-        "height": 400
-    },
-    {
         "fumo_type": "Plush Strap Type",
         "type_description": "Fumos that are small enough to be used as keychains.",
         "height": 160
     },
     {
         "fumo_type": "Mannaka (Medium) Type",
-        "type_description": "Fumos that are larger than Standard Type but smaller t| Deka Type.",
+        "type_description": "Fumos that are larger than Standard Type but smaller than Deka Type.",
         "height": 400
     },
     {
         "fumo_type": "Deka Type",
         "type_description": "The Biggest Fumos, more larger than Mannaka Type.",
         "height": 700
-    },
-    {
-        "fumo_type": "Puppet Type",
-        "type_description": "Limited edition for Fumos that are made to be used as puppets.",
-        "height": 400
-
     },
     {
         "fumo_type": "Clear Bookmarker Type",
