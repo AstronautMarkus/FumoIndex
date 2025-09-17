@@ -27,7 +27,7 @@
                 </a>
             </div>
             <a href="https://github.com/AstronautMarkus/FumoIndex" target="_blank" class="text-white hover:text-gray-300 flex items-center">
-                <img src="{{ asset('img/helpers/github-mark-white.svg') }}" alt="GitHub Logo" width="24" height="24" class="mr-2 pointer-events-none" />
+                <i class="fa-brands fa-github mr-2"></i>
                 GitHub Repository
             </a>
         </div>
