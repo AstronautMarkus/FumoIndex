@@ -24,11 +24,11 @@
         <div class="flex flex-row flex-wrap justify-center items-start gap-8 mb-8">
             <div class="flex flex-col items-center w-40 sm:w-48">
                 <img src="/img/pages/fumo_origins/marisa_2008.jpg" alt="Marisa Kirisame Fumo (2008)" class="w-full max-h-64 sm:max-h-72 object-contain rounded-xl shadow-lg mb-2 pointer-events-none">
-                <span class="text-base text-center text-primary font-bold"><a class="underline text-primary hover:text-primary-light focus:outline-none cursor-pointer" href="/characters/marisa_kirisame">Marisa Kirisame</a></span>
+                <span class="text-base text-center text-primary font-bold"><a class="hover:underline text-primary hover:text-primary-light focus:outline-none cursor-pointer" href="/characters/marisa_kirisame">Marisa Kirisame</a></span>
             </div>
             <div class="flex flex-col items-center w-40 sm:w-48">
                 <img src="/img/pages/fumo_origins/reimu_2008.jpg" alt="Reimu Hakurei Fumo (2008)" class="w-full max-h-64 sm:max-h-72 object-contain rounded-xl shadow-lg mb-2 pointer-events-none">
-                <span class="text-base text-center text-primary font-bold"><a class="underline text-primary hover:text-primary-light focus:outline-none cursor-pointer" href="/characters/reimu_hakurei">Reimu Hakurei</a></span>
+                <span class="text-base text-center text-primary font-bold"><a class="hover:underline text-primary hover:text-primary-light focus:outline-none cursor-pointer" href="/characters/reimu_hakurei">Reimu Hakurei</a></span>
             </div>
         </div>
 
