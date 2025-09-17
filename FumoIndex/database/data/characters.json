@@ -197,18 +197,26 @@
     },
     {
         "name": "Hitori Gotoh",
+        "description":"Hitori Gotoh (後藤 ひとり Gotō Hitori), often referred to by her bandmates as Bocchi-chan (ぼっちちゃん),[2] is the titular main protagonist of the manga and anime series Bocchi the Rock!. She is a first-year of Shuka High School and is the lead guitarist and lyricist of Kessoku Band.",
+        "description_source":"https://bocchi-the-rock.fandom.com/wiki/Hitori_Gotoh",
         "franchise_id": 2
     },
     {
         "name": "Nijika Ijichi",
+        "description":"Nijika Ijichi (伊地知 虹夏 Ijichi Nijika) is one of the main characters in the manga and anime series Bocchi the Rock!. She is a second-year student of Shimokitazawa High School and is the drummer of Kessoku Band.",
+        "description_source":"https://bocchi-the-rock.fandom.com/wiki/Nijika_Ijichi",
         "franchise_id": 2
     },
     {
         "name":"Ikuyo Kita",
+        "description":"Ikuyo Kita (喜多 郁代 Kita Ikuyo) is one of the main characters in the manga and anime series Bocchi the Rock!. She is a first-year of Shuka High School and is the lead vocalist and backup guitarist for Kessoku Band. She started admiring Ryo Yamada after seeing her street concert.",
+        "description_source":"https://bocchi-the-rock.fandom.com/wiki/Ikuyo_Kita",
         "franchise_id": 2
     },
     {
         "name":"Ryo Yamada",
+        "description":"Ryo Yamada (山田 リョウ Yamada Ryō) is one of the main characters in the manga and anime series Bocchi the Rock!. She is a second-year student at Shimokitazawa High School and is the bassist, backup vocalist, and composer for Kessoku Band.",
+        "description_source":"https://bocchi-the-rock.fandom.com/wiki/Ryo_Yamada",
         "franchise_id": 2
     },
     {
@@ -237,6 +245,8 @@
     },
     {
         "name":"Amico",
+        "description":"She is a “Magical World Princess” that is cheerfully working to support her favorite hobby and anime at “AmiAmi Akiba Store”.",
+        "description_source":"https://amico-web.jp/en/character/",
         "franchise_id": 4
     },
     {
@@ -301,18 +311,26 @@
     },
     {
         "name":"Nobeta",
+        "description":"The little witch has come to the castle after all. She barely remembers anything, was she always alone? None of this matter, now. Nobeta understand that she must enter the castle and reach the throne despite the crafted souls and challenges ahead of her. It's the only way to find out the truth and the answer to her past.",
+        "description_source":"https://www.littlewitchnobeta.com/en/character/",
         "franchise_id": 6
     },
     {
         "name":"Saya",
+        "description":"Saya is the secondary main character and central protagonist of Saya no Uta. She is voiced by Naoko Takano (credited as Midori Kawamura).",
+        "description_source":"https://saya-no-uta.fandom.com/wiki/Saya",
         "franchise_id": 7
     },
     {
         "name":"Monika",
+        "description":"Monika (モニカ) is a main character and the poster girl of Doki Doki Literature Club!. She is the President of the Literature Club and is the game's driving force, directing club members to write poems until the club festival, which enables and develops the characters and story.",
+        "description_source":"https://doki-doki-literature-club.fandom.com/wiki/Monika_(DDLC)",
         "franchise_id": 8
     },
     {
         "name":"Shinji Ikari",
+        "description":"Shinji Ikari (碇シンジ, Ikari Shinji)[2] is the Third Child, the main protagonist of the Neon Genesis Evangelion franchise, and the designated pilot of Evangelion Unit-01.",
+        "description_source":"https://evangelion.fandom.com/wiki/Shinji_Ikari",
         "franchise_id": 9
     }
 ]
