@@ -332,5 +332,12 @@
         "description":"Shinji Ikari (碇シンジ, Ikari Shinji)[2] is the Third Child, the main protagonist of the Neon Genesis Evangelion franchise, and the designated pilot of Evangelion Unit-01.",
         "description_source":"https://evangelion.fandom.com/wiki/Shinji_Ikari",
         "franchise_id": 9
+    },
+    {
+        "name":"ZUN",
+        "franchise_id": 1,
+        "description":"ZUN (太田順也, romanized Jun'ya Ota) is the sole known member of Team Shanghai Alice, and is the designer, programmer, script writer, and composer of the extremely popular Touhou Project series. He is seen to be rather reclusive, and thus very little is known about him, except that he's very fond of beer. He was employed by Taito Corporation,[1] and had been involved in the production of various Taito titles.",
+        "description_source":"https://touhou.fandom.com/wiki/ZUN"
+
     }
 ]
