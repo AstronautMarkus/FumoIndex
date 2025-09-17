@@ -10,7 +10,7 @@
                 <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 mt-10 mb-10">
                     <h2 class="text-2xl font-bold mb-2 text-center text-primary">Select a Character Franchise</h2>
                     <p class="text-center text-tertiary mb-4">
-                        <button id="whyFranchisesBtn" class="underline text-tertiary hover:text-tertiary-light focus:outline-none cursor-pointer">
+                        <button id="whyFranchisesBtn" class="hover:underline text-tertiary hover:text-tertiary-light focus:outline-none cursor-pointer">
                             Why Franchises? Aren't Fumos originally from the Touhou Project?
                         </button>
                     </p>
@@ -100,11 +100,11 @@
             <p class="text-gray-700 mb-4 text-base leading-relaxed">
                 Yes, Fumos were originally born from the <span class="font-semibold">Touhou Project</span>. 
                 (For more details, see the <span class="italic"><a href="{{ route('the_fumo_origins') }}" target="_blank" class="text-primary hover:underline">Fumo Origins</a></span> section.)
-                The first designs were created by <span class="font-semibold">AngelType</span>, and later official production was taken over by <span class="font-semibold">Gift</span>.
+                The first designs were created by <span class="font-semibold">ANGELTYPE</span>, and later official production was taken over by <span class="font-semibold">Gift</span>.
             </p>
             
             <p class="text-gray-700 mb-4 text-base leading-relaxed">
-                Over time, Gift expanded the <strong>ふもふも (fumofumo)</strong> plush line beyond Touhou, 
+                Over time, <span class="font-semibold">Gift</span> expanded the <strong>ふもふも (fumofumo)</strong> plush line beyond Touhou, 
                 producing Fumo plushies of characters from <span class="font-semibold">other franchises</span> as well. 
                 This means there are now official Fumos from Touhou and from completely different series.
             </p>
@@ -149,6 +149,9 @@
     };
     document.getElementById('whyFranchisesModal').onclick = function(e) {
         if (e.target === this) this.classList.add('hidden');
+    };
+    document.getElementById('closeWhyFranchisesModalBtn').onclick = function() {
+        document.getElementById('whyFranchisesModal').classList.add('hidden');
     };
 </script>
 @endpush
