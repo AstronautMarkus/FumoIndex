@@ -140,6 +140,44 @@
 
 <div class="flex flex-col items-center justify-center py-8">
     <div class="bg-container border-4 border-secondary rounded-3xl shadow-md w-[95%] max-w-7xl mx-auto px-6 py-8 flex flex-col items-center">
+        <h1 class="text-4xl font-bold mb-8 text-center text-primary">Are Toy Strap Plushies Considered Fumo? <i class="fa-solid fa-yin-yang"></i></h1>
+
+        <p class="text-lg mb-4 text-center">Short answer: <strong>No.</strong> Long answer: <strong>It depends.</strong> There is some debate about these plushies made by Gift, as some models could be considered Fumos, but most are not. Let me explain:</p>
+
+        <div class="w-48 h-48 bg-gray-200 rounded shadow flex items-center justify-center overflow-hidden mb-4">
+            <img src="{{ asset('img/pages/what_is_a_fumo/reimu_toy_strap.jpg') }}" alt="Reimu Toy Strap" class="object-cover w-full h-full pointer-events-none" />
+        </div>
+
+        <p class="text-lg mb-4 text-center">Have you seen this cute plush of <a href="/characters/reimu_hakurei" target="_blank" class="hover:underline text-primary hover:text-primary-light focus:outline-none cursor-pointer">Reimu</a>? This plush is classified as a 'Toy Strap'.</p>
+
+        <p class="text-lg mb-4 text-center">Toy Straps are manufactured by Gift, and while they may resemble Fumos, they have their own distinct style and are not considered Fumos. However, there are some Toy Straps that do qualify as authentic Fumos, at least in our view. For example:</p>
+
+        <div class="w-48 h-48 bg-gray-200 rounded shadow flex items-center justify-center overflow-hidden mb-4">
+            <img src="{{ asset('img/pages/what_is_a_fumo/reimu_toy_strap_fumo.jpg') }}" alt="Reimu Toy Strap Fumo" class="object-cover w-full h-full pointer-events-none" />
+        </div>
+
+        <p class="text-lg mb-4 text-center">This other plush of <a href="/characters/reimu_hakurei" target="_blank" class="hover:underline text-primary hover:text-primary-light focus:outline-none cursor-pointer">Reimu</a> is a Toy Strap that is considered a Fumo, as it features the basic characteristics of a Fumo (face, proportions, etc.). The main difference is that it functions more as a keychain, with a strap on its head for hanging, but its design closely matches that of a traditional Fumo.</p>
+
+        <h2 class="text-2xl font-bold mb-8 text-center text-primary">So... Are There Toy Straps Listed on This Page? <i class="fa-solid fa-yin-yang"></i></h2>
+
+        <div class="flex flex-col md:flex-row items-center gap-8 w-full max-w-3xl mx-auto mb-8">
+            <div class="md:w-2/3 w-full">
+                <p class="text-lg mb-4 text-center md:text-left">
+                    On this site, we do not list Toy Straps that are not Fumos, but we do include those that are. As explained above, we only list plushies that are traditional Fumos. <br><br> If the plush includes <strong>ふもふも (fumofumo)</strong> in its name, we consider it for our index; otherwise, it will not be included in the system.
+                </p>
+            </div>
+            <div class="md:w-1/3 w-full flex justify-center">
+                <div class="w-96 bg-gray-200 rounded shadow flex items-center justify-center overflow-hidden">
+                    <img src="{{ asset('img/pages/what_is_a_fumo/fumo_list.png') }}" alt="Real fumo list" class="object-cover w-full h-full pointer-events-none" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="flex flex-col items-center justify-center py-8">
+
+    <div class="bg-container border-4 border-secondary rounded-3xl shadow-md w-[95%] max-w-7xl mx-auto px-6 py-8 flex flex-col items-center">
         <h1 class="text-4xl font-bold mb-8 text-center text-primary">The Bootleg Fumos <i class="fa-solid fa-skull-crossbones"></i></h1>
 
         <section class="flex flex-col md:flex-row items-center gap-8 w-full max-w-5xl mx-auto mb-16">
