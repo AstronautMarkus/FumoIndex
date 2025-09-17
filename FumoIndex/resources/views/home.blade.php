@@ -20,7 +20,7 @@
                 <div class="text-5xl text-nowrap md:text-6xl font-bold text-white">The Fumo Index</div>
                 <div class="text-2xl text-white">The ultimate guide to all things Fumo!</div>
             </div>
-            <div class="flex w-full md:w-auto justify-between flex-col md:flex-row gap-10 mt-16" data-aos="fade-up" data-aos-delay="1200">
+            <div class="flex w-full md:w-auto justify-between flex-col md:flex-row gap-10 mt-16">
                 <a href="{{ route('what_is_a_fumo') }}" class="btn flex items-center justify-center text-nowrap btn-outline text-2xl gap-2 p-3">
                     <div class="flex w-full justify-center text-center">
                         What's a Fumo?
