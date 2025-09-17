@@ -306,5 +306,13 @@
     {
         "name":"Saya",
         "franchise_id": 7
+    },
+    {
+        "name":"Monika",
+        "franchise_id": 8
+    },
+    {
+        "name":"Shinji Ikari",
+        "franchise_id": 9
     }
 ]
