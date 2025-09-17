@@ -8,6 +8,7 @@
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
         <link rel="shortcut icon" href="{{ asset('img/FumoIndex.svg') }}" type="image/x-icon">
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @livewireStyles
     </head>
     <body class="bg-background min-h-screen flex flex-col">
         @include('components.header')
@@ -16,5 +17,6 @@
         </main>
         @include('components.footer')
         @stack('scripts')
+        @livewireScripts
     </body>
 </html>
