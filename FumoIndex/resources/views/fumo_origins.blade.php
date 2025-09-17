@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="flex flex-col items-center justify-center py-8">
-    <div class="bg-container border-4 border-secondary rounded-3xl shadow-md w-[95%] max-w-5xl mx-auto px-6 py-8 flex flex-col items-center">
+    <div class="bg-container border-4 border-secondary rounded-3xl shadow-md w-[95%] max-w-7xl mx-auto px-6 py-8 flex flex-col items-center">
 
         <h1 class="text-4xl font-bold mb-2 text-center text-primary">The Fumo Origins</h1>
         <h2 class="text-sm mb-4 text-center text-tertiary">Learn about the origin of the Fumo plushies ᗜˬᗜ</h2>
@@ -49,7 +49,7 @@
 </div>
 
 <div class="flex flex-col items-center justify-center py-8">
-    <div class="bg-container border-4 border-secondary rounded-3xl shadow-md w-[95%] max-w-5xl mx-auto px-6 py-8 flex flex-col items-center">
+    <div class="bg-container border-4 border-secondary rounded-3xl shadow-md w-[95%] max-w-7xl mx-auto px-6 py-8 flex flex-col items-center">
         <h1 class="text-4xl font-bold mb-2 text-center text-primary">"The First Fumo: Inu Sakuya"</h1>
 
         <div class="w-full flex justify-center mb-6">
