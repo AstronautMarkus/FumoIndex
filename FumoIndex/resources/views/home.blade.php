@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'The Fumo Index')
+@section('title', 'Home')
 
 @section('content')
     <div class="overflow-hidden relative">

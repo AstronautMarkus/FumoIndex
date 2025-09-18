@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'What is a Fumo? The Fumo Index')
+@section('title', 'What is a Fumo?')
 
 @section('content')
 <div class="flex flex-col items-center justify-center py-8">

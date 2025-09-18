@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Character Detail - ' . $character->character_name)
+@section('title', $character->character_name)
 
 @section('content')
     <div class="flex flex-col items-center justify-center mt-8 mb-6">
