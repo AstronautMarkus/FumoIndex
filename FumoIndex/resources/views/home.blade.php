@@ -156,7 +156,7 @@
                 </div>
 
                 <div class="text-center mt-4 text-lg text-gray-800">
-                    <p>Deka (70cm) - Medium (40cm) - Puppet (40cm) - Nendoroid (40cm) - Standard (20cm) - Toy Strap (10cm)</p>
+                    <p>Deka (70cm)  Medium (40cm)  Standard (20cm)  Toy Strap (10cm)</p>
                 </div>
 
                 <div class="flex flex-col items-center mt-6">
@@ -167,7 +167,7 @@
                         </p>
                         <p class="text-gray-800">
                             These are the <span class="font-bold">"original"</span> Fumo categories, but there are many more: bowls, keychains, beach pillows, etc.<br>
-                            Please check the <a href="#" class="text-primary font-semibold">categories section</a> for more information.
+                            Please check the <a href="{{ route('fumo_types') }}" class="text-primary font-semibold">Fumo Types</a> for more information.
                         </p>
                     </div>
                 </div>
@@ -182,6 +182,9 @@
             <ul class="list-disc pl-6 text-lg text-gray-800 space-y-4">
                 <li>
                     <span class="font-semibold text-primary">By a fan, for the fans:</span> This site is made with love by Touhou and Fumo enthusiasts for the whole community.
+                </li>
+                <li>
+                    <span class="font-semibold text-primary">Info written by fans:</span> Please note that this information may not be entirely accurate. Our research is based primarily on <a href="https://www.gift-gift.jp" class="text-primary font-semibold hover:underline">Gift</a>. In case of any confusion, it's always best to read their articles, if you know Japanese.
                 </li>
                 <li>
                     <span class="font-semibold text-primary">Open Source:</span> All code is open source, and we welcome contributions and improvements from anyone in the community.

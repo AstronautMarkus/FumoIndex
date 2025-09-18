@@ -11,3 +11,4 @@ Route::get('/characters', [CharacterListController::class, 'index'])->name('char
 Route::get('/characters/{slug}', [CharacterDetailController::class, 'show'])->name('characters.detail');
 Route::get('/what-is-a-fumo', function () { return view('what_is_a_fumo');})->name('what_is_a_fumo');
 Route::get('/the-fumo-origins', function () { return view('fumo_origins');})->name('the_fumo_origins');
+Route::get('/fumo-types', function () { return view('fumo_types');})->name('fumo_types');

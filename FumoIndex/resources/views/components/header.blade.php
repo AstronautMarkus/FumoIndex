@@ -29,6 +29,12 @@
                 </a>
             </li>
             <li>
+                <a href="{{ route('fumo_types') }}" class="block px-4 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105">
+                    Fumo Types
+                    <i class="fa-solid fa-tags"></i>
+                </a>
+            </li>
+            <li>
                 <a href="{{ route('what_is_a_fumo') }}" class="block px-4 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105">
                     What is a Fumo
                     <i class="fa-solid fa-question"></i>
