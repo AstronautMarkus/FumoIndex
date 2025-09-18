@@ -3,7 +3,7 @@
 @section('title', 'Character List')
 
 @section('content')
-    <div class="flex flex-col items-center justify-center">
+<div class="flex flex-col items-center justify-center">
         <div class="max-w-6xl mx-auto px-4 w-full">
 
             @if(!$selectedFranchise)
@@ -81,14 +81,14 @@
                         @endif
                     </div>
                     <div class="mt-4 flex justify-center">
-                        <a href="{{ route('characters.list') }}" class="btn flex items-center justify-center text-nowrap btn-tertiary text-2xl gap-2 p-3">Change Franchise</a>
+                        <a href="{{ route('characters.list') }}" class="btn flex items-center justify-center text-nowrap btn-tertiary text-2xl gap-2 p-3">Change Franchise <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             @endif
         </div>
-    </div>
+</div>
 
-    <div id="whyFranchisesModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
+<div id="whyFranchisesModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
         <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 max-w-2xl w-full relative">
 
             <button id="closeWhyFranchisesModal" class="absolute top-4 right-4 text-primary hover:text-primary-light text-2xl focus:outline-none cursor-pointer" aria-label="Close">
@@ -135,7 +135,11 @@
                 Got it!
             </button>
         </div>
-    </div>
+</div>
+
+<div class="flex justify-center mb-8 px-4 md:px-0 w-[95%]">
+    <a href="{{ route('home') }}" class="btn flex items-center justify-center text-nowrap btn-tertiary text-2xl gap-2 p-3">Back Home <i class="fa-solid fa-home"></i></a>
+</div>
 
 @endsection
 
