@@ -178,6 +178,28 @@
 
     <div class="container mx-auto flex flex-col items-center justify-center mt-8">
         <div class="bg-container backdrop-blur-sm rounded-3xl shadow-xl border-4 border-secondary p-8 w-full max-w-7xl">
+            <h2 class="text-2xl font-bold text-center mb-6 text-primary">Frequently Asked Questions <i class="fa-solid fa-question"></i></h2>
+            <div class="w-full flex flex-col gap-4">
+                @foreach($faqs as $index => $faq)
+                    <div x-data="{ open: false }" class="w-full">
+                        <button @click="open = !open" class="w-full text-left bg-secondary border-2 border-secondary px-6 py-4 font-semibold text-lg text-primary transition-colors duration-200 hover:bg-secondary-light hover:border-secondary-light focus:outline-none cursor-pointer" style="border-radius:0;">
+                            {{ $faq['question'] }}
+                            <span class="float-right">
+                                <i :class="open ? 'fa-solid fa-chevron-up' : 'fa-solid fa-chevron-down'"></i>
+                            </span>
+                        </button>
+                        <div x-show="open" x-transition class="bg-white border-x-2 border-b-2 border-secondary px-6 py-4 text-gray-800 text-base" style="border-radius:0;">
+                            {{ $faq['answer'] }}
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mx-auto flex flex-col items-center justify-center mt-8">
+        <div class="bg-container backdrop-blur-sm rounded-3xl shadow-xl border-4 border-secondary p-8 w-full max-w-7xl">
             <h2 class="text-2xl font-bold text-center mb-4 text-primary">About This Project <i class="fa-solid fa-circle-info"></i></h2>
             <ul class="list-disc pl-6 text-lg text-gray-800 space-y-4">
                 <li>
