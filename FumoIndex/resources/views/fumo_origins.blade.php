@@ -83,7 +83,7 @@
             <div class="flex flex-col justify-center items-start max-w-md">
                 <p class="text-base text-left mb-4">
                     The story presents 
-                    <span class="font-bold text-tertiary">Sakuya Izayoi</span>,
+                    <a class="hover:underline text-primary hover:text-primary-light focus:outline-none cursor-pointer" href="/characters/sakuya_izayoi">Sakuya Izayoi</a>,
                     the Scarlet Devil Mansion's maid, in
                     a more tender and canine form, behaving
                     like a loyal and affectionate pet.
