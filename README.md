@@ -1,15 +1,12 @@
 <div align="center">
 
 # The Fumo Index (ふも)
-  
-![fumoindex](https://github.com/user-attachments/assets/6995ff46-0698-4607-a3bf-e1704bb3095b)
 
-> **Illustration by [Kevin Arthur](https://x.com/KevinArthurLS/status/1819539890935382386)**  
-> Kindly credited to the artist. Original source linked above.
+<img width="1600" height="800" alt="fumo-index" src="https://github.com/user-attachments/assets/ee940e9c-b626-4e94-bfa0-de51a1c83cc5" />
 
 </div>
 
-## **The definitive open-source archive for all officially released FumoFumo merchandise.**  
+## **The definitive open-source archive for all officially released ふも (FumoFumo) merchandise.**  
 - From plushies to postcards, keychains to cushions — if it carries the **FumoFumo** name, it belongs here.
 
 ---
@@ -20,7 +17,7 @@ FumoIndex aims to preserve and catalog the entire history of FumoFumo-branded pr
 This project is built for fans, collectors, archivists, and the Fumo enjoyers of the world.
 
 Our mission is simple:  
-> "Document everything. Respect the source. Share the joy."
+> "Document everything about FumoFumo plushies. Respect the source material. Share the joy of collecting."
 
 ---
 
@@ -32,17 +29,16 @@ Our mission is simple:
 - 🏷️ Tagging system for special events, regional exclusives, and bundles.
 - 📝 Community-powered corrections and additions (wiki-style edits).
 - 🖼️ Image galleries and product comparisons.
-- 🛠️ API-ready backend for future integrations or mobile apps.
-
 ---
 
 ## 🧪 Technologies
 
-- `Laravel` — Robust backend for data management.
-- `React.js + Tailwind CSS` — frontend for the wiki/forum-like interface.
-- `MySQL` — Structured relational database for all Fumo metadata.
-- `Markdown/JSON` — Friendly formats for editing and data importing.
-
+- `Laravel + Livewire` for a dynamic, reactive user experience.
+- `Tailwind CSS` for a clean, modern design.
+- `Node.js` for front-end utilities styling and interactivity.
+- `AWS S3` for scalable image storage.
+- `MySQL` for robust data management.
+- `GitHub` for version control and collaboration.
 ---
 
 ## 🚀 Installation (development)
@@ -72,6 +68,7 @@ We do not claim ownership of any artwork, merchandise, or official product data.
 ### 🙏 Special Thanks
 
 - To **ZUN**, for creating the magical world of Touhou Project.
+- To **ANGELTYPE**, for the first concept, 'Inu Sakuya'.
 - To **Gift**, for bringing the FumoFumo line to life.
 - And to all creators, companies, and fans whose work made this project possible.
 
