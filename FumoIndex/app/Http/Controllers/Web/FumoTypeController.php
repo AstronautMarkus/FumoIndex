@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\FumoType;
 
-class FumoTypesController extends Controller
+class FumoTypeController extends Controller
 {
     public function index()
     {
