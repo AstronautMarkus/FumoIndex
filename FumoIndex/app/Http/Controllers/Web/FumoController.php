@@ -8,7 +8,7 @@ use App\Models\Fumo;
 use App\Models\FumoType;
 use App\Models\Character;
 
-class FumosController extends Controller
+class FumoController extends Controller
 {
     public function index()
     {
