@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Character;
 use App\Models\Franchise;
 
-class CharacterListController extends Controller
+class CharacterController extends Controller
 {
     public function index(Request $request)
     {
@@ -29,6 +29,14 @@ class CharacterListController extends Controller
             }
         }
 
-        return view('character_list', compact('franchises', 'selectedFranchise', 'characters', 'characters_count'));
+        return view('characters', compact('franchises', 'selectedFranchise', 'characters', 'characters_count'));
+    }
+
+    public function show($slug)
+    {
+        $character = Character::where('slug_name', $slug)->firstOrFail();
+        $franchise = Franchise::find($character->franchise_id);
+
+        return view('show.character', compact('character', 'franchise'));
     }
 }
