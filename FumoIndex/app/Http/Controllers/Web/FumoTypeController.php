@@ -17,4 +17,12 @@ class FumoTypeController extends Controller
             'secondaryFumoTypes' => $secondaryFumoTypes
         ]);
     }
+
+    public function show($slug_name)
+    {
+        $fumoType = FumoType::where('slug_name', $slug_name)->firstOrFail();
+        return view('show.fumo_type', [
+            'fumoType' => $fumoType
+        ]);
+    }
 }

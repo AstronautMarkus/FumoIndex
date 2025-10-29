@@ -5,7 +5,7 @@
 @section('content')
     <div class="flex flex-col items-center justify-center mt-8 mb-6">
         <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 w-full max-w-6xl flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start">
-            <div class="w-72 h-72 md:w-96 md:h-96 rounded-full border-4 border-gray-300 flex items-center justify-center overflow-hidden mr-0 md:mr-12 mb-4 md:mb-0 bg-white">
+            <div class="w-72 h-72 md:w-96 md:h-96 rounded-full border-4 border-secondary flex items-center justify-center overflow-hidden mr-0 md:mr-12 mb-4 md:mb-0 bg-gradient-to-b from-gray-100 to-gray-300">
                 <img src="{{ asset('assets/characters/' . $character->character_image) }}" alt="{{ $character->character_name }}" class="w-full h-full object-cover pointer-events-none" />
             </div>
             <div class="flex flex-col flex-1 items-center md:items-start w-full">

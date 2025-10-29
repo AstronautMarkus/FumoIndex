@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('fumo_types', function (Blueprint $table) {
             $table->id();
             $table->string('fumo_type', 45);
+            $table->string('slug_name', 45)->unique();
             $table->string('type_description', 255);
             $table->string('type_image', 255);
             $table->boolean('is_primary')->default(true);
