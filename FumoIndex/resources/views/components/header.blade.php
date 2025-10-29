@@ -16,7 +16,7 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="block px-4 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold">
+                <a href="{{ route('fumos') }}" class="block px-4 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold">
                     Fumo List
                 </a>
             </li>

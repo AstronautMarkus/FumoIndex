@@ -63,7 +63,7 @@
                     What's a Fumo?
                     </div>
                 </a>
-                <a href="#" class="btn flex items-center justify-center text-nowrap btn-primary text-sm gap-2 p-2 w-full">
+                <a href="{{ route('fumos') }}" class="btn flex items-center justify-center text-nowrap btn-primary text-sm gap-2 p-2 w-full">
                     <div class="flex w-full justify-center text-center">
                     Explore Fumos List
                     </div>
@@ -167,7 +167,7 @@
                         </p>
                         <p class="text-gray-800">
                             These are the <span class="font-bold">"original"</span> Fumo categories, but there are many more: bowls, keychains, beach pillows, etc.<br>
-                            Please check the <a href="{{ route('fumo_types') }}" class="text-primary font-semibold">Fumo Types</a> for more information.
+                            Please check the <a href="{{ route('fumo_types') }}" class="text-primary font-semibold hover:underline">Fumo Types</a> for more information.
                         </p>
                     </div>
                 </div>
