@@ -11,7 +11,7 @@
             <h2 class="text-2xl font-bold mb-4 text-primary text-center">Primary Fumo Types</h2>
             <div class="flex flex-wrap justify-center gap-6 mb-10">
                 @forelse($primaryFumoTypes as $type)
-                    <a href="{{ route('fumo_type.detail', ['slug_name' => $type->slug_name]) }}" class="no-underline">
+                    <a href="{{ route('fumo_types.show', ['slug_name' => $type->slug_name]) }}" class="no-underline">
                         <div class="relative bg-gradient-to-b from-gray-100 to-gray-300 rounded-2xl shadow-lg border-4 border-gray-300 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-blue-500 flex flex-col items-center w-64">
                             <div class="aspect-square p-2 w-full flex items-center justify-center">
                                 <img src="{{ asset('img/fumo_types/' . $type->type_image) }}" alt="{{ $type->fumo_type }}" class="w-full h-full object-cover rounded-t-xl pointer-events-none" />
@@ -33,7 +33,7 @@
             <h2 class="text-2xl font-bold mb-4 text-primary text-center">Secondary Fumo Types</h2>
             <div class="flex flex-wrap justify-center gap-6">
                 @forelse($secondaryFumoTypes as $type)
-                    <a href="{{ route('fumo_type.detail', ['slug_name' => $type->slug_name]) }}" class="no-underline">
+                    <a href="{{ route('fumo_types.show', ['slug_name' => $type->slug_name]) }}" class="no-underline">
                         <div class="relative bg-gradient-to-b from-gray-100 to-gray-300 rounded-2xl shadow-lg border-4 border-gray-300 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-purple-500 flex flex-col items-center w-64">
                             <div class="aspect-square p-2 w-full flex items-center justify-center">
                                 <img src="{{ asset('img/fumo_types/' . $type->type_image) }}" alt="{{ $type->fumo_type }}" class="w-full h-full object-cover rounded-t-xl pointer-events-none" />
