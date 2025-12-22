@@ -88,7 +88,7 @@
         </div>
 </div>
 
-<div id="whyFranchisesModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
+<div id="whyFranchisesModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 hidden opacity-0 transition-opacity duration-300" style="pointer-events: none;">
         <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 max-w-2xl w-full relative">
 
             <button id="closeWhyFranchisesModal" class="absolute top-4 right-4 text-primary hover:text-primary-light text-2xl focus:outline-none cursor-pointer" aria-label="Close">
@@ -145,17 +145,40 @@
 
 @push('scripts')
 <script>
-    document.getElementById('whyFranchisesBtn').onclick = function() {
-        document.getElementById('whyFranchisesModal').classList.remove('hidden');
-    };
-    document.getElementById('closeWhyFranchisesModal').onclick = function() {
-        document.getElementById('whyFranchisesModal').classList.add('hidden');
-    };
-    document.getElementById('whyFranchisesModal').onclick = function(e) {
-        if (e.target === this) this.classList.add('hidden');
-    };
-    document.getElementById('closeWhyFranchisesModalBtn').onclick = function() {
-        document.getElementById('whyFranchisesModal').classList.add('hidden');
+    let whyFranchisesModal = document.getElementById('whyFranchisesModal');
+    let isModalAnimating = false;
+
+    function showWhyFranchisesModal() {
+        if (isModalAnimating) return;
+        isModalAnimating = true;
+        whyFranchisesModal.classList.remove('hidden');
+        setTimeout(() => {
+            whyFranchisesModal.classList.add('opacity-100');
+            whyFranchisesModal.classList.remove('opacity-0');
+            whyFranchisesModal.style.pointerEvents = 'auto';
+        }, 10);
+        setTimeout(() => {
+            isModalAnimating = false;
+        }, 300);
+    }
+
+    function hideWhyFranchisesModal() {
+        if (isModalAnimating) return;
+        isModalAnimating = true;
+        whyFranchisesModal.classList.remove('opacity-100');
+        whyFranchisesModal.classList.add('opacity-0');
+        whyFranchisesModal.style.pointerEvents = 'none';
+        setTimeout(() => {
+            whyFranchisesModal.classList.add('hidden');
+            isModalAnimating = false;
+        }, 300);
+    }
+
+    document.getElementById('whyFranchisesBtn').onclick = showWhyFranchisesModal;
+    document.getElementById('closeWhyFranchisesModal').onclick = hideWhyFranchisesModal;
+    document.getElementById('closeWhyFranchisesModalBtn').onclick = hideWhyFranchisesModal;
+    whyFranchisesModal.onclick = function(e) {
+        if (e.target === this) hideWhyFranchisesModal();
     };
 </script>
 @endpush
