@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <div>
-                <a href="{{ route('home') }}" class="inline-block font-bold text-lg text-white tracking-wide">
+                <a href="{{ route('dashboard.index') }}" class="inline-block font-bold text-lg text-white tracking-wide">
                     <h3 class="font-semibold mb-3 text-white tracking-wide hover:underline">
                         Fumo Index Admin Panel
                     </h3>
