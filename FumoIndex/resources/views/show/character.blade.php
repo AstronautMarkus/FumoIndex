@@ -42,20 +42,26 @@
             <h3 class="text-2xl font-bold mb-4 text-primary text-center">
                 {{ explode(' ', trim($character->character_name))[0] }}'s Fumos
             </h3>
-            <div class="flex flex-wrap justify-center gap-6">
-                <div class="relative bg-white rounded-2xl shadow-lg border-4 border-gray-300 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-red-500 flex flex-col items-center w-64 group">
-                    <div class="aspect-square p-2 w-full flex items-center justify-center mb-2">
-                        <img src="/img/helpers/default.png" alt="Default" class="w-full h-full object-cover rounded-xl pointer-events-none" />
-                    </div>
-                    <div class="relative -mt-2 mx-2 mb-4 w-full">
-                        <div class="bg-black text-white text-xs font-bold py-2 px-3 rounded-lg text-center relative overflow-hidden">
-                            <span class="relative z-10">Lorem Ipsum</span>
-                            <div class="absolute inset-0 bg-gradient-to-r from-gray-800 to-black opacity-80"></div>
+
+            @forelse($character->fumos as $fumo)
+                <div class="flex flex-wrap justify-center gap-6">
+                    <div class="relative bg-white rounded-2xl shadow-lg border-4 border-gray-300 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-red-500 flex flex-col items-center w-64 group">
+                        <div class="aspect-square p-2 w-full flex items-center justify-center mb-2">
+                            <img src="/img/helpers/default.png" alt="Default" class="w-full h-full object-cover rounded-xl pointer-events-none" />
                         </div>
+                        <div class="relative -mt-2 mx-2 mb-4 w-full">
+                            <div class="bg-black text-white text-xs font-bold py-2 px-3 rounded-lg text-center relative overflow-hidden">
+                                <span class="relative z-10">Lorem Ipsum</span>
+                                <div class="absolute inset-0 bg-gradient-to-r from-gray-800 to-black opacity-80"></div>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-red-500/30 to-red-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                     </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-red-500/30 to-red-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                 </div>
-            </div>
+            @empty
+                <p class="text-center text-gray-600">{{ explode(' ', trim($character->character_name))[0] }} has no fumos yet. Please check back later!</p>
+            @endforelse
+
         </div>
     </div>
 @endsection
