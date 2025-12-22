@@ -7,6 +7,7 @@ use App\Http\Controllers\Web\CharacterController;;
 use App\Http\Controllers\Web\FumoTypeController;
 use App\Http\Controllers\Web\FumoController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Dashboard\DashboardController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/characters', [CharacterController::class, 'index'])->name('characters.list');
@@ -17,6 +18,10 @@ Route::get('/fumo-types', [FumoTypeController::class, 'index'])->name('fumo_type
 Route::get('/fumo-types/{slug_name}', [FumoTypeController::class, 'show'])->name('fumo_types.show');
 Route::get('/terms-and-conditions', function () { return view('terms_and_conditions');})->name('terms_and_conditions');
 Route::get('/fumos', [FumoController::class, 'index'])->name('fumos');
+
+Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('index');
+});
 
 Route::prefix('auth')->name('auth.')->group(function () {
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form');
