@@ -26,7 +26,7 @@
                         What's a Fumo?
                     </div>
                 </a>
-                <a href="#" class="btn flex items-center justify-center text-nowrap btn-primary text-2xl gap-2 p-3">
+                <a href="{{ route('fumos') }}" class="btn flex items-center justify-center text-nowrap btn-primary text-2xl gap-2 p-3">
                     <div class="flex w-full justify-center text-center">
                         Explore Fumo List
                     </div>
