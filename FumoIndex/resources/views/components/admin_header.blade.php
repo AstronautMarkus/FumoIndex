@@ -2,7 +2,7 @@
     <nav class="container mx-auto px-4 md:px-20 flex justify-between items-center">
 
         <div class="flex items-center flex-shrink-0 hover:scale-105 transition-transform duration-300 ease-in-out">
-            <a href="{{ route('home') }}">
+            <a href="{{ route('dashboard.index') }}">
                 <img src="{{ asset('img/FUMO_INDEX.svg') }}" class="pointer-events-none" alt="FumoIndexLogo" width="100" height="100" />
             </a>
         </div>
@@ -10,61 +10,41 @@
         <div class="flex-1 flex justify-center">
             <ul id="menu" class="hidden md:flex space-x-8 text-white text-lg flex-col md:flex-row md:items-center absolute md:static top-full left-0 w-full md:w-auto bg-primary md:bg-transparent">
                 <li>
-                    <a href="{{ route('home') }}" class="block px-4 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold">
-                        Home
+                    <a  class="block px-4 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold">
+                        Admin Feature 1
                     </a>
                 </li>
+
                 <li>
-                    <a href="{{ route('characters.list') }}" class="block px-4 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold">
-                        Character List
+                    <a  class="block px-4 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold">
+                        Admin Feature 2
                     </a>
                 </li>
 
                 <li class="relative">
                     <button type="button" class="flex items-center px-4 py-2 font-bold hover:underline transition duration-300 ease-in-out hover:scale-105 focus:outline-none dropdown-toggle cursor-pointer">
-                        Fumos
+                        Admin Feature Dropdown
                         <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M5.23 7.21a.75.75 0 011.06.02L10 11.293l3.71-4.06a.75.75 0 111.08 1.04l-4.25 4.65a.75.75 0 01-1.08 0l-4.25-4.65a.75.75 0 01.02-1.06z"/></svg>
                     </button>
                     <ul class="dropdown-menu absolute left-0 mt-2 w-48 bg-white shadow-lg hidden z-50 text-gray-900 border border-gray-200">
                         <li>
-                            <a href="{{ route('fumos') }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Fumo List</a>
+                            <a  class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Dropdown Feature 1</a>
                         </li>
                         <li>
-                            <a href="{{ route('fumo_types') }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Fumo Types</a>
+                            <a  class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Dropdown Feature 2</a>
                         </li>
                     </ul>
                 </li>
 
-                <li class="relative">
-                    <button type="button" class="flex items-center px-4 py-2 font-bold hover:underline transition duration-300 ease-in-out hover:scale-105 focus:outline-none dropdown-toggle cursor-pointer">
-                        Info / About
-                        <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M5.23 7.21a.75.75 0 011.06.02L10 11.293l3.71-4.06a.75.75 0 111.08 1.04l-4.25 4.65a.75.75 0 01-1.08 0l-4.25-4.65a.75.75 0 01.02-1.06z"/></svg>
-                    </button>
-                    <ul class="dropdown-menu absolute left-0 mt-0 md:mt-2 w-56 bg-white shadow-lg hidden z-50 text-gray-900 border border-gray-200">
-                        <li>
-                            <a href="{{ route('what_is_a_fumo') }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">What is a Fumo</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('the_fumo_origins') }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">The Fumo Origins</a>
-                        </li>
-                    </ul>
+                <li>
+                    <a  class="block px-4 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold">
+                        Admin Feature 4
+                    </a>
                 </li>
 
-                @if(!Auth::check())
-                    <li class="md:hidden">
-                        <a href="{{ route('auth.login.form') }}" class="flex items-center px-4 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold text-white">
-                            <i class="fa-solid fa-right-to-bracket"></i>
-                            <span class="ml-1">Login</span>
-                        </a>
-                    </li>
-                    <li class="md:hidden">
-                        <a href="{{ route('auth.register.form') }}" class="flex items-center px-4 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold text-white">
-                            <i class="fa-solid fa-user-plus"></i>
-                            <span class="ml-1">Register</span>
-                        </a>
-                    </li>
-                @else
-                    <li class="relative md:hidden">
+
+
+                <li class="relative md:hidden">
                         <button type="button" class="flex items-center px-4 py-2 font-bold hover:underline transition duration-300 ease-in-out hover:scale-105 focus:outline-none dropdown-toggle cursor-pointer text-white w-full">
                             <i class="fa-solid fa-user"></i>
                             <span class="ml-1">{{ Auth::user()->username }}</span>
@@ -79,7 +59,7 @@
                                 <a href="" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Profile</a>
                             </li>
                             <li>
-                                <a href="{{ route('dashboard.index') }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Dashboard</a>
+                                <a href="{{ route('home') }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Go to Main Page</a>
                             </li>
                         </ul>
                     </li>
@@ -91,30 +71,12 @@
                                 <span class="ml-1">Logout</span>
                             </button>
                         </form>
-                    </li>
-                @endif
+                </li>
             </ul>
         </div>
 
         <div class="flex items-center space-x-2">
-
-            @if(!Auth::check())
-                <ul class="hidden md:flex space-x-4 text-white text-lg items-center">
-                    <li>
-                        <span class="flex items-center px-2 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold text-white cursor-pointer">
-                            <i class="fa-solid fa-right-to-bracket"></i>
-                            <a href="{{ route('auth.login.form') }}" class="ml-1 text-white">Login</a>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="flex items-center px-2 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold text-white cursor-pointer">
-                            <i class="fa-solid fa-user-plus"></i>
-                            <a href="{{ route('auth.register.form') }}" class="ml-1 text-white">Register</a>
-                        </span>
-                    </li>
-                </ul>
-            @else
-                <ul class="hidden md:flex space-x-4 text-white text-lg items-center">
+            <ul class="hidden md:flex space-x-4 text-white text-lg items-center">
                     <li class="relative">
                         <button type="button" class="flex items-center px-2 py-2 font-bold hover:underline transition duration-300 ease-in-out hover:scale-105 focus:outline-none dropdown-toggle cursor-pointer">
                             <i class="fa-solid fa-user"></i>
@@ -130,7 +92,7 @@
                                 <a href="" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Profile</a>
                             </li>
                             <li>
-                                <a href="{{ route('dashboard.index') }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Dashboard</a>
+                                <a href="{{ route('home') }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Go to Main Page</a>
                             </li>
                         </ul>
                     </li>
@@ -143,8 +105,8 @@
                             </button>
                         </form>
                     </li>
-                </ul>
-            @endif
+            </ul>
+
             <button id="menu-btn" class="md:hidden text-white focus:outline-none text-2xl ml-2">
                 <i class="fa-solid fa-bars"></i>
             </button>

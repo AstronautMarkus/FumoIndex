@@ -18,14 +18,14 @@
             </div>
             <div class="flex flex-col lg:items-center lg:justify-center">
                 <div class="flex flex-col text-sm space-y-2.5">
-                    <h2 class="font-semibold mb-4 text-white tracking-wide">Useful Links</h2>
+                    <h3 class="font-semibold mb-4 text-white tracking-wide">Useful Links</h3>
                     <a class="hover:underline transition-colors" href="{{ route('characters.list') }}">Characters</a>
                     <a class="hover:underline transition-colors" href="{{ route('fumo_types') }}">Fumo Types</a>
                     <a class="hover:underline transition-colors" href="{{ route('fumos') }}">Fumo List</a>
                 </div>
             </div>
             <div>
-                <h2 class="font-semibold text-white mb-4 tracking-wide">By a Fan, For Fans</h2>
+                <h3 class="font-semibold text-white mb-4 tracking-wide">By a Fan, For Fans</h3>
                 <div class="text-sm space-y-4 max-w-xs text-white opacity-90">
                     <p>This site is free and non-profit. We just want to share our passion for fumofumos.</p>
                     <p>Please support official stores and ZUN, creator of Touhou Project.</p>
