@@ -12,7 +12,7 @@
             <div>
                 <label for="email" class="block text-tertiary font-semibold mb-1">Email</label>
                 <div class="relative">
-                    <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus class="input input-bordered w-full pl-10" autocomplete="email">
+                    <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus class="input input-bordered w-full pl-10" autocomplete="email" placeholder="Enter your email">
                     <i class="fa fa-envelope absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
                 </div>
                 @error('email')
@@ -22,7 +22,7 @@
             <div>
                 <label for="password" class="block text-tertiary font-semibold mb-1">Password</label>
                 <div class="relative">
-                    <input id="password" type="password" name="password" required class="input input-bordered w-full pl-10 pr-10" autocomplete="current-password">
+                    <input id="password" type="password" name="password" required class="input input-bordered w-full pl-10 pr-10" autocomplete="current-password" placeholder="Enter your password">
                     <i class="fa fa-lock absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
                     <button type="button" onclick="togglePassword('password', this)" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 focus:outline-none">
                         <i class="fa fa-eye"></i>
