@@ -33,7 +33,7 @@
                 Back to characters list
             </a>
 
-            <a href="{{ url('/characters') . '?franchise=' . $franchise->slug_name }}" class="ml-4 px-3 md:px-4 py-4 btn btn-tertiary">
+            <a href="{{ route('characters.list') . '?franchise=' . $franchise->slug_name }}" class="ml-4 px-3 md:px-4 py-4 btn btn-tertiary">
                 Back to {{ $franchise->franchise_name }} franchise
             </a>
         </div>
