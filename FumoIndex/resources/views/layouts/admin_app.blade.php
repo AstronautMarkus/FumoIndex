@@ -13,6 +13,7 @@
         <main class="flex-1 mb-8">
             @yield('content')
         </main>
+        <x-utils-alerts />
         @include('components.admin_footer')
         @stack('scripts')
         @livewireScripts

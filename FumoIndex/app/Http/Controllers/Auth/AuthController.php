@@ -18,7 +18,7 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (auth()->attempt($credentials)) {
-            return redirect()->route('home');
+            return redirect()->route('dashboard.index')->with('success', 'You have successfully logged in. Welcome back!');
         }
 
         return back()->withErrors([
@@ -29,7 +29,7 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         auth()->logout();
-        return redirect()->route('auth.login.form');
+        return redirect()->route('auth.login.form')->with('success', 'You have successfully logged out. See you next time!');
     }
 
     public function showRegistrationForm()
@@ -57,6 +57,6 @@ class AuthController extends Controller
 
         auth()->login($user);
 
-        return redirect()->route('home');
+        return redirect()->route('dashboard.index')->with('success', 'Registration successful. Welcome to FumoIndex!');
     }
 }
