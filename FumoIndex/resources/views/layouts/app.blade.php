@@ -10,7 +10,7 @@
     </head>
     <body class="bg-background min-h-screen flex flex-col">
         @include('components.header')
-        <main class="flex-1">
+        <main class="flex-1 mb-8">
             @yield('content')
         </main>
         @include('components.footer')
