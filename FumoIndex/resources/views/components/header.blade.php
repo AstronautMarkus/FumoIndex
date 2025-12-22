@@ -53,20 +53,54 @@
         </div>
 
         <div class="flex items-center space-x-2">
-            <ul class="hidden md:flex space-x-4 text-white text-lg items-center">
-                <li>
-                    <span class="flex items-center px-2 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold text-white cursor-pointer">
-                        <i class="fa-solid fa-right-to-bracket"></i>
-                        <a href="" class="ml-1 text-white">Login</a>
-                    </span>
-                </li>
-                <li>
-                    <span class="flex items-center px-2 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold text-white cursor-pointer">
-                        <i class="fa-solid fa-user-plus"></i>
-                        <a href="" class="ml-1 text-white">Register</a>
-                    </span>
-                </li>
-            </ul>
+            @if(!Auth::check())
+                <ul class="hidden md:flex space-x-4 text-white text-lg items-center">
+                    <li>
+                        <span class="flex items-center px-2 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold text-white cursor-pointer">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                            <a href="{{ route('auth.login.form') }}" class="ml-1 text-white">Login</a>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="flex items-center px-2 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold text-white cursor-pointer">
+                            <i class="fa-solid fa-user-plus"></i>
+                            <a href="{{ route('auth.register.form') }}" class="ml-1 text-white">Register</a>
+                        </span>
+                    </li>
+                </ul>
+            @else
+                <ul class="hidden md:flex space-x-4 text-white text-lg items-center">
+                    <li class="relative">
+                        <button type="button" class="flex items-center px-2 py-2 font-bold hover:underline transition duration-300 ease-in-out hover:scale-105 focus:outline-none dropdown-toggle cursor-pointer">
+                            <i class="fa-solid fa-user"></i>
+                            <span class="ml-1">{{ Auth::user()->username }}</span>
+                            <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M5.23 7.21a.75.75 0 011.06.02L10 11.293l3.71-4.06a.75.75 0 111.08 1.04l-4.25 4.65a.75.75 0 01-1.08 0l-4.25-4.65a.75.75 0 01.02-1.06z"/></svg>
+                        </button>
+                        <ul class="dropdown-menu absolute left-0 mt-2 w-64 bg-white shadow-lg hidden z-50 text-gray-900 border border-gray-200">
+                            <li class="px-4 py-2 border-b border-gray-200">
+                                <div class="font-semibold">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</div>
+                                <div class="text-sm text-gray-600">{{ Auth::user()->email }}</div>
+                            </li>
+                            <li>
+                                <a href="" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Profile</a>
+                            </li>
+                            <li>
+                                <a href="" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Dashboard</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <form method="POST" action="{{ route('auth.logout') }}">
+                            @csrf
+                            <button type="submit" class="flex items-center px-2 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold text-white cursor-pointer">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                <span class="ml-1">Logout</span>
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            @endif
             <button id="menu-btn" class="md:hidden text-white focus:outline-none text-2xl ml-2">
                 <i class="fa-solid fa-bars"></i>
             </button>

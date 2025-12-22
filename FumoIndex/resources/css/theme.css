@@ -45,14 +45,14 @@
     @apply border-1;
     @apply border-gray-300;
     @apply duration-200;
-    @apply focus:outline-none focus:border-primary focus:scale-103;
+    @apply focus:outline-none focus:border-primary;
 }
 
 .select {
     @apply border-1 border-gray-300;
     @apply p-2;
     @apply duration-200;
-    @apply focus:outline-none focus:border-primary focus:scale-101;
+    @apply focus:outline-none focus:border-primary;
 }
 
 .decoration-line {
