@@ -46,6 +46,8 @@
     @apply border-gray-300;
     @apply duration-200;
     @apply focus:outline-none focus:border-primary;
+    @apply bg-white;
+    @apply px-9 py-2;
 }
 
 .select {

@@ -6,8 +6,11 @@ use App\Http\Controllers\Web\HomeController;
 use App\Http\Controllers\Web\CharacterController;;
 use App\Http\Controllers\Web\FumoTypeController;
 use App\Http\Controllers\Web\FumoController;
+
 use App\Http\Controllers\Auth\AuthController;
+
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\CharactersController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/characters', [CharacterController::class, 'index'])->name('characters.list');
@@ -21,6 +24,13 @@ Route::get('/fumos', [FumoController::class, 'index'])->name('fumos');
 
 Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
+    Route::get('/characters', [CharactersController::class, 'index'])->name('characters.index');
+    Route::get('/characters/create', [CharactersController::class, 'create'])->name('characters.create');
+    Route::post('/characters', [CharactersController::class, 'store'])->name('characters.store');
+    Route::get('/characters/{character}', [CharactersController::class, 'show'])->name('characters.show');
+    Route::get('/characters/{character}/edit', [CharactersController::class, 'edit'])->name('characters.edit');
+    Route::put('/characters/{character}', [CharactersController::class, 'update'])->name('characters.update');
+    Route::delete('/characters/{character}', [CharactersController::class, 'destroy'])->name('characters.destroy');
 });
 
 Route::prefix('auth')->name('auth.')->group(function () {
