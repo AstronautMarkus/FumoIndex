@@ -84,9 +84,9 @@
                         </ul>
                     </li>
                     <li class="md:hidden">
-                        <form method="POST" action="{{ route('auth.logout') }}">
+                        <form id="logoutFormMobile" method="POST" action="{{ route('auth.logout') }}">
                             @csrf
-                            <button type="submit" class="flex items-center px-4 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold text-white w-full">
+                            <button type="button" id="logoutBtnMobile" class="flex items-center px-4 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold text-white w-full">
                                 <i class="fa-solid fa-right-from-bracket"></i>
                                 <span class="ml-1">Logout</span>
                             </button>
@@ -135,9 +135,9 @@
                         </ul>
                     </li>
                     <li>
-                        <form method="POST" action="{{ route('auth.logout') }}">
+                        <form id="logoutFormDesktop" method="POST" action="{{ route('auth.logout') }}">
                             @csrf
-                            <button type="submit" class="flex items-center px-2 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold text-white cursor-pointer">
+                            <button type="button" id="logoutBtnDesktop" class="flex items-center px-2 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold text-white cursor-pointer">
                                 <i class="fa-solid fa-right-from-bracket"></i>
                                 <span class="ml-1">Logout</span>
                             </button>
@@ -151,6 +151,26 @@
         </div>
     </nav>
 </header>
+
+<div id="logoutConfirmModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 hidden opacity-0 transition-opacity duration-300" style="pointer-events: none;">
+    <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 max-w-md w-full relative">
+        <button id="closeLogoutModal" class="absolute top-4 right-4 text-primary hover:text-primary-light text-2xl focus:outline-none cursor-pointer" aria-label="Close">
+            <i class="fa fa-times"></i>
+        </button>
+        <h3 class="text-2xl font-bold mb-6 text-primary text-center">Confirm Logout</h3>
+        <p class="text-gray-700 mb-4 text-base leading-relaxed text-center">
+            Are you sure you want to log out of your account?
+        </p>
+        <div class="flex flex-col gap-4 mt-6">
+            <button id="confirmLogoutBtn" class="btn btn-primary w-full p-3 text-lg">
+                Yes, log me out
+            </button>
+            <button id="cancelLogoutBtn" class="btn btn-tertiary w-full p-3 text-lg">
+                Cancel
+            </button>
+        </div>
+    </div>
+</div>
 
 <script>
     const btn = document.getElementById('menu-btn');
@@ -190,4 +210,40 @@
             e.stopPropagation();
         });
     });
+
+    // Logout modal logic
+    function showLogoutModal() {
+        const modal = document.getElementById('logoutConfirmModal');
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modal.classList.add('opacity-100');
+            modal.classList.remove('opacity-0');
+            modal.style.pointerEvents = 'auto';
+        }, 10);
+    }
+    function hideLogoutModal() {
+        const modal = document.getElementById('logoutConfirmModal');
+        modal.classList.remove('opacity-100');
+        modal.classList.add('opacity-0');
+        modal.style.pointerEvents = 'none';
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300);
+    }
+    document.getElementById('logoutBtnDesktop')?.addEventListener('click', showLogoutModal);
+    document.getElementById('logoutBtnMobile')?.addEventListener('click', showLogoutModal);
+    document.getElementById('closeLogoutModal').onclick = hideLogoutModal;
+    document.getElementById('cancelLogoutBtn').onclick = hideLogoutModal;
+    document.getElementById('logoutConfirmModal').onclick = function(e) {
+        if (e.target === this) hideLogoutModal();
+    };
+    document.getElementById('confirmLogoutBtn').onclick = function() {
+        // Try to submit the visible logout form
+        if (document.getElementById('logoutFormDesktop')) {
+            document.getElementById('logoutFormDesktop').submit();
+        }
+        if (document.getElementById('logoutFormMobile')) {
+            document.getElementById('logoutFormMobile').submit();
+        }
+    };
 </script>
