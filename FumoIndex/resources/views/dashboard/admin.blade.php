@@ -49,7 +49,11 @@
 
                 <a href="{{ route('dashboard.characters.index') }}" class="group cursor-pointer relative bg-white rounded-2xl shadow-lg border-4 border-gray-300 overflow-hidden flex flex-col items-center p-6 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-red-500">
                     <div class="w-16 h-16 flex items-center justify-center bg-gray-100 mb-4 border-2 border-gray-300">
-                        <img src="{{ asset('assets/characters/' . $random_character->character_image) }}" alt="{{ $random_character->character_name }}" class="w-full h-full object-cover pointer-events-none" />
+                        @if ($random_character)
+                            <img src="{{ asset('assets/characters/' . $random_character->character_image) }}" alt="{{ $random_character->character_name }}" class="w-full h-full object-cover pointer-events-none" />
+                        @else
+                            <i class="fa-solid fa-user-astronaut text-3xl text-green-700"></i>
+                        @endif
                     </div>
                     <div class="text-4xl font-bold text-primary mb-2">{{ $characters->count() }}</div>
                     <div class="text-lg font-semibold text-tertiary">Characters</div>
