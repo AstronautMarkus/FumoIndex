@@ -38,7 +38,7 @@
                     <div class="absolute inset-0 bg-gradient-to-t from-red-500/30 to-red-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                 </a>
 
-                <a class="group cursor-pointer relative bg-white rounded-2xl shadow-lg border-4 border-gray-300 overflow-hidden flex flex-col items-center p-6 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-red-500">
+                <a href="{{ route('dashboard.franchises.index') }}" class="group cursor-pointer relative bg-white rounded-2xl shadow-lg border-4 border-gray-300 overflow-hidden flex flex-col items-center p-6 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-red-500">
                     <div class="w-16 h-16 flex items-center justify-center bg-gray-100 rounded-full mb-4">
                         <i class="fa-solid fa-cubes text-3xl text-blue-500"></i>
                     </div>

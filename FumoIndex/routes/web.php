@@ -11,6 +11,7 @@ use App\Http\Controllers\Auth\AuthController;
 
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\CharactersController;
+use App\Http\Controllers\Dashboard\FranchisesController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/characters', [CharacterController::class, 'index'])->name('characters.list');
@@ -31,6 +32,14 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
     Route::get('/characters/{character}/edit', [CharactersController::class, 'edit'])->name('characters.edit');
     Route::put('/characters/{character}', [CharactersController::class, 'update'])->name('characters.update');
     Route::delete('/characters/{character}', [CharactersController::class, 'destroy'])->name('characters.destroy');
+
+    Route::get('/franchises', [FranchisesController::class, 'index'])->name('franchises.index');
+    Route::get('/franchises/create', [FranchisesController::class, 'create'])->name('franchises.create');
+    Route::post('/franchises', [FranchisesController::class, 'store'])->name('franchises.store');
+    Route::get('/franchises/{franchise}', [FranchisesController::class, 'show'])->name('franchises.show');
+    Route::get('/franchises/{franchise}/edit', [FranchisesController::class, 'edit'])->name('franchises.edit');
+    Route::put('/franchises/{franchise}', [FranchisesController::class, 'update'])->name('franchises.update');
+    Route::delete('/franchises/{franchise}', [FranchisesController::class, 'destroy'])->name('franchises.destroy');
 });
 
 Route::prefix('auth')->name('auth.')->group(function () {
