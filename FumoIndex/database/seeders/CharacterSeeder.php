@@ -14,8 +14,15 @@ class CharacterSeeder extends Seeder
         $characters = json_decode(File::get(database_path('data/characters.json')), true);
 
         foreach ($characters as $character) {
-            $franchise = DB::table('franchises')->where('id', $character['franchise_id'])->first();
-            $franchiseSlug = Str::slug($franchise->franchise_name, '_');
+            // Search Franchise by slug_name
+            $franchise = DB::table('franchises')->where('slug_name', $character['franchise_slug'])->first();
+
+            // If not exist, skip
+            if (!$franchise) {
+                continue;
+            }
+
+            $franchiseSlug = $franchise->slug_name;
             $characterSlug = Str::slug($character['name'], '_');
 
             DB::table('characters')->insert([
@@ -24,7 +31,7 @@ class CharacterSeeder extends Seeder
                 'character_description' => $character['description'] ?? null,
                 'description_source' => $character['description_source'] ?? null,
                 'slug_name' => $characterSlug,
-                'franchise_id' => $character['franchise_id'],
+                'franchise_id' => $franchise->id,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

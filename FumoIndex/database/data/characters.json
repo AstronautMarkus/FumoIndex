@@ -1,341 +1,341 @@
 [
     {
         "name":"Reimu Hakurei",
-        "franchise_id":1,
+        "franchise_slug":"touhou_project",
         "description":"Reimu Hakurei (博麗 霊夢 Hakurei Reimu) is the Main Character of the Touhou Project series, having appeared in all of the main games and in almost every game in the series. As the sole maiden of the Hakurei Shrine, she is commonly called upon (or calls it upon herself) to investigate strange occurrences throughout Gensokyo. ",
         "description_source":"https://touhou.fandom.com/wiki/Reimu_Hakurei"
     },
     {
         "name":"Marisa Kirisame",
-        "franchise_id":1,
+        "franchise_slug":"touhou_project",
         "description":"Marisa Kirisame (霧雨 魔理沙 Kirisame Marisa) is a human magician, and is one of the most important sub-characters of the series (according to series producer ZUN). Her personality is sometimes described as disagreeable, but in some other titles, straightforward. Either way, she is a very self-confident person that likes to stick her nose into every trouble out of curiosity. ",
         "description_source":"https://touhou.fandom.com/wiki/Marisa_Kirisame"
     },
     {
         "name":"Remilia Scarlet",
-        "franchise_id":1,
+        "franchise_slug":"touhou_project",
         "description":"Remilia Scarlet (レミリア・スカーレット Remiria Sukāretto) is the owner and head of the Scarlet Devil Mansion, the mistress of Sakuya Izayoi and Hong Meiling, and the older sister (and guardian) of Flandre Scarlet. Though her appearance (and often behavior) is childlike, and seems nonthreatening, She has fearsome magical powers and a reputation to match, being known throughout Gensokyo as the dangerous \"Scarlet Devil.\"",
         "description_source":"https://touhou.fandom.com/wiki/Remilia_Scarlet"
     },
     {
         "name":"Flandre Scarlet",
-        "franchise_id":1,
+        "franchise_slug":"touhou_project",
         "description":"Flandre Scarlet (フランドール・スカーレット Furandooru Sukaaretto) is the younger sister of Remilia Scarlet and a vampire who has lived at the Scarlet Devil Mansion for over 495 years. Flandre first appeared as the Extra Stage boss of Embodiment of Scarlet Devil.",
         "description_source":"https://touhou.fandom.com/wiki/Flandre_Scarlet"
     },
     {
         "name":"Cirno",
-        "franchise_id":1,
+        "franchise_slug":"touhou_project",
         "description":"Cirno (チルノ Chiruno) is an ice fairy. While she is described as a weak boss in the Touhou series, her powers are not to be underestimated, and that is implied to be so in Phantasmagoria of Flower View by Eiki Shiki. Her personality is childish and rather incompetent, as you and many others might expect from her appearance.",
         "description_source":"https://touhou.fandom.com/wiki/Cirno"
     },
     {
         "name":"Satori Komeiji",
-        "franchise_id":1,
+        "franchise_slug":"touhou_project",
         "description":"",
         "description_source":""
     },
     {
         "name":"Ran Yakumo",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Yukari Yakumo",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Reisen Udongein Inaba",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Tewi Inaba",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Kaguya Houraisan",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Sakuya Izayoi",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Yuyuko Saigyouji",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Patchouli Knowledge",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Koishi Komeiji",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Shion Yorigami",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Chen",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Suika Ibuki",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Youmu Konpaku",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Tenshi Hinanawi",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Momiji Inubashiri",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Nitori Kawashiro",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Shikieiki Yamaxanadu",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Joon Yorigami",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Sanae Kochiya",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Aya Shameimaru",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Rumia",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Renko Usami",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Rinnosuke Morichika",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Seija Kijin",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Maribel Hearn",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Hata no Kokoro",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Hatate Himekaidou",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Toyosatomimi no Miko",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Futo Mononobe",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Fujiwara no Mokou",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Hong Meiling",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Yuuka Kazami",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Alice Margatroid",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Kasen Ibaraki",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Nazrin",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Okina Matara",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Hecatia Lapislazuli",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Hina Kagiyama",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Chimata Tenkyuu",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name":"Utsuho Reiuji",
-        "franchise_id":1
+        "franchise_slug":"touhou_project"
     },
     {
         "name": "Hitori Gotoh",
         "description":"Hitori Gotoh (後藤 ひとり Gotō Hitori), often referred to by her bandmates as Bocchi-chan (ぼっちちゃん),[2] is the titular main protagonist of the manga and anime series Bocchi the Rock!. She is a first-year of Shuka High School and is the lead guitarist and lyricist of Kessoku Band.",
         "description_source":"https://bocchi-the-rock.fandom.com/wiki/Hitori_Gotoh",
-        "franchise_id": 2
+        "franchise_slug": "bocchi_the_rock"
     },
     {
         "name": "Nijika Ijichi",
         "description":"Nijika Ijichi (伊地知 虹夏 Ijichi Nijika) is one of the main characters in the manga and anime series Bocchi the Rock!. She is a second-year student of Shimokitazawa High School and is the drummer of Kessoku Band.",
         "description_source":"https://bocchi-the-rock.fandom.com/wiki/Nijika_Ijichi",
-        "franchise_id": 2
+        "franchise_slug": "bocchi_the_rock"
     },
     {
         "name":"Ikuyo Kita",
         "description":"Ikuyo Kita (喜多 郁代 Kita Ikuyo) is one of the main characters in the manga and anime series Bocchi the Rock!. She is a first-year of Shuka High School and is the lead vocalist and backup guitarist for Kessoku Band. She started admiring Ryo Yamada after seeing her street concert.",
         "description_source":"https://bocchi-the-rock.fandom.com/wiki/Ikuyo_Kita",
-        "franchise_id": 2
+        "franchise_slug": "bocchi_the_rock"
     },
     {
         "name":"Ryo Yamada",
         "description":"Ryo Yamada (山田 リョウ Yamada Ryō) is one of the main characters in the manga and anime series Bocchi the Rock!. She is a second-year student at Shimokitazawa High School and is the bassist, backup vocalist, and composer for Kessoku Band.",
         "description_source":"https://bocchi-the-rock.fandom.com/wiki/Ryo_Yamada",
-        "franchise_id": 2
+        "franchise_slug": "bocchi_the_rock"
     },
     {
         "name":"Hatsune Miku NT",
-        "franchise_id": 3
+        "franchise_slug": "vocaloid"
     },
     {
         "name":"Kagamine Rin V4X",
-        "franchise_id": 3
+        "franchise_slug": "vocaloid"
     },
     {
         "name":"Kagamine Len V4X",
-        "franchise_id": 3
+        "franchise_slug": "vocaloid"
     },
     {
         "name":"Megurine Luka V4X",
-        "franchise_id": 3
+        "franchise_slug": "vocaloid"
     },
     {
         "name":"KAITO V3",
-        "franchise_id": 3
+        "franchise_slug": "vocaloid"
     },
     {
         "name":"MEIKO V3",
-        "franchise_id": 3
+        "franchise_slug": "vocaloid"
     },
     {
         "name":"Amico",
         "description":"She is a “Magical World Princess” that is cheerfully working to support her favorite hobby and anime at “AmiAmi Akiba Store”.",
         "description_source":"https://amico-web.jp/en/character/",
-        "franchise_id": 4
+        "franchise_slug": "amiami"
     },
     {
         "name":"Taihou",
-        "franchise_id": 5
+        "franchise_slug": "azur_lane"
     },
     {
         "name":"Shimakaze",
-        "franchise_id": 5
+        "franchise_slug": "azur_lane"
     },
     {
         "name":"Agir",
-        "franchise_id": 5
+        "franchise_slug": "azur_lane"
     },
     {
         "name":"Azuma",
-        "franchise_id": 5
+        "franchise_slug": "azur_lane"
     },
     {
         "name":"Sheffield",
-        "franchise_id": 5
+        "franchise_slug": "azur_lane"
     },
     {
         "name":"Formidable",
-        "franchise_id": 5
+        "franchise_slug": "azur_lane"
     },
     {
         "name":"Shinano",
-        "franchise_id": 5
+        "franchise_slug": "azur_lane"
     },
     {
         "name":"Le Malin",
-        "franchise_id": 5
+        "franchise_slug": "azur_lane"
     },
     {
         "name":"Cheshire",
-        "franchise_id": 5
+        "franchise_slug": "azur_lane"
     },
     {
         "name":"Noshiro",
-        "franchise_id": 5
+        "franchise_slug": "azur_lane"
     },
     {
         "name":"Prinz Eugen",
-        "franchise_id": 5
+        "franchise_slug": "azur_lane"
     },
     {
         "name":"New Jersey",
-        "franchise_id": 5
+        "franchise_slug": "azur_lane"
     },
     {
         "name":"Kaga",
-        "franchise_id": 5
+        "franchise_slug": "azur_lane"
     },
     {
         "name":"Akagi",
-        "franchise_id": 5
+        "franchise_slug": "azur_lane"
     },
     {
         "name":"Belfast",
-        "franchise_id": 5
+        "franchise_slug": "azur_lane"
     },
     {
         "name":"Nobeta",
         "description":"The little witch has come to the castle after all. She barely remembers anything, was she always alone? None of this matter, now. Nobeta understand that she must enter the castle and reach the throne despite the crafted souls and challenges ahead of her. It's the only way to find out the truth and the answer to her past.",
         "description_source":"https://www.littlewitchnobeta.com/en/character/",
-        "franchise_id": 6
+        "franchise_slug": "little_witch_nobeta"
     },
     {
         "name":"Saya",
         "description":"Saya is the secondary main character and central protagonist of Saya no Uta. She is voiced by Naoko Takano (credited as Midori Kawamura).",
         "description_source":"https://saya-no-uta.fandom.com/wiki/Saya",
-        "franchise_id": 7
+        "franchise_slug": "saya_no_uta"
     },
     {
         "name":"Monika",
         "description":"Monika (モニカ) is a main character and the poster girl of Doki Doki Literature Club!. She is the President of the Literature Club and is the game's driving force, directing club members to write poems until the club festival, which enables and develops the characters and story.",
         "description_source":"https://doki-doki-literature-club.fandom.com/wiki/Monika_(DDLC)",
-        "franchise_id": 8
+        "franchise_slug": "doki_doki_literature_club"
     },
     {
         "name":"Shinji Ikari",
         "description":"Shinji Ikari (碇シンジ, Ikari Shinji)[2] is the Third Child, the main protagonist of the Neon Genesis Evangelion franchise, and the designated pilot of Evangelion Unit-01.",
         "description_source":"https://evangelion.fandom.com/wiki/Shinji_Ikari",
-        "franchise_id": 9
+        "franchise_slug": "neon_genesis_evangelion"
     },
     {
         "name":"ZUN",
-        "franchise_id": 1,
+        "franchise_slug": "touhou_project",
         "description":"ZUN (太田順也, romanized Jun'ya Ota) is the sole known member of Team Shanghai Alice, and is the designer, programmer, script writer, and composer of the extremely popular Touhou Project series. He is seen to be rather reclusive, and thus very little is known about him, except that he's very fond of beer. He was employed by Taito Corporation,[1] and had been involved in the production of various Taito titles.",
         "description_source":"https://touhou.fandom.com/wiki/ZUN"
 
