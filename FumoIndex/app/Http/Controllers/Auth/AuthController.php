@@ -16,8 +16,9 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
+        $remember = $request->has('remember');
 
-        if (auth()->attempt($credentials)) {
+        if (auth()->attempt($credentials, $remember)) {
             return redirect()->route('dashboard.index')->with('success', 'You have successfully logged in. Welcome back!');
         }
 
