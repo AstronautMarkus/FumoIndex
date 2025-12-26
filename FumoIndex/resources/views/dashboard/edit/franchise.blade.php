@@ -26,7 +26,7 @@
                     <i class="fa fa-image absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
                 </div>
                 @if($franchise->franchise_image)
-                    <img src="{{ asset('assets/franchises/' . $franchise->franchise_image) }}" alt="{{ $franchise->franchise_name }}" class="mt-2 h-24 object-cover pointer-events-none">
+                    <img src="{{ $franchise->franchise_image }}" alt="{{ $franchise->franchise_name }}" class="mt-2 h-24 object-cover pointer-events-none">
                 @endif
                 @error('franchise_image')
                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
