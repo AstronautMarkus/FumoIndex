@@ -15,15 +15,18 @@
                         </label>
                         @if ($type === 'characters' || $type === 'franchises')
                             <a href="{{ route('dashboard.import_export.export_data', ['type' => $type]) }}"
-                               class="mt-4 px-6 py-2 bg-primary text-white rounded-lg shadow hover:bg-primary-dark transition">
+                               class="mt-4 px-6 py-2 btn btn-primary">
                                 Download @if ($type === 'characters') Characters JSON @elseif ($type === 'franchises') Franchises JSON @else JSON @endif
                             </a>
                         @endif
                     </div>
-                    <div>
+                    <div class="flex flex-col items-center">
                         <label class="block text-lg font-semibold text-primary mb-4">
-                            Export Preview
+                            Instructions
                         </label>
+                        <p class="text-md text-tertiary text-center">
+                            To export your @if ($type === 'characters') characters @elseif ($type === 'franchises') franchises @else data @endif, click the button above. A JSON file containing your @if ($type === 'characters') characters @elseif ($type === 'franchises') franchises @else data @endif will be generated for download. Make sure to save the file in a secure location.
+                        </p>
                     </div>
                 </div>
             </div>
