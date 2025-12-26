@@ -47,6 +47,7 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
         Route::get('/', [ImportExportController::class, 'importExportView'])->name('index');
         Route::get('/import/{type}', [ImportExportController::class, 'importView'])->name('import_view');
         Route::get('/export/{type}', [ImportExportController::class, 'exportView'])->name('export_view');
+        Route::get('/export-data/{type}', [ImportExportController::class, 'exportData'])->name('export_data');
     });
 });
 
