@@ -9,7 +9,7 @@
         <form method="POST" action="{{ route('dashboard.franchises.store') }}" enctype="multipart/form-data" class="w-full flex flex-col gap-4">
             @csrf
             <div>
-                <label for="franchise_name" class="block text-tertiary font-semibold mb-1">Name</label>
+                <label for="franchise_name" class="block text-tertiary font-semibold mb-1">Name <span class="text-primary">*</span></label>
                 <div class="relative">
                     <input id="franchise_name" type="text" name="franchise_name" value="{{ old('franchise_name') }}" required class="input input-bordered w-full pl-10" placeholder="Franchise name">
                     <i class="fa fa-layer-group absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
@@ -19,9 +19,9 @@
                 @enderror
             </div>
             <div>
-                <label for="franchise_image" class="block text-tertiary font-semibold mb-1">Image</label>
+                <label for="franchise_image" class="block text-tertiary font-semibold mb-1">Image <span class="text-primary">* Only PNG files!</span></label>
                 <div class="relative">
-                    <input id="franchise_image" type="file" name="franchise_image" class="input input-bordered w-full pl-10">
+                    <input id="franchise_image" type="file" name="franchise_image" class="input input-bordered w-full pl-10" required accept="image/png">
                     <i class="fa fa-image absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
                 </div>
                 @error('franchise_image')

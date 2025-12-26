@@ -10,7 +10,7 @@
             @csrf
             @method('PUT')
             <div>
-                <label for="franchise_name" class="block text-tertiary font-semibold mb-1">Name</label>
+                <label for="franchise_name" class="block text-tertiary font-semibold mb-1">Name <span class="text-primary">*</span></label>
                 <div class="relative">
                     <input id="franchise_name" type="text" name="franchise_name" value="{{ old('franchise_name', $franchise->franchise_name) }}" required class="input input-bordered w-full pl-10" placeholder="Franchise name">
                     <i class="fa fa-layer-group absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
@@ -20,14 +20,23 @@
                 @enderror
             </div>
             <div>
-                <label for="franchise_image" class="block text-tertiary font-semibold mb-1">Image</label>
+                <label for="franchise_image" class="block text-tertiary font-semibold mb-1">Image <span class="text-primary">Only PNG files!</span></label>
                 <div class="relative">
-                    <input id="franchise_image" type="file" name="franchise_image" class="input input-bordered w-full pl-10">
+                    <input id="franchise_image" type="file" name="franchise_image" class="input input-bordered w-full pl-10" accept="image/png">
                     <i class="fa fa-image absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
                 </div>
-                @if($franchise->franchise_image)
-                    <img src="{{ $franchise->franchise_image }}" alt="{{ $franchise->franchise_name }}" class="mt-2 h-24 object-cover pointer-events-none">
-                @endif
+                <p class="mt-4 text-tertiary font-semibold">Current image:</p>
+                <div class="grid grid-cols-2 gap-6 w-full">
+                    <div class="flex flex-col items-center">
+                        <p class="text-tertiary font-semibold mb-2">Current image:</p>
+                        <img src="{{ $franchise->franchise_image }}" alt="{{ $franchise->franchise_name }}" class="w-36 object-cover pointer-events-none" id="current-image">
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <p class="text-tertiary font-semibold mb-2">New image:</p>
+                        <img src="" alt="New image preview" class="w-36 object-cover pointer-events-none hidden" id="new-image-preview">
+                        <button type="button" id="cancel-image-btn" class="btn btn-primary mt-2 py-4 px-4 hidden">Cancel</button>
+                    </div>
+                </div>
                 @error('franchise_image')
                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                 @enderror
@@ -40,3 +49,35 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+document.getElementById('franchise_image').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    const preview = document.getElementById('new-image-preview'); 
+    const cancelBtn = document.getElementById('cancel-image-btn');
+    if (file && file.type === 'image/png') {
+        const reader = new FileReader();
+        reader.onload = function(ev) {
+            preview.src = ev.target.result;
+            preview.classList.remove('hidden');
+            cancelBtn.classList.remove('hidden');
+        };
+        reader.readAsDataURL(file);
+    } else {
+        preview.src = '';
+        preview.classList.add('hidden');
+        cancelBtn.classList.add('hidden');
+    }
+});
+
+document.getElementById('cancel-image-btn').addEventListener('click', function() {
+    const fileInput = document.getElementById('franchise_image');
+    const preview = document.getElementById('new-image-preview');
+    this.classList.add('hidden');
+    preview.src = '';
+    preview.classList.add('hidden');
+    fileInput.value = '';
+});
+</script>
+@endpush
