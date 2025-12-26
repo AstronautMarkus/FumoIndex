@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Imports;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 use App\Models\Character;
 use App\Models\Franchise;
@@ -31,6 +32,7 @@ class ImportExportController extends Controller
             $characters = Character::with('franchise')->get()->map(function ($character) {
                 return [
                     'name' => $character->character_name,
+                    'slug_name' => $character->slug_name,
                     'franchise_slug' => $character->franchise->slug_name ?? null,
                     'description' => $character->character_description,
                     'description_source' => $character->description_source,
@@ -63,5 +65,97 @@ class ImportExportController extends Controller
         }
 
         abort(404);
+    }
+
+    public function importData(Request $request, $type)
+    {
+        $request->validate([
+            'import_file' => 'required|file|mimes:json',
+        ]);
+
+        $file = $request->file('import_file');
+        $data = json_decode(file_get_contents($file), true);
+
+        $results = [
+            'imported' => 0,
+            'updated' => 0,
+            'skipped' => 0,
+            'skipped_items' => [],
+        ];
+
+        try {
+            DB::beginTransaction();
+            if ($type === 'characters') {
+                foreach ($data as $item) {
+                    $franchise = Franchise::where('slug_name', $item['franchise_slug'])->first();
+                    if (!$franchise) {
+                        $results['skipped']++;
+                        $results['skipped_items'][] = [
+                            'name' => $item['name'],
+                            'reason' => 'Franchise not found: ' . $item['franchise_slug']
+                        ];
+                        continue;
+                    }
+
+                    $character = Character::where('character_name', $item['name'])->first();
+                    if ($character) {
+                        $character->update([
+                            'slug_name' => $item['slug_name'],
+                            'franchise_id' => $franchise->id,
+                            'character_description' => $item['description'],
+                            'description_source' => $item['description_source'],
+                            'character_image' => $item['character_image'],
+                        ]);
+                        $results['updated']++;
+                    } else {
+                        Character::create([
+                            'character_name' => $item['name'],
+                            'slug_name' => $item['slug_name'],
+                            'franchise_id' => $franchise->id,
+                            'character_description' => $item['description'],
+                            'description_source' => $item['description_source'],
+                            'character_image' => $item['character_image'],
+                        ]);
+                        $results['imported']++;
+                    }
+                }
+            } 
+            elseif ($type === 'franchises') {
+                foreach ($data as $item) {
+                    $franchise = Franchise::where('slug_name', $item['slug_name'])->first();
+                    if ($franchise) {
+                        $franchise->update([
+                            'franchise_name' => $item['franchise_name'],
+                            'franchise_image' => $item['franchise_image'],
+                        ]);
+                        $results['updated']++;
+                    } else {
+                        Franchise::create([
+                            'franchise_name' => $item['franchise_name'],
+                            'franchise_image' => $item['franchise_image'],
+                            'slug_name' => $item['slug_name'],
+                        ]);
+                        $results['imported']++;
+                    }
+                }
+            } 
+            else {
+                abort(404);
+            }
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('error', 'Import failed: ' . $e->getMessage());
+        }
+
+        $message = ucfirst($type) . " import summary: Imported: {$results['imported']}, Updated: {$results['updated']}, Skipped: {$results['skipped']}";
+        if ($results['skipped'] > 0) {
+            $message .= ". Skipped items: ";
+            foreach ($results['skipped_items'] as $skipped) {
+                $message .= "[{$skipped['name']}: {$skipped['reason']}] ";
+            }
+        }
+
+        return redirect()->back()->with('success', $message);
     }
 }

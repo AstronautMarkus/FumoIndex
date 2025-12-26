@@ -18,6 +18,11 @@
                     <p class="text-sm text-tertiary text-center">
                         Only properly formatted JSON files are accepted.
                     </p>
+                    <!-- Formulario oculto para submit -->
+                    <form id="importForm" action="{{ route('dashboard.import_export.import_data', ['type' => $type]) }}" method="POST" enctype="multipart/form-data" style="display:none;">
+                        @csrf
+                        <input type="file" name="import_file" id="hiddenJsonFile" accept=".json" />
+                    </form>
                 </div>
 
                 <div>
@@ -293,6 +298,22 @@ document.getElementById('jsonFile').addEventListener('change', function(event) {
         }
     };
     reader.readAsText(file);
+});
+
+// Copia el archivo seleccionado al input oculto
+const hiddenInput = document.getElementById('hiddenJsonFile');
+document.getElementById('jsonFile').addEventListener('change', function(event) {
+    if (hiddenInput && event.target.files.length > 0) {
+        hiddenInput.files = event.target.files;
+    }
+});
+
+// Manejar el click en Upload para enviar el formulario
+document.getElementById('uploadBtn').addEventListener('click', function() {
+    const form = document.getElementById('importForm');
+    if (form) {
+        form.submit();
+    }
 });
 </script>
 @endpush
