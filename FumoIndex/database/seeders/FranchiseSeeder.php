@@ -16,7 +16,7 @@ class FranchiseSeeder extends Seeder
 
         foreach ($franchises as &$franchise) {
             $franchiseSlug = Str::slug($franchise['franchise_name'], '_');
-            $franchise['franchise_image'] = "$franchiseSlug.png";
+            $franchise['franchise_image'] = "https://thefumoindex.s3.us-east-2.amazonaws.com/images/franchises/$franchiseSlug.png";
             $franchise['slug_name'] = $franchiseSlug;
         }
 
