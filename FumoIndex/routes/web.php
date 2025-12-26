@@ -12,7 +12,6 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\CharactersController;
 use App\Http\Controllers\Dashboard\FranchisesController;
-use App\Http\Controllers\Test\BucketController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/characters', [CharacterController::class, 'index'])->name('characters.list');
@@ -49,11 +48,4 @@ Route::prefix('auth')->name('auth.')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register.form');
     Route::post('/register', [AuthController::class, 'register'])->name('register');
-});
-
-// Rutas de prueba para el bucket S3
-Route::prefix('test/bucket')->group(function () {
-    Route::get('/list', [BucketController::class, 'listFiles'])->name('bucket.list');
-    Route::post('/upload', [BucketController::class, 'uploadFile'])->name('bucket.upload');
-    Route::delete('/delete', [BucketController::class, 'deleteFile'])->name('bucket.delete');
 });
