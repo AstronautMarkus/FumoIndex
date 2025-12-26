@@ -8,6 +8,7 @@ use App\Models\Franchise;
 use Illuminate\Support\Str;
 use App\Models\Character;
 use App\Models\Fumo;
+use Illuminate\Support\Facades\Storage;
 
 class FranchisesController extends Controller
 {
@@ -53,16 +54,26 @@ class FranchisesController extends Controller
         $slugName = Str::slug($validated['franchise_name'], '_');
 
         if ($request->hasFile('franchise_image')) {
-            $image = $request->file('franchise_image');
-            $filename = $slugName . '.' . $image->getClientOriginalExtension();
-            $directory = public_path("assets/franchises");
-            if (!file_exists($directory)) {
-                mkdir($directory, 0755, true);
+            try {
+                $image = $request->file('franchise_image');
+                $extension = $image->getClientOriginalExtension();
+                $filename = "{$slugName}.{$extension}";
+                $path = "images/franchises/{$filename}";
+                $stored = Storage::disk('s3')->put($path, file_get_contents($image));
+                if (!$stored) {
+                    return back()->withErrors([
+                        'franchise_image' => 'Failed to upload image to S3.'
+                    ]);
+                }
+                $validated['franchise_image'] = Storage::disk('s3')->url($path);
+            } catch (\Exception $e) {
+                return back()->withErrors([
+                    'franchise_image' => 'Failed to upload image to S3: ' . $e->getMessage()
+                ]);
             }
-            $image->move($directory, $filename);
-            $validated['franchise_image'] = $filename;
         } else {
-            $validated['franchise_image'] = "default.png";
+            $validated['franchise_image'] = Storage::disk('s3')
+                ->url('images/franchises/default.png');
         }
 
         $validated['slug_name'] = $slugName;
