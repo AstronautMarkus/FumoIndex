@@ -134,6 +134,13 @@ class FranchisesController extends Controller
             $character->fumos()->detach();
             $character->delete();
         }
+
+        // Delete franchise image from S3 if exists
+        $imagePath = "images/franchises/{$franchise->slug_name}.png";
+        if ($franchise->franchise_image && \Storage::disk('s3')->exists($imagePath)) {
+            \Storage::disk('s3')->delete($imagePath);
+        }
+
         $franchise->delete();
         return redirect()->route('dashboard.franchises.index')
             ->with('success', 'Franchise deleted successfully.');
