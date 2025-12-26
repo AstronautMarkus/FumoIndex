@@ -13,6 +13,8 @@ use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\CharactersController;
 use App\Http\Controllers\Dashboard\FranchisesController;
 
+use App\Http\Controllers\Imports\ImportExportController;
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/characters', [CharacterController::class, 'index'])->name('characters.list');
 Route::get('/characters/{slug}', [CharacterController::class, 'show'])->name('characters.show');
@@ -40,6 +42,12 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
     Route::get('/franchises/{franchise}/edit', [FranchisesController::class, 'edit'])->name('franchises.edit');
     Route::put('/franchises/{franchise}', [FranchisesController::class, 'update'])->name('franchises.update');
     Route::delete('/franchises/{franchise}', [FranchisesController::class, 'destroy'])->name('franchises.destroy');
+
+    Route::prefix('import-export')->name('import_export.')->group(function () {
+        Route::get('/', [ImportExportController::class, 'importExportView'])->name('index');
+        Route::get('/import/{type}', [ImportExportController::class, 'importView'])->name('import_view');
+        Route::get('/export/{type}', [ImportExportController::class, 'exportView'])->name('export_view');
+    });
 });
 
 Route::prefix('auth')->name('auth.')->group(function () {

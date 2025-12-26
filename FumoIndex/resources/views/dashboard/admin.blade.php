@@ -110,12 +110,15 @@
                 </div>
 
                 <div class="bg-white rounded-2xl shadow-lg border-4 border-gray-300 p-6 flex flex-col">
-                    <div class="font-bold text-lg text-primary mb-3">Recent News</div>
+                    <div class="font-bold text-lg text-primary mb-3">Admin Operations</div>
                     <ul class="space-y-2">
-                        <li class="text-tertiary text-sm">No recent news.</li>
+                        <li>
+                            <a href="{{ route('dashboard.import_export.index') }}" class="flex items-center text-blue-600 hover:underline">
+                                <i class="fa-solid fa-file-import mr-2"></i> Import/Export Data
+                            </a>
+                        </li>
                     </ul>
                 </div>
-
             </div>
         </div>
     </div>

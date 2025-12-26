@@ -25,6 +25,12 @@
     @apply hover:bg-tertiary-light;
 }
 
+.btn-success {
+    @apply bg-green-600;
+    @apply text-white;
+    @apply hover:bg-green-700;
+}
+
 .btn-outline {
     @apply bg-white;
     @apply text-primary;
