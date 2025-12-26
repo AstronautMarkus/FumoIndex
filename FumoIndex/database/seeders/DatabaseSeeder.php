@@ -16,12 +16,5 @@ class DatabaseSeeder extends Seeder
             FumoTypeSeeder::class,
             CharacterSeeder::class,
         ]);
-
-        User::factory()->create([
-            'first_name' => 'Test',
-            'last_name' => 'User',
-            'username' => 'testuser',
-            'email' => 'test@example.com',
-        ]);
     }
 }
