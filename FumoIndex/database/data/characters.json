@@ -32,168 +32,248 @@
     {
         "name":"Satori Komeiji",
         "franchise_slug":"touhou_project",
-        "description":"",
-        "description_source":""
+        "description":"Satori Komeiji is the Mistress of the Palace of the Earth Spirits after the underground city was separated from Hell. She barely gets any visitors because her ability to read minds makes various youkai and spirits fear her, while leaving her well-loved by the animals that normally can't be understood.",
+        "description_source":"https://touhou.fandom.com/wiki/Satori_Komeiji"
     },
     {
         "name":"Ran Yakumo",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"During Perfect Cherry Blossom, Ran Yakumo is busy preparing a banquet for her master, Yukari, who was still asleep as usual, when Ran was suddenly interrupted by the heroine. Because she is actually a Kitsune, and is a shikigami herself, it's highly unusual that Ran has a shikigami of her own; Chen.",
+        "description_source":"https://touhou.fandom.com/wiki/Ran_Yakumo"
     },
     {
         "name":"Yukari Yakumo",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"An often seen and referenced character, Yukari Yakumo is the youkai of boundaries. She was first introduced in Perfect Cherry Blossom as the sleepy mistress of Ran Yakumo. During Imperishable Night, Yukari teams up with Reimu to find those responsible for the fake moon. In Immaterial and Missing Power, she actually sings her way from battle to battle, stealing everyone's sake, wine, and brandy, even right from the shrine's altar. However, this is all part of her strategy to save the day.",
+        "description_source":"https://touhou.fandom.com/wiki/Yukari_Yakumo"
     },
     {
         "name":"Reisen Udongein Inaba",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Reisen Udongein Inaba (鈴仙・優曇華院・イナバ) is a former moon rabbit that serves as Eirin Yagokoro's student and medicine peddler, residing in Eientei after fleeing from the Moon. She first appeared as the stage 5 boss of Imperishable Night. Since Phantasmagoria of Flower View, she has appeared as a playable character in multiple games including Legacy of Lunatic Kingdom.",
+        "description_source":"https://en.touhouwiki.net/wiki/Reisen_Udongein_Inaba"
     },
     {
         "name":"Tewi Inaba",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Tewi Inaba (因幡　てゐ Inaba Tewi) is a youkai Earth rabbit who leads other Earth rabbits in the Bamboo Forest of the Lost while living and guarding Eientei. She first appeared as the Stage 5 midboss of Imperishable Night and became a playable character, and possible opponent, in Phantasmagoria of Flower View.",
+        "description_source":"https://en.touhouwiki.net/wiki/Tewi_Inaba"
     },
     {
         "name":"Kaguya Houraisan",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Kaguya Houraisan (蓬莱山　輝夜 Houraisan Kaguya) is an immortal Lunarian who was once a princess of the Lunarians of the Lunar Capital on the Moon. She had Eirin Yagokoro create the Hourai Elixir with the help of Kaguya's power to control eternity which lead to her being exiled to Earth. After liking her life on Earth, she and Eirin choose to not go back to the Lunar Capital and resided for thousands of years in Eientei within the Bamboo Forest of the Lost that is now in Gensokyo. Kaguya first appeared as the true Stage 6 boss and one of the main antagonists of Imperishable Night.",
+        "description_source":"https://en.touhouwiki.net/wiki/Kaguya_Houraisan"
     },
     {
         "name":"Sakuya Izayoi",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Sakuya Izayoi (十六夜　咲夜 Izayoi Sakuya) is the chief maid and only human of the Scarlet Devil Mansion who is capable of stopping time and also specializes in throwing knifes. Sakuya first appeared as the Stage 5 boss of Embodiment of Scarlet Devil and has been a playable character in multiple games since Perfect Cherry Blossom.",
+        "description_source":"https://en.touhouwiki.net/wiki/Sakuya_Izayoi"
     },
     {
         "name":"Yuyuko Saigyouji",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Yuyuko Saigyouji (西行寺　幽々子 Saigyouji Yuyuko) is a ghost \"princess\" head of Hakugyokurou in the Netherworld. She first appeared as the Stage 6 boss and main antagonist of Perfect Cherry Blossom then first became a playable character in Imperishable Night, in a team along with Youmu Konpaku, as well as in Immaterial and Missing Power. ",
+        "description_source":"https://en.touhouwiki.net/wiki/Yuyuko_Saigyouji"
     },
     {
         "name":"Patchouli Knowledge",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Patchouli Knowledge (パチュリー・ノーレッジ Pachurii Noorejji) is a Youkai Magician/witch and resident of the Scarlet Devil Mansion in the library. She's friends with the mistress of the house, Remilia Scarlet, and acts as her resident librarian. She first appeared as the Stage 4 boss of Embodiment of Scarlet Devil and has been playable in multiple fighting games since Immaterial and Missing Power. She can be a possible supporting character for Marisa Kirisame in Subterranean Animism.",
+        "description_source":"https://en.touhouwiki.net/wiki/Patchouli_Knowledge"
     },
     {
         "name":"Koishi Komeiji",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Koishi Komeiji (古明地 こいし Komeiji Koishi) is a satori who sealed her third eye that gave her the ability to read minds and is Satori Komeiji's younger sister who both reside in the Palace of Earth Spirits within the Underworld. She first appeared as the Extra Stage boss of Subterranean Animism then later appeared as a playable character, and possible opponent, in multiple fighting games since Hopeless Masquerade.",
+        "description_source":"https://en.touhouwiki.net/wiki/Koishi_Komeiji"
     },
     {
         "name":"Shion Yorigami",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Shion Yorigami (依神 紫苑 Yorigami Shion) is a poverty god and the older sister of Joon Yorigami. Shion makes everyone around her misfortunate as well as herself so she usually lives the life of a poor person or is wrapped up in one of Joon's schemes. Shion first appeared as one of the main antagonists, and usually final boss if most story scenarios, in Antinomy of Common Flowers as an opponent and playable character as the slave of Joon then reappeared as Joon's supporting partner again in Sunken Fossil World.",
+        "description_source":"https://en.touhouwiki.net/wiki/Shion_Yorigami"
     },
     {
         "name":"Chen",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Chen (橙) is a Nekomata and Ran Yakumo's shikigami. Chen first appeared in Perfect Cherry Blossom as the midboss and boss of Stage 2 and also as the extra stage midboss as well as Ran Yakumo's familiar in one of her spell cards.",
+        "description_source":"https://en.touhouwiki.net/wiki/Chen"
     },
     {
         "name":"Suika Ibuki",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Suika Ibuki (伊吹 萃香 Ibuki Suika) is an oni capable of manipulating density who loves drinking and fighting with enough physical strength to throw large boulders single-handedly. Suika was one of the Big Four of the Mountain who lived on Youkai Mountain before the creation of the barrier surrounded Gensokyo. She and many oni then went to live in Hell, before it became Former Hell, until going back to live up on the surface after a long time. She has been playable in multiple fighting games with her first appearing as the main antagonist of Immaterial and Missing Power, then her first appearance in a main game as a support character for Reimu Hakurei in Subterranean Animism, then finally as a playable character in Unfinished Dream of All Living Ghost. She also has a frequent supporting role in Lotus Eaters.",
+        "description_source":"https://en.touhouwiki.net/wiki/Suika_Ibuki"
     },
     {
         "name":"Youmu Konpaku",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Youmu Konpaku (魂魄　妖夢 Konpaku Youmu) is a half-human half-phantom who lives at Hakugyokurou in the Netherworld who also serves for Yuyuko Saigyouji as a gardener and swords specialist. She first appeared as the Stage 5 boss of Perfect Cherry Blossom and has been a playable character in multiple games since being playable in Imperishable Night, in a team along Yuyuko, and in Immaterial and Missing Power.",
+        "description_source":"https://en.touhouwiki.net/wiki/Youmu_Konpaku"
     },
     {
         "name":"Tenshi Hinanawi",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Tenshi Hinanawi (比那名居　天子 Hinanawi Tenshi) is a celestial who is the \"Eldest Daughter\" (総領娘 souryou musume) of the Hinanawi clan. She first appeared as the main antagonist and final possible opponent for most story scenarios in Scarlet Weather Rhapsody, as well as a playable character. She later became a playable character in the versus mode of Touhou Hisoutensoku and later fully appear as a playable character, or possible opponent, in Antinomy of Common Flowers.",
+        "description_source":"https://en.touhouwiki.net/wiki/Tenshi_Hinanawi"
     },
     {
         "name":"Momiji Inubashiri",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Momiji Inubashiri (犬走 椛 Inubashiri Momiji) is a white wolf tengu whose duty is to patrol the Youkai Mountain. She first appeared as the Stage 4 midboss in Mountain of Faith.",
+        "description_source":"https://en.touhouwiki.net/wiki/Momiji_Inubashiri"
     },
     {
         "name":"Nitori Kawashiro",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Nitori Kawashiro (河城 にとり Kawashiro Nitori) is a Kappa who has the power to control water and is very good with engineering, technology as well as running businesses. She first appeared as the Stage 3 boss in Mountain of Faith and became a possible supporting character for Marisa Kirisame in Subterranean Animism. She then became a playable character in multiple fighting games since Hopeless Masquerade.",
+        "description_source":"https://en.touhouwiki.net/wiki/Nitori_Kawashiro"
     },
     {
-        "name":"Shikieiki Yamaxanadu",
-        "franchise_slug":"touhou_project"
+        "name":"Eiki Shiki, Yamaxanadu",
+        "franchise_slug":"touhou_project",
+        "description":"Eiki Shiki, Yamaxanadu (四季映姫・ヤマザナドゥ Shiki Eiki Yamazanadu, given name \"Eiki\", surname \"Shiki\") is one of the Yama who judges the dead and decides whether they go to Heaven, Hell, the Netherworld, or get reincarnated. She first appeared in Phantasmagoria of Flower View, where she served as final boss for nearly all of the Story Mode scenarios and can be unlocked as a playable character.",
+        "description_source":"https://en.touhouwiki.net/wiki/Shikieiki_Yamaxanadu"
     },
     {
         "name":"Joon Yorigami",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Joon Yorigami (依神 女苑 Yorigami Joon) is a pestilence god and the younger sister of Shion Yorigami. Joon often comes with schemes that involve taking the wealth of others of their wealth by bringing them financial ruin to take the wealth for herself. Joon first appeared as one of the main antagonists, and usually final boss if most story scenarios, in Antinomy of Common Flowers as an opponent and playable character with Shion as her slave then reappeared as a playable character, or possible opponent, again in Sunken Fossil World.",
+        "description_source":"https://en.touhouwiki.net/wiki/Joon_Yorigami"
     },
     {
         "name":"Sanae Kochiya",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Sanae Kochiya (東風谷 早苗 Kochiya Sanae) is a human and a living god, descended from the goddess Suwako Moriya. Originally from the Outside World, she migrated to Gensokyo together with the Moriya Shrine and its two resident goddesses: Kanako Yasaka and Suwako Moriya. At the shrine, Sanae serves a role similar to that of a shrine maiden, tasked with maintaining rituals and gathering faith for the Moriya Shrine, which has moved atop Youkai Mountain.",
+        "description_source":"https://en.touhouwiki.net/wiki/Sanae_Kochiya"
     },
     {
         "name":"Aya Shameimaru",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Aya Shameimaru (射命丸文 Shameimaru Aya) is a crow tengu capable of manipulating wind and serves as the journalist for the Bunbunmaru Newspaper writing articles, that are usually dubious, about anything in Gensokyo. She first appears in Bohemian Archive in Japanese Red as the reporter of its articles and has appeared as a playable character in multiple games since being a playable character, and possible opponent, in Phantasmagoria of Flower View. She is also the main protagonist of Shoot the Bullet, Double Spoiler and a playable character in Hidden Star in Four Seasons while serving as the main reporter yet again in Alternative Facts in Eastern Utopia.",
+        "description_source":"https://en.touhouwiki.net/wiki/Aya_Shameimaru"
     },
     {
         "name":"Rumia",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Rumia (ルーミア Ruumia)[1] is a youkai with the ability of manipulating the darkness. She first appeared as the Stage 1 boss of Embodiment of Scarlet Devil.",
+        "description_source":"https://en.touhouwiki.net/wiki/Rumia"
     },
     {
         "name":"Renko Usami",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Renko Usami (宇佐見 蓮子 Usami Renko) is one of the main protagonists in the attached stories of ZUN's Music Collection. She is a university student in the near future of the Outside World in Kyoto, who forms the \"Hifuu Club\" along with her close friend Maribel Hearn. She has no relation to Gensokyo, but is aware of it through Maribel talking about her visits to it in her dreams.",
+        "description_source":"https://en.touhouwiki.net/wiki/Renko_Usami"
     },
     {
         "name":"Rinnosuke Morichika",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Rinnosuke Morichika (森近　霖之助 Morichika Rinnosuke), nicknamed Kourin (香霖) by Marisa Kirisame, is the main protagonist of Curiosities of Lotus Asia and one of the few male characters depicted in the Touhou Project. He is a half-human half-youkai hybrid with the ability to know the name and purpose of an object by examining it. He runs Kourindou, an antique shop specializing in items from the Outside World.",
+        "description_source":"https://en.touhouwiki.net/wiki/Rinnosuke_Morichika"
     },
     {
         "name":"Seija Kijin",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Seija Kijin (鬼人 正邪 Kijin Seija) is an amanojaku with the power to turn over anything. She is a rebellious youkai that often causes trouble in Gensokyo such as in Double Dealing Character when she tried to overthrow society and make the weak rule over the strong. Seija first appeared in Double Dealing Character as the midboss and boss of Stage 5 as well as the midboss of Stage 6 in the same game. She then became a playable character as the main protagonist of Impossible Spell Card and the minigame Gold Rush.",
+        "description_source":"https://en.touhouwiki.net/wiki/Seija_Kijin"
     },
     {
         "name":"Maribel Hearn",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Maribel Hearn (マエリベリー・ハーン Maeriberii Haan) is one of the main protagonists in the attached stories of ZUN's Music Collection. She is a university student in the near future of the Outside World in Kyoto, who forms the \"Secret Sealing Club\" with Renko Usami. She has no relation to Gensokyo, but has often visited Gensokyo in her dreams. ",
+        "description_source":"https://en.touhouwiki.net/wiki/Maribel_Hearn"
     },
     {
         "name":"Hata no Kokoro",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Hata no Kokoro (秦 こころ) is the main antagonist of Hopeless Masquerade and a menreiki youkai. She relies on her masks to show her emotions to others, as her actual face is emotionless and can be likened to a poker face.",
+        "description_source":"https://en.touhouwiki.net/wiki/Hata_no_Kokoro"
     },
     {
         "name":"Hatate Himekaidou",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Hatate Himekaidou (姫海棠　はたて Himekaidou Hatate) is a tengu reporter who produces the the news article, Kakashi Spirit News. Unlike her colleague Aya Shameimaru, she never goes outside for researching newspapers since she has the ability to take pictures of anywhere with her thoughts called thoughtography (念写 nensha). She first appeared in Double Spoiler as the final opponent for Aya before being unlocked as a playable character.",
+        "description_source":"https://en.touhouwiki.net/wiki/Hatate_Himekaidou"
     },
     {
         "name":"Toyosatomimi no Miko",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Toyosatomimi no Miko (豊聡耳　神子) is a saint and a type of hermit known as a shikaisen that resurrected from placing their soul in a treasured sword. Miko has the ability to hear up to ten people communicate at once with her as well as read their desires which made her very popular in the past. She now lives in her own version of Senkai. Miko first appeared as the Stage 6 boss of Ten Desires and first appeared as a playable character, and possible opponent, in multiple fighting games since Hopeless Masquerade.",
+        "description_source":"https://en.touhouwiki.net/wiki/Toyosatomimi_no_Miko"
     },
     {
         "name":"Futo Mononobe",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Mononobe no Futo (物部　布都) is a shikaisen who was formerly a hermit practicing Taoism that resurrected by placing her soul into a plate. Futo is a loyal vassal of Toyosatomimi no Miko who originates from the Asuka era and possesses the ability to manipulate feng shui. Futo first appeared as the Stage 5 boss and briefly as a supporting enemy during the Stage 6 boss fight in Ten Desires. She then became a playable character, and possible opponent, in multiple fighting games since Hopeless Masquerade.",
+        "description_source":"https://en.touhouwiki.net/wiki/Futo_Mononobe"
     },
     {
         "name":"Fujiwara no Mokou",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Fujiwara no Mokou (藤原 妹紅) is an immortal human capable of manipulating fire who obtained immortality after drinking the Hourai Elixir over 1,300 years ago. After Mokou's aristocrat father was humiliated from being unable to fulfill Kaguya Houraisan's impossible request, Mokou stole and drunk the Hourai Elixir from an Emperor's men as a way to get revenge on Kaguya who had left it as a gift for the Emperor. Over 1,000 years later, she now protects humans from youkai and guides anyone outside of the Bamboo Forest of the Lost when they get lost in it, while also having a rivalry with Kaguya. Mokou first appeared as the Extra Stage boss of Imperishable Night then became a playable character in Urban Legend in Limbo and Antinomy of Common Flowers.",
+        "description_source":"https://en.touhouwiki.net/wiki/Fujiwara_no_Mokou"
     },
     {
         "name":"Hong Meiling",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Hong Meiling (紅 美鈴 Hon Meirin) is a youkai who serves as the gatekeeper of the Scarlet Devil Mansion, and is known for her martial arts. She first appeared as the Stage 3 boss of Embodiment of Scarlet Devil and first became a playable character through a downloadable patch in Immaterial and Missing Power as a versus mode character with no story, as well as one of the three protagonists of Touhou Hisoutensoku.",
+        "description_source":"https://en.touhouwiki.net/wiki/Hong_Meiling"
     },
     {
         "name":"Yuuka Kazami",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Yuuka Kazami (風見　幽香 Kazami Yuuka) is a long-lived youkai called the \"Flower Master of the Four Seasons\" whose main place of activity is the Garden of the Sun during Phantasmagoria of Flower View. Whereas when Yuuka first debuted in Lotus Land Story from the PC-98 games, she was the master of a mansion in the Fantasy World who wanted the Hakurei Shrine destroyed out of boredom. Yuuka first appeared as the Stage 5 boss and Stage 6 boss of Lotus Land Story then first became a playable character in Mystic Square. She later reappeared in the Windows games as a playable character, or possible opponent, in Phantasmagoria of Flower View.",
+        "description_source":"https://en.touhouwiki.net/wiki/Yuuka_Kazami"
     },
     {
         "name":"Alice Margatroid",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Alice Margatroid (アリス・マーガトロイド Arisu Māgatoroido) is a Youkai magician who can controls dolls and lives in a house within the Forest of Magic not far away from the home of Marisa Kirisame. She first appeared as the Stage 3 and Extra boss in Mystic Square and then later reappeared in the Windows games as the midboss (twice) and boss of Stage 3 in Perfect Cherry Blossom. She became a playable character in multiple games since Imperishable Night, in a team along Marisa, and in Immaterial and Missing Power. She also is a possible supporting character for Marisa in Subterranean Animism.",
+        "description_source":"https://en.touhouwiki.net/wiki/Alice_Margatroid"
     },
     {
         "name":"Kasen Ibaraki",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Kasen Ibaraki (茨木 華扇 Ibaraki Kasen) who also goes by the pseudonym Ibarakasen (茨華仙) or just Kasen (華仙), is a hermit who is actually also an oni who used to be known as one of the Big Four of the Mountain. She used to be known as Ibaraki-Douji but had her right arm cut off by the Onikirimaru and sealed her wickedness away into it over 1,000 years ago.[2] Since then, She's became a hermit who is also one of the Sages of Gensokyo and now lives in a house within her own Senkai on Youkai Mountain. She first appeared as the the main protagonist of Wild and Horned Hermit then later appeared as a playable character, or possible opponent, in Urban Legend in Limbo as well as Antinomy of Common Flowers.",
+        "description_source":"https://en.touhouwiki.net/wiki/Kasen_Ibaraki"
     },
     {
         "name":"Nazrin",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Nazrin (ナズーリン Nazūrin) is a mouse youkai who's a skilled dowser and the subordinate of Shou Toramaru. She leads many mice who she often employs them to search for things for her; though if she were to ask them to find food, it would most likely be gone by the time they returned. Nazrin first appeared as the midboss and boss of Stage 1 as well as the Stage 5 midboss in Undefined Fantastic Object. She first became a playable character in Unfinished Dream of All Living Ghost.",
+        "description_source":"https://en.touhouwiki.net/wiki/Nazrin"
     },
     {
         "name":"Okina Matara",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Okina Matara (摩多羅 隠岐奈 Matara Okina) is a god of multiple names and roles who rules over the Land of the Back Door. She has remained out of sight for some time until the events of Hidden Star in Four Seasons and maintains the balance of Gensokyo as one of the sages of Gensokyo who created Gensokyo. Mai Teireida and Satono Nishida are her subordinates. Okina first appeared as both the Stage 6 boss and Extra Stage boss in Hidden Star in Four Seasons as the main antagonist. She reappeared in Sunken Fossil World as Flandre Scarlet's advisor who also caused the oil leaks during the black water incident as well as being the final boss of Yuuma Toutetsu's story scenario.",
+        "description_source":"https://en.touhouwiki.net/wiki/Okina_Matara"
     },
     {
         "name":"Hecatia Lapislazuli",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Hecatia Lapislazuli (ヘカーティア・ラピスラズリ Hekātia Rapisurazuri) is a Goddess of Hell that has three bodies capable of being in Earth, the Moon and another world at once. She first appeared as an Extra Stage Boss in Legacy of Lunatic Kingdom and also appeared frequently in Visionary Fairies in Shrine.",
+        "description_source":"https://en.touhouwiki.net/wiki/Hecatia_Lapislazuli"
     },
     {
         "name":"Hina Kagiyama",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Hina Kagiyama (鍵山　雛 Kagiyama Hina) is a misfortune god and the leader of the Nagashi-bina doll army. Her job is to gather the misfortune of humans, as well as scare off lost humans who get too near to the Youkai Mountain at the Great Youkai Forest. Hina first appeared as the Stage 2 boss in Mountain of Faith.",
+        "description_source":"https://en.touhouwiki.net/wiki/Hina_Kagiyama"
     },
     {
         "name":"Chimata Tenkyuu",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Chimata Tenkyuu (天弓　千亦 Tenkyuu Chimata) is the God of special event marketplaces with the ability to let one relinquish ownership. She acts as the Stage 6 boss and one of the three main antagonists of Unconnected Marketeers, as well as the cause of the start of the events of Unfinished Dream of All Living Ghost.",
+        "description_source":"https://en.touhouwiki.net/wiki/Chimata_Tenkyuu"
     },
     {
         "name":"Utsuho Reiuji",
-        "franchise_slug":"touhou_project"
+        "franchise_slug":"touhou_project",
+        "description":"Utsuho Reiuji (霊烏路 空 Reiuji Utsuho) is a Hell raven who is one of Satori Komeiji's pets and lived in the Underworld since before the transition to the newer Hell happened. Kanako Yasaka fed Utsuho the Sun God, Yatagarasu, which led to Utsuho obtaining the power of nuclear fusion. Utsuho first appeared as the Stage 6 boss of Subterranean Animism, then later appeared in Touhou Hisoutensoku as a playable character and possible opponent, then lastly appeared in Sunken Fossil World as a possible opponent.",
+        "description_source":"https://en.touhouwiki.net/wiki/Utsuho_Reiuji"
     },
     {
         "name": "Hitori Gotoh",
@@ -221,27 +301,39 @@
     },
     {
         "name":"Hatsune Miku NT",
-        "franchise_slug": "vocaloid"
+        "franchise_slug": "vocaloid",
+        "description":"Hatsune Miku (初音ミク), codenamed CV01, was the first Japanese VOCALOID to be both developed and distributed by Crypton Future Media, Inc.. She was initially released in August 2007 for the VOCALOID2 engine and was the first member of the Character Vocal Series. She was the seventh VOCALOID overall, as well as the second VOCALOID2 vocal released to be released for the engine. Her voice is provided by the Japanese voice actress Saki Fujita (藤田咲, Fujita Saki).",
+        "description_source":"https://vocaloid.fandom.com/wiki/Hatsune_Miku"
     },
     {
         "name":"Kagamine Rin V4X",
-        "franchise_slug": "vocaloid"
+        "franchise_slug": "vocaloid",
+        "description":"Rin is a VIRTUAL SINGER known for performing with her counterpart Kagamine Len. Her and the other VIRTUAL SINGERS live in another world called SEKAI, but appear in the real world to consult people who have trouble understanding their true feelings through music.",
+        "description_source":"https://projectsekai.fandom.com/wiki/Kagamine_Rin"
     },
     {
         "name":"Kagamine Len V4X",
-        "franchise_slug": "vocaloid"
+        "franchise_slug": "vocaloid",
+        "description":"Len is a VIRTUAL SINGER best known for performing with his counterpart, Kagamine Rin. He and the other VIRTUAL SINGERS live in another world called SEKAI, but appear in the real world to consult people who have trouble understanding their true feelings through music.",
+        "description_source":"https://projectsekai.fandom.com/wiki/Kagamine_Len"
     },
     {
         "name":"Megurine Luka V4X",
-        "franchise_slug": "vocaloid"
+        "franchise_slug": "vocaloid",
+        "description":"Megurine Luka (巡音ルカ), codenamed CV03, is a Japanese VOCALOID developed and distributed by Crypton Future Media, Inc., and was initially released in January 2009 for the VOCALOID2 engine. She is the third release of Crypton's Character Vocal Series and is a Character Voice VOCALOID. In March 2015, additional voicebanks and an upgrade to the VOCALOID4 engine were released.",
+        "description_source":"https://vocaloid.fandom.com/wiki/Megurine_Luka"
     },
     {
         "name":"KAITO V3",
-        "franchise_slug": "vocaloid"
+        "franchise_slug": "vocaloid",
+        "description":"KAITO (カイト) is a Japanese VOCALOID developed originally by Yamaha Corporation and distributed by Crypton Future Media, Inc.. He was one of the 4 known \"Project Daisy\" vocals. His VOCALOID3 update was developed and distributed by Crypton. He was initially released in February 2006 for the first VOCALOID engine. There has since been a second installment developed for the VOCALOID3 engine dubbed KAITO V3. His voice is provided by the famous Japanese singer, Naoto Fūga (風雅なおと).",
+        "description_source":"https://vocaloid.fandom.com/wiki/KAITO"
     },
     {
         "name":"MEIKO V3",
-        "franchise_slug": "vocaloid"
+        "franchise_slug": "vocaloid",
+        "description":"MEIKO (メイコ) is a Japanese VOCALOID originally developed by Yamaha Corporation and distributed by Crypton Future Media, Inc.. She was one of the 4 known \"Project Daisy\" vocals. Her VOCALOID3 update was developed and distributed by Crypton Future Media. She was initially released in November 2004 for the first VOCALOID engine. There has since been a second installment developed for the VOCALOID3 engine, dubbed MEIKO V3. Her voice is provided by the Japanese female singer-songwriter, Meiko Haigō (拝郷 メイコ Haigō Meiko).",
+        "description_source":"https://vocaloid.fandom.com/wiki/MEIKO"
     },
     {
         "name":"Amico",
@@ -251,63 +343,93 @@
     },
     {
         "name":"Taihou",
-        "franchise_slug": "azur_lane"
+        "franchise_slug": "azur_lane",
+        "description":"",
+        "description_source":""
     },
     {
         "name":"Shimakaze",
-        "franchise_slug": "azur_lane"
+        "franchise_slug": "azur_lane",
+        "description":"",
+        "description_source":""
     },
     {
         "name":"Agir",
-        "franchise_slug": "azur_lane"
+        "franchise_slug": "azur_lane",
+        "description":"",
+        "description_source":""
     },
     {
         "name":"Azuma",
-        "franchise_slug": "azur_lane"
+        "franchise_slug": "azur_lane",
+        "description":"",
+        "description_source":""
     },
     {
         "name":"Sheffield",
-        "franchise_slug": "azur_lane"
+        "franchise_slug": "azur_lane",
+        "description":"",
+        "description_source":""
     },
     {
         "name":"Formidable",
-        "franchise_slug": "azur_lane"
+        "franchise_slug": "azur_lane",
+        "description":"",
+        "description_source":""
     },
     {
         "name":"Shinano",
-        "franchise_slug": "azur_lane"
+        "franchise_slug": "azur_lane",
+        "description":"",
+        "description_source":""
     },
     {
         "name":"Le Malin",
-        "franchise_slug": "azur_lane"
+        "franchise_slug": "azur_lane",
+        "description":"",
+        "description_source":""
     },
     {
         "name":"Cheshire",
-        "franchise_slug": "azur_lane"
+        "franchise_slug": "azur_lane",
+        "description":"",
+        "description_source":""
     },
     {
         "name":"Noshiro",
-        "franchise_slug": "azur_lane"
+        "franchise_slug": "azur_lane",
+        "description":"",
+        "description_source":""
     },
     {
         "name":"Prinz Eugen",
-        "franchise_slug": "azur_lane"
+        "franchise_slug": "azur_lane",
+        "description":"",
+        "description_source":""
     },
     {
         "name":"New Jersey",
-        "franchise_slug": "azur_lane"
+        "franchise_slug": "azur_lane",
+        "description":"",
+        "description_source":""
     },
     {
         "name":"Kaga",
-        "franchise_slug": "azur_lane"
+        "franchise_slug": "azur_lane",
+        "description":"",
+        "description_source":""
     },
     {
         "name":"Akagi",
-        "franchise_slug": "azur_lane"
+        "franchise_slug": "azur_lane",
+        "description":"",
+        "description_source":""
     },
     {
         "name":"Belfast",
-        "franchise_slug": "azur_lane"
+        "franchise_slug": "azur_lane",
+        "description":"",
+        "description_source":""
     },
     {
         "name":"Nobeta",
@@ -335,7 +457,7 @@
     },
     {
         "name":"ZUN",
-        "franchise_slug": "touhou_project",
+        "franchise_slug":"touhou_project",
         "description":"ZUN (太田順也, romanized Jun'ya Ota) is the sole known member of Team Shanghai Alice, and is the designer, programmer, script writer, and composer of the extremely popular Touhou Project series. He is seen to be rather reclusive, and thus very little is known about him, except that he's very fond of beer. He was employed by Taito Corporation,[1] and had been involved in the production of various Taito titles.",
         "description_source":"https://touhou.fandom.com/wiki/ZUN"
 
