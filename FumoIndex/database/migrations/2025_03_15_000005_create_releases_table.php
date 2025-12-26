@@ -23,7 +23,6 @@ return new class extends Migration
             $table->unsignedBigInteger('event_id')->nullable();
             $table->text('notes')->nullable();
             $table->timestamps();
-
             $table->foreign('fumo_id')->references('id')->on('fumos')->onDelete('cascade');
             $table->foreign('event_id')->references('id')->on('events')->onDelete('set null');
         });

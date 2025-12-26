@@ -20,6 +20,7 @@ return new class extends Migration
             $table->boolean('is_primary')->default(true);
             $table->integer('width')->nullable();
             $table->integer('height')->nullable();
+            $table->timestamps();
         });
     }    
 

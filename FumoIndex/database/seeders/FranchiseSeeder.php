@@ -18,6 +18,8 @@ class FranchiseSeeder extends Seeder
             $franchiseSlug = Str::slug($franchise['franchise_name'], '_');
             $franchise['franchise_image'] = "https://thefumoindex.s3.us-east-2.amazonaws.com/images/franchises/$franchiseSlug.png";
             $franchise['slug_name'] = $franchiseSlug;
+            $franchise['created_at'] = now();
+            $franchise['updated_at'] = now();
         }
 
         DB::table('franchises')->insert($franchises);

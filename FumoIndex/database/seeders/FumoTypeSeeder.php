@@ -23,6 +23,8 @@ class FumoTypeSeeder extends Seeder
                 'is_primary' => $fumo_type['is_primary'] ?? true,
                 'height' => $fumo_type['height'] ?? null,
                 'width' => $fumo_type['width'] ?? null,
+                'created_at' => now(),
+                'updated_at' => now(),
             ]);
         }
     }

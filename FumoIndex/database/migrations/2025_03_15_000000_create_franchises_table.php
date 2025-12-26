@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('franchise_name', 255);
             $table->string('franchise_image', 2048)->nullable();
             $table->string('slug_name', 255);
+            $table->timestamps();
         });
     }    
 
