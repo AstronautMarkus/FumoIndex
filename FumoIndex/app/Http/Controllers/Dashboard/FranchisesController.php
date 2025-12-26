@@ -127,6 +127,14 @@ class FranchisesController extends Controller
     {
         // Delete associated characters and their fumos
         foreach ($franchise->characters as $character) {
+            // Delete character image from S3 if exists
+            $franchiseSlug = Str::slug($franchise->franchise_name, '_');
+            $characterSlug = $character->slug_name;
+            $characterImagePath = "images/characters/{$franchiseSlug}/{$characterSlug}.png";
+            if ($character->character_image && \Storage::disk('s3')->exists($characterImagePath)) {
+                \Storage::disk('s3')->delete($characterImagePath);
+            }
+
             $fumoIds = $character->fumos()->pluck('fumos.id');
             if ($fumoIds->count() > 0) {
                 Fumo::whereIn('id', $fumoIds)->delete();
