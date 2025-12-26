@@ -89,38 +89,31 @@ class FranchisesController extends Controller
 
         $oldSlugName = $franchise->slug_name;
         $slugName = Str::slug($validated['franchise_name'], '_');
-        $oldImagePath = $franchise->franchise_image
-            ? ltrim(parse_url($franchise->franchise_image, PHP_URL_PATH), '/')
-            : null;
-        $newImagePath = "images/franchises/{$slugName}.png";
         $validated['slug_name'] = $slugName;
 
+        $oldImagePath = "images/franchises/{$oldSlugName}.png";
+        $newImagePath = "images/franchises/{$slugName}.png";
+
         if ($request->hasFile('franchise_image')) {
-            // If a new image is uploaded, delete the old one and upload the new one
-            if ($oldImagePath && Storage::disk('s3')->exists($oldImagePath)) {
+            // Upload new image and delete old one
+            if (Storage::disk('s3')->exists($oldImagePath)) {
                 Storage::disk('s3')->delete($oldImagePath);
             }
+
             $image = $request->file('franchise_image');
             Storage::disk('s3')->put($newImagePath, file_get_contents($image));
             $validated['franchise_image'] = Storage::disk('s3')->url($newImagePath);
+
         } else {
-            // If only the name changed and there is an image, move the file in S3 and update the URL
-            if (
-                $slugName !== $oldSlugName &&
-                $oldImagePath &&
-                Storage::disk('s3')->exists($oldImagePath)
-            ) {
-                // Move the file (rename) in S3
-                Storage::disk('s3')->move($oldImagePath, $newImagePath);
-                $validated['franchise_image'] = Storage::disk('s3')->url($newImagePath);
-            } elseif ($slugName !== $oldSlugName && $franchise->franchise_image) {
-                // If the URL changed but the old file doesn't exist (rare case), just update the URL
-                $validated['franchise_image'] = Storage::disk('s3')->url($newImagePath);
-            } elseif (!$franchise->franchise_image) {
-                $validated['franchise_image'] = null;
-            } else {
-                $validated['franchise_image'] = $franchise->franchise_image;
+            // Only the name changed → rename the existing file in S3
+            if ($slugName !== $oldSlugName && Storage::disk('s3')->exists($oldImagePath)) {
+                // Copy to the new path and delete the old one
+                Storage::disk('s3')->put($newImagePath, Storage::disk('s3')->get($oldImagePath));
+                Storage::disk('s3')->delete($oldImagePath);
             }
+
+            // Update the URL to the new path even if the file is the same
+            $validated['franchise_image'] = Storage::disk('s3')->url($newImagePath);
         }
 
         $franchise->update($validated);
@@ -128,6 +121,7 @@ class FranchisesController extends Controller
         return redirect()->route('dashboard.franchises.show', $franchise->id)
             ->with('success', 'Franchise updated successfully.');
     }
+
 
     public function destroy(Franchise $franchise)
     {
