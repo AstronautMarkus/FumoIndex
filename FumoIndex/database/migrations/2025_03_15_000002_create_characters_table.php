@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('slug_name', 45)->unique();
             $table->text('character_description')->nullable();
             $table->string('description_source', 100)->nullable();
-            $table->string('character_image', 45);
+            $table->string('character_image', 2048);
             $table->foreignId('franchise_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
