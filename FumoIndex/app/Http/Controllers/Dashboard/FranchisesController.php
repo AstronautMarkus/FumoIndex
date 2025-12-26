@@ -48,35 +48,20 @@ class FranchisesController extends Controller
     {
         $validated = $request->validate([
             'franchise_name' => 'required|string|max:255',
-            'franchise_image' => 'nullable|image|max:2048',
+            'franchise_image' => 'nullable|image|mimes:png|max:2048',
         ]);
 
         $slugName = Str::slug($validated['franchise_name'], '_');
+        $imagePath = "images/franchises/{$slugName}.png";
+        $validated['slug_name'] = $slugName;
 
         if ($request->hasFile('franchise_image')) {
-            try {
-                $image = $request->file('franchise_image');
-                $extension = $image->getClientOriginalExtension();
-                $filename = "{$slugName}.{$extension}";
-                $path = "images/franchises/{$filename}";
-                $stored = Storage::disk('s3')->put($path, file_get_contents($image));
-                if (!$stored) {
-                    return back()->withErrors([
-                        'franchise_image' => 'Failed to upload image to S3.'
-                    ]);
-                }
-                $validated['franchise_image'] = Storage::disk('s3')->url($path);
-            } catch (\Exception $e) {
-                return back()->withErrors([
-                    'franchise_image' => 'Failed to upload image to S3: ' . $e->getMessage()
-                ]);
-            }
+            $image = $request->file('franchise_image');
+            Storage::disk('s3')->put($imagePath, file_get_contents($image));
+            $validated['franchise_image'] = Storage::disk('s3')->url($imagePath);
         } else {
-            $validated['franchise_image'] = Storage::disk('s3')
-                ->url('images/franchises/default.png');
+            $validated['franchise_image'] = null;
         }
-
-        $validated['slug_name'] = $slugName;
 
         $franchise = Franchise::create($validated);
 
@@ -99,65 +84,44 @@ class FranchisesController extends Controller
     {
         $validated = $request->validate([
             'franchise_name' => 'required|string|max:255',
-            'franchise_image' => 'nullable|image|max:2048',
+            'franchise_image' => 'nullable|image|mimes:png|max:2048',
         ]);
 
         $oldSlugName = $franchise->slug_name;
         $slugName = Str::slug($validated['franchise_name'], '_');
-        $defaultUrl = Storage::disk('s3')->url('images/franchises/default.png');
-        $oldImageUrl = $franchise->franchise_image;
+        $oldImagePath = $franchise->franchise_image
+            ? ltrim(parse_url($franchise->franchise_image, PHP_URL_PATH), '/')
+            : null;
+        $newImagePath = "images/franchises/{$slugName}.png";
+        $validated['slug_name'] = $slugName;
 
         if ($request->hasFile('franchise_image')) {
-            try {
-                if ($oldImageUrl && $oldImageUrl !== $defaultUrl) {
-                    $oldPath = parse_url($oldImageUrl, PHP_URL_PATH);
-                    $oldPath = ltrim($oldPath, '/');
-                    if (Storage::disk('s3')->exists($oldPath)) {
-                        Storage::disk('s3')->delete($oldPath);
-                    }
-                }
-
-                $image = $request->file('franchise_image');
-                $extension = $image->getClientOriginalExtension();
-                $filename = "{$slugName}.{$extension}";
-                $path = "images/franchises/{$filename}";
-                $stored = Storage::disk('s3')->put($path, file_get_contents($image));
-                if (!$stored) {
-                    return back()->withErrors([
-                        'franchise_image' => 'Failed to upload image to S3.'
-                    ]);
-                }
-                $validated['franchise_image'] = Storage::disk('s3')->url($path);
-            } catch (\Exception $e) {
-                return back()->withErrors([
-                    'franchise_image' => 'Failed to upload image to S3: ' . $e->getMessage()
-                ]);
+            // If a new image is uploaded, delete the old one and upload the new one
+            if ($oldImagePath && Storage::disk('s3')->exists($oldImagePath)) {
+                Storage::disk('s3')->delete($oldImagePath);
             }
+            $image = $request->file('franchise_image');
+            Storage::disk('s3')->put($newImagePath, file_get_contents($image));
+            $validated['franchise_image'] = Storage::disk('s3')->url($newImagePath);
         } else {
-            // If the slug name has changed, rename the existing image file in S3
-            if ($slugName !== $oldSlugName && $oldImageUrl && $oldImageUrl !== $defaultUrl) {
-                $oldPath = parse_url($oldImageUrl, PHP_URL_PATH);
-                $oldPath = ltrim($oldPath, '/');
-                $extension = pathinfo($oldPath, PATHINFO_EXTENSION);
-                $newFilename = "{$slugName}.{$extension}";
-                $newPath = "images/franchises/{$newFilename}";
-
-                if (Storage::disk('s3')->exists($oldPath)) {
-                    Storage::disk('s3')->copy($oldPath, $newPath);
-                    Storage::disk('s3')->delete($oldPath);
-
-                    // Reconstruct the new URL
-                    $parsed = parse_url($oldImageUrl);
-                    $scheme = $parsed['scheme'] ?? 'https';
-                    $host = $parsed['host'] ?? '';
-                    $newUrl = "{$scheme}://{$host}/{$newPath}";
-                    $validated['franchise_image'] = $newUrl;
-                }
+            // If only the name changed and there is an image, move the file in S3 and update the URL
+            if (
+                $slugName !== $oldSlugName &&
+                $oldImagePath &&
+                Storage::disk('s3')->exists($oldImagePath)
+            ) {
+                // Move the file (rename) in S3
+                Storage::disk('s3')->move($oldImagePath, $newImagePath);
+                $validated['franchise_image'] = Storage::disk('s3')->url($newImagePath);
+            } elseif ($slugName !== $oldSlugName && $franchise->franchise_image) {
+                // If the URL changed but the old file doesn't exist (rare case), just update the URL
+                $validated['franchise_image'] = Storage::disk('s3')->url($newImagePath);
+            } elseif (!$franchise->franchise_image) {
+                $validated['franchise_image'] = null;
+            } else {
+                $validated['franchise_image'] = $franchise->franchise_image;
             }
-           
         }
-
-        $validated['slug_name'] = $slugName;
 
         $franchise->update($validated);
 
