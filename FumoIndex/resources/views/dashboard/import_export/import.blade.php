@@ -81,6 +81,7 @@ function validateCharactersJson(json) {
         let itemErrors = [];
         if (!item.name || typeof item.name !== 'string') itemErrors.push(`'name' is required`);
         if (!item.franchise_slug || typeof item.franchise_slug !== 'string') itemErrors.push(`'franchise_slug' is required`);
+        if (!item.character_image || typeof item.character_image !== 'string') itemErrors.push(`'character_image' is required and must be a string`);
         // If required fields are missing, mark as error
         if (itemErrors.length > 0) {
             errors.push(`Item #${idx+1}${item.name ? ` (${item.name})` : ''}: ${itemErrors.join(', ')}`);
@@ -95,7 +96,7 @@ function validateCharactersJson(json) {
             itemWarnings.push('Missing or empty description_source');
         }
         // Extra keys warning
-        const allowed = ['name','franchise_slug','description','description_source'];
+        const allowed = ['name','franchise_slug','character_image','description','description_source'];
         Object.keys(item).forEach(key => {
             if (!allowed.includes(key)) {
                 itemWarnings.push(`Extra key '${key}'`);
@@ -131,12 +132,19 @@ function validateFranchisesJson(json) {
             return;
         }
         const keys = Object.keys(item);
+        let itemErrors = [];
         if (!('franchise_name' in item) || typeof item.franchise_name !== 'string' || !item.franchise_name) {
-            errors.push(`Item #${idx+1}${item.franchise_name ? ` (${item.franchise_name})` : ''}: 'franchise_name' is required`);
+            itemErrors.push(`'franchise_name' is required`);
+        }
+        if (!('franchise_image' in item) || typeof item.franchise_image !== 'string' || !item.franchise_image) {
+            itemErrors.push(`'franchise_image' is required and must be a string`);
+        }
+        if (itemErrors.length > 0) {
+            errors.push(`Item #${idx+1}${item.franchise_name ? ` (${item.franchise_name})` : ''}: ${itemErrors.join(', ')}`);
             return;
         }
-        if (keys.length !== 1 || keys[0] !== 'franchise_name') {
-            errors.push(`Item #${idx+1} (${item.franchise_name}): must have only 'franchise_name' key`);
+        if (keys.length !== 2 || !keys.includes('franchise_name') || !keys.includes('franchise_image')) {
+            errors.push(`Item #${idx+1} (${item.franchise_name}): must have only 'franchise_name' and 'franchise_image' keys`);
         }
     });
     let status = errors.length > 0 ? 'error' : 'success';
