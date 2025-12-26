@@ -11,10 +11,6 @@ class DatabaseSeeder extends Seeder
 
     public function run(): void
     {
-        $this->call([
-            FranchiseSeeder::class,
-            FumoTypeSeeder::class,
-            CharacterSeeder::class,
-        ]);
+
     }
 }
