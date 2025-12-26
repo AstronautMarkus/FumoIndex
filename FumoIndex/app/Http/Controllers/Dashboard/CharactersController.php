@@ -8,6 +8,7 @@ use App\Models\Character;
 use App\Models\Fumo;
 use App\Models\Franchise;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class CharactersController extends Controller
 {
@@ -48,7 +49,7 @@ class CharactersController extends Controller
         $validated = $request->validate([
             'character_name' => 'required|string|max:255',
             'franchise_id' => 'required|exists:franchises,id',
-            'character_image' => 'nullable|image|max:2048',
+            'character_image' => 'nullable|image|mimes:png|max:2048',
             'character_description' => 'nullable|string',
             'description_source' => 'nullable|url|max:255',
         ]);
@@ -56,21 +57,16 @@ class CharactersController extends Controller
         $franchise = Franchise::findOrFail($validated['franchise_id']);
         $franchiseSlug = Str::slug($franchise->franchise_name, '_');
         $slugName = Str::slug($validated['character_name'], '_');
+        $imagePath = "images/characters/{$franchiseSlug}/{$slugName}.png";
+        $validated['slug_name'] = $slugName;
 
         if ($request->hasFile('character_image')) {
             $image = $request->file('character_image');
-            $filename = $slugName . '.' . $image->getClientOriginalExtension();
-            $directory = public_path("assets/characters/{$franchiseSlug}");
-            if (!file_exists($directory)) {
-                mkdir($directory, 0755, true);
-            }
-            $image->move($directory, $filename);
-            $validated['character_image'] = "{$franchiseSlug}/{$filename}";
+            Storage::disk('s3')->put($imagePath, file_get_contents($image));
+            $validated['character_image'] = Storage::disk('s3')->url($imagePath);
         } else {
-            $validated['character_image'] = "{$franchiseSlug}/default.png";
+            $validated['character_image'] = null;
         }
-
-        $validated['slug_name'] = $slugName;
 
         $character = Character::create($validated);
 
@@ -95,7 +91,7 @@ class CharactersController extends Controller
         $validated = $request->validate([
             'character_name' => 'required|string|max:255',
             'franchise_id' => 'required|exists:franchises,id',
-            'character_image' => 'nullable|image|max:2048',
+            'character_image' => 'nullable|image|mimes:png|max:2048',
             'character_description' => 'nullable|string',
             'description_source' => 'nullable|url|max:255',
         ]);
@@ -103,21 +99,31 @@ class CharactersController extends Controller
         $franchise = Franchise::findOrFail($validated['franchise_id']);
         $franchiseSlug = Str::slug($franchise->franchise_name, '_');
         $slugName = Str::slug($validated['character_name'], '_');
+        $validated['slug_name'] = $slugName;
+
+        $oldFranchise = $character->franchise;
+        $oldFranchiseSlug = Str::slug($oldFranchise->franchise_name, '_');
+        $oldSlugName = $character->slug_name;
+
+        $oldImagePath = "images/characters/{$oldFranchiseSlug}/{$oldSlugName}.png";
+        $newImagePath = "images/characters/{$franchiseSlug}/{$slugName}.png";
 
         if ($request->hasFile('character_image')) {
-            $image = $request->file('character_image');
-            $filename = $slugName . '.' . $image->getClientOriginalExtension();
-            $directory = public_path("assets/characters/{$franchiseSlug}");
-            if (!file_exists($directory)) {
-                mkdir($directory, 0755, true);
+            // Delete old image if it exists
+            if (Storage::disk('s3')->exists($oldImagePath)) {
+                Storage::disk('s3')->delete($oldImagePath);
             }
-            $image->move($directory, $filename);
-            $validated['character_image'] = "{$franchiseSlug}/{$filename}";
+            $image = $request->file('character_image');
+            Storage::disk('s3')->put($newImagePath, file_get_contents($image));
+            $validated['character_image'] = Storage::disk('s3')->url($newImagePath);
         } else {
-            unset($validated['character_image']);
+            // If the name or franchise changed, rename/move the path in S3
+            if (($franchiseSlug !== $oldFranchiseSlug || $slugName !== $oldSlugName) && Storage::disk('s3')->exists($oldImagePath)) {
+                Storage::disk('s3')->put($newImagePath, Storage::disk('s3')->get($oldImagePath));
+                Storage::disk('s3')->delete($oldImagePath);
+            }
+            $validated['character_image'] = Storage::disk('s3')->url($newImagePath);
         }
-
-        $validated['slug_name'] = $slugName;
 
         $character->update($validated);
 
@@ -127,6 +133,14 @@ class CharactersController extends Controller
 
     public function destroy(Character $character)
     {
+        $oldFranchise = $character->franchise;
+        $oldFranchiseSlug = Str::slug($oldFranchise->franchise_name, '_');
+        $oldSlugName = $character->slug_name;
+        $imagePath = "images/characters/{$oldFranchiseSlug}/{$oldSlugName}.png";
+        if ($character->character_image && Storage::disk('s3')->exists($imagePath)) {
+            Storage::disk('s3')->delete($imagePath);
+        }
+
         $fumoIds = $character->fumos()->pluck('fumos.id');
         if ($fumoIds->count() > 0) {
             Fumo::whereIn('id', $fumoIds)->delete();

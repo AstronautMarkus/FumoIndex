@@ -36,10 +36,17 @@
                 @enderror
             </div>
             <div>
-                <label for="character_image" class="block text-tertiary font-semibold mb-1">Image</label>
+                <label for="character_image" class="block text-tertiary font-semibold mb-1">Image <span class="text-primary">* Only PNG files!</span></label>
                 <div class="relative">
-                    <input id="character_image" type="file" name="character_image" class="input input-bordered w-full pl-10">
+                    <input id="character_image" type="file" name="character_image" class="input input-bordered w-full pl-10" accept="image/png">
                     <i class="fa fa-image absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                </div>
+                <div class="grid grid-cols-2 gap-6 w-full mt-4">
+                    <div class="flex flex-col items-center">
+                        <p class="text-tertiary font-semibold mb-2">Image Preview:</p>
+                        <img src="" alt="New image preview" class="w-36 object-cover pointer-events-none hidden" id="new-image-preview">
+                        <button type="button" id="cancel-image-btn" class="btn btn-primary mt-2 py-4 px-4 hidden">Cancel</button>
+                    </div>
                 </div>
                 @error('character_image')
                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
@@ -73,3 +80,35 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+document.getElementById('character_image').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    const preview = document.getElementById('new-image-preview'); 
+    const cancelBtn = document.getElementById('cancel-image-btn');
+    if (file && file.type === 'image/png') {
+        const reader = new FileReader();
+        reader.onload = function(ev) {
+            preview.src = ev.target.result;
+            preview.classList.remove('hidden');
+            cancelBtn.classList.remove('hidden');
+        };
+        reader.readAsDataURL(file);
+    } else {
+        preview.src = '';
+        preview.classList.add('hidden');
+        cancelBtn.classList.add('hidden');
+    }
+});
+
+document.getElementById('cancel-image-btn').addEventListener('click', function() {
+    const fileInput = document.getElementById('character_image');
+    const preview = document.getElementById('new-image-preview');
+    this.classList.add('hidden');
+    preview.src = '';
+    preview.classList.add('hidden');
+    fileInput.value = '';
+});
+</script>
+@endpush
