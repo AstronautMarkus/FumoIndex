@@ -51,7 +51,7 @@
                         @forelse($characters as $character)
                         <tr class="border-b border-gray-200 hover:bg-gray-50 transition">
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <img src="{{ asset('assets/characters/' . $character->character_image) }}" alt="{{ $character->character_name }}" class="pointer-events-none h-18 object-cover border-2 border-secondary">
+                                <img src="{{ $character->character_image }}" alt="{{ $character->character_name }}" class="pointer-events-none h-18 object-cover border-2 border-secondary">
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap font-semibold text-primary">
                                 <a href="{{ route('dashboard.characters.show', $character->id) }}" class="hover:underline">{{ $character->character_name }}</a>
