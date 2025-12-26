@@ -87,6 +87,21 @@ class ImportExportController extends Controller
             DB::beginTransaction();
             if ($type === 'characters') {
                 foreach ($data as $item) {
+                    // Check required fields
+                    if (
+                        !array_key_exists('description', $item) ||
+                        (!is_null($item['description']) && !is_string($item['description'])) ||
+                        !array_key_exists('description_source', $item) ||
+                        (!is_null($item['description_source']) && !is_string($item['description_source']))
+                    ) {
+                        $results['skipped']++;
+                        $results['skipped_items'][] = [
+                            'name' => $item['name'] ?? '(sin nombre)',
+                            'reason' => 'Campos description o description_source ausentes o inválidos'
+                        ];
+                        continue;
+                    }
+
                     $franchise = Franchise::where('slug_name', $item['franchise_slug'])->first();
                     if (!$franchise) {
                         $results['skipped']++;
