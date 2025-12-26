@@ -14,7 +14,7 @@
             Edit Franchise
         </a>
         <div class="w-56 md:w-64 flex items-center justify-center overflow-hidden mr-0 md:mr-12 mb-4 md:mb-0">
-            <img src="{{ asset('assets/franchises/' . $franchise->franchise_image) }}" alt="{{ $franchise->franchise_name }}" class="w-full h-full object-cover pointer-events-none" />
+            <img src="{{ $franchise->franchise_image }}" alt="{{ $franchise->franchise_name }}" class="w-full h-full object-cover pointer-events-none" />
         </div>
         <div class="flex flex-col flex-1 items-center md:items-start w-full">
             <h1 class="text-3xl md:text-5xl font-bold mb-2 text-center md:text-left text-primary">{{ $franchise->franchise_name }}</h1>

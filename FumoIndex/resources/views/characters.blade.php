@@ -19,7 +19,7 @@
                             <a href="{{ route('characters.list', ['franchise' => $franchise->slug_name]) }}" class="group cursor-pointer">
                                 <div class="relative bg-white rounded-2xl shadow-lg border-4 border-gray-300 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-red-500 flex flex-col items-center">
                                     <div class="w-full flex items-center justify-center p-2 bg-gray-100" style="aspect-ratio: 3/1;">
-                                        <img src="{{ asset('assets/franchises/' . $franchise->franchise_image) }}" alt="{{ $franchise->franchise_name }}" class="max-h-full max-w-full object-contain rounded-xl pointer-events-none" />
+                                        <img src="{{ $franchise->franchise_image }}" alt="{{ $franchise->franchise_name }}" class="max-h-full max-w-full object-contain rounded-xl pointer-events-none" />
                                     </div>
                                     <div class="relative -mt-2 mx-2 mb-2 w-full">
                                         <div class="bg-black text-white text-xs font-bold py-2 px-3 rounded-lg text-center relative overflow-hidden">
@@ -46,7 +46,7 @@
             @else
                 <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 relative mt-10 mb-10">
                     <div class="flex items-center mb-8 justify-center">
-                        <img src="{{ asset('assets/franchises/' . $selectedFranchise->franchise_image) }}" alt="{{ $selectedFranchise->franchise_name }}" class="w-64 object-cover mr-2 pointer-events-none" />
+                        <img src="{{ $selectedFranchise->franchise_image }}" alt="{{ $selectedFranchise->franchise_name }}" class="w-64 object-cover mr-2 pointer-events-none" />
                         <span class="ml-2 text-xl font-bold text-tertiary">({{ $selectedFranchise->franchise_name }})</span>
                     </div>
                     <div class="mb-6 text-center">

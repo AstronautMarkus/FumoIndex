@@ -20,9 +20,22 @@ class FranchisesController extends Controller
             $query->where('franchise_name', 'like', '%' . $search . '%');
         }
 
-        $franchises = $query->orderBy('franchise_name')->paginate(10)->withQueryString();
+        $franchises = $query->with(['characters.fumos'])->orderBy('franchise_name')->paginate(10)->withQueryString();
 
-        return view('dashboard.franchises', compact('franchises'));
+        // Precompute hasFumos for each franchise
+        $franchisesHasFumos = [];
+        foreach ($franchises as $franchise) {
+            $hasFumos = false;
+            foreach ($franchise->characters as $character) {
+                if ($character->fumos && $character->fumos->count() > 0) {
+                    $hasFumos = true;
+                    break;
+                }
+            }
+            $franchisesHasFumos[$franchise->id] = $hasFumos;
+        }
+
+        return view('dashboard.franchises', compact('franchises', 'franchisesHasFumos'));
     }
 
     public function create()

@@ -38,7 +38,7 @@
                         @forelse($franchises as $franchise)
                         <tr class="border-b border-gray-200 hover:bg-gray-50 transition">
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <img src="{{ asset('assets/franchises/' . $franchise->franchise_image) }}" alt="{{ $franchise->franchise_name }}" class="pointer-events-none w-36 object-cover">
+                                <img src="{{ $franchise->franchise_image }}" alt="{{ $franchise->franchise_name }}" class="pointer-events-none w-36 object-cover">
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap font-semibold text-primary">
                                 <a href="{{ route('dashboard.franchises.show', $franchise->id) }}" class="hover:underline">{{ $franchise->franchise_name }}</a>
@@ -53,20 +53,10 @@
                                 <a href="{{ route('dashboard.franchises.edit', $franchise->id) }}" class="inline-block text-blue-500 hover:text-blue-700 mr-3" title="Edit">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
-                                @php
-                                    // Calcular si la franquicia tiene fumos asociados a sus personajes
-                                    $hasFumos = false;
-                                    foreach ($franchise->characters as $character) {
-                                        if ($character->fumos && $character->fumos->count() > 0) {
-                                            $hasFumos = true;
-                                            break;
-                                        }
-                                    }
-                                @endphp
                                 <button type="button"
                                     class="text-red-500 hover:text-red-700 cursor-pointer"
                                     title="Delete"
-                                    onclick="showDeleteFranchiseModal({{ $franchise->id }}, '{{ addslashes($franchise->franchise_name) }}', {{ $franchise->characters->count() }}, {{ $hasFumos ? 'true' : 'false' }})"
+                                    onclick="showDeleteFranchiseModal({{ $franchise->id }}, '{{ addslashes($franchise->franchise_name) }}', {{ $franchise->characters->count() }}, {{ $franchisesHasFumos[$franchise->id] ? 'true' : 'false' }})"
                                 >
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
