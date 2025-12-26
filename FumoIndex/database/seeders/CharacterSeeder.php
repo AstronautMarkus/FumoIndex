@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class CharacterSeeder extends Seeder
 {
@@ -24,10 +25,11 @@ class CharacterSeeder extends Seeder
 
             $franchiseSlug = $franchise->slug_name;
             $characterSlug = Str::slug($character['name'], '_');
+            $imagePath = "images/characters/{$franchiseSlug}/{$characterSlug}.png";
 
             DB::table('characters')->insert([
                 'character_name' => $character['name'],
-                'character_image' => "https://s3.us-east-2.amazonaws.com/thefumoindex/images/characters/$franchiseSlug/$characterSlug.png",
+                'character_image' => Storage::disk('s3')->url($imagePath),
                 'character_description' => $character['description'] ?? null,
                 'description_source' => $character['description_source'] ?? null,
                 'slug_name' => $characterSlug,

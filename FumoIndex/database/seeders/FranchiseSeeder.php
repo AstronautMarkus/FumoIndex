@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class FranchiseSeeder extends Seeder
 {
@@ -16,7 +17,8 @@ class FranchiseSeeder extends Seeder
 
         foreach ($franchises as &$franchise) {
             $franchiseSlug = Str::slug($franchise['franchise_name'], '_');
-            $franchise['franchise_image'] = "https://thefumoindex.s3.us-east-2.amazonaws.com/images/franchises/$franchiseSlug.png";
+            $imagePath = "images/franchises/{$franchiseSlug}.png";
+            $franchise['franchise_image'] = Storage::disk('s3')->url($imagePath);
             $franchise['slug_name'] = $franchiseSlug;
             $franchise['created_at'] = now();
             $franchise['updated_at'] = now();
