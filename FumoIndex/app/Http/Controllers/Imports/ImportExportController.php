@@ -44,6 +44,22 @@ class ImportExportController extends Controller
                 'Content-Type' => 'application/json',
                 'Content-Disposition' => 'attachment; filename="characters.json"',
             ]);
+        } 
+        elseif ($type === 'franchises') {
+            $franchises = Franchise::all()->map(function ($franchise) {
+                return [
+                    'franchise_name' => $franchise->franchise_name,
+                    'franchise_image' => $franchise->franchise_image,
+                    'slug_name' => $franchise->slug_name,
+                ];
+            });
+
+            $json = $franchises->toJson(JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+
+            return response($json, 200, [
+                'Content-Type' => 'application/json',
+                'Content-Disposition' => 'attachment; filename="franchises.json"',
+            ]);
         }
 
         abort(404);

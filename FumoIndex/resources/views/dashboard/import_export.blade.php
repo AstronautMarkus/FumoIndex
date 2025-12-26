@@ -46,8 +46,13 @@
                     </div>
                     <div class="text-2xl font-bold text-primary mb-2">Export Data</div>
                     <div class="text-md text-tertiary text-center mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa.
+                        You can export your Fumo Index data in bulk as a <strong>JSON</strong> file. This allows you to back up your data or transfer it to another instance of Fumo Index.
                     </div>
+                    <ul class="text-sm text-gray-600 mb-4 list-disc list-inside text-left w-full">
+                        <span class="font-semibold text-primary">Export Type List:</span>
+                        <li>Characters</li>
+                        <li>Franchises</li>
+                    </ul>
                     <div class="relative w-full mt-auto flex flex-col items-center">
                         <button type="button" class="btn btn-primary text-white px-4 py-2 shadow dropdown-toggle-export w-full flex justify-center items-center">
                             Export Data

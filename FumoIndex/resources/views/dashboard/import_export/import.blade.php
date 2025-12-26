@@ -7,6 +7,7 @@
     <div class="max-w-4xl mx-auto px-4 w-full">
         <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 mt-10 mb-10">
             <h2 class="text-3xl font-bold mb-6 text-center text-primary">Import Data</h2>
+            <h3 class="text-xl font-semibold mb-8 text-center text-tertiary">@if ($type === 'characters') Import Characters List to Database @elseif ($type === 'franchises') Import Franchises List to Database @else Import Data @endif</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
                 <div class="flex flex-col items-center">
@@ -139,12 +140,15 @@ function validateFranchisesJson(json) {
         if (!('franchise_image' in item) || typeof item.franchise_image !== 'string' || !item.franchise_image) {
             itemErrors.push(`'franchise_image' is required and must be a string`);
         }
+        if (!('slug_name' in item) || typeof item.slug_name !== 'string' || !item.slug_name) {
+            itemErrors.push(`'slug_name' is required and must be a string`);
+        }
         if (itemErrors.length > 0) {
             errors.push(`Item #${idx+1}${item.franchise_name ? ` (${item.franchise_name})` : ''}: ${itemErrors.join(', ')}`);
             return;
         }
-        if (keys.length !== 2 || !keys.includes('franchise_name') || !keys.includes('franchise_image')) {
-            errors.push(`Item #${idx+1} (${item.franchise_name}): must have only 'franchise_name' and 'franchise_image' keys`);
+        if (keys.length !== 3 || !keys.includes('franchise_name') || !keys.includes('franchise_image') || !keys.includes('slug_name')) {
+            errors.push(`Item #${idx+1} (${item.franchise_name}): must have only 'franchise_name', 'franchise_image', and 'slug_name' keys`);
         }
     });
     let status = errors.length > 0 ? 'error' : 'success';
