@@ -172,13 +172,11 @@ class ImportExportController extends Controller
             foreach ($results['skipped_items'] as $skipped) {
                 $message .= "- {$skipped['name']}: {$skipped['reason']}\n";
             }
-            // Only show the special modal if everything was skipped
-            if ($results['imported'] === 0 && $results['updated'] === 0) {
-                return redirect()->back()->with('alert_modal', $message);
-            }
+            // Shows modal if there were skipped items
+            return redirect()->back()->with('alert_modal', $message);
         }
 
-        // If there are any imported or updated, show normal success
+        // If not skipped items, show normal success message
         return redirect()->back()->with('success', str_replace("\n", ' ', $message));
     }
 }
