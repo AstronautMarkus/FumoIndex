@@ -13,14 +13,16 @@ return new class extends Migration
     {
         Schema::create('fumos', function (Blueprint $table) {
             $table->id();
+            $table->string('gift_code', 50)->unique();
+            $table->string('version', 10);
             $table->string('fumo_name', 45);
+            $table->string('official_url', 255)->nullable();
+            $table->string('notes', 255)->nullable();
+            $table->foreignId('character_id')->constrained('characters')->onDelete('cascade');
             $table->foreignId('type_id')->constrained('fumo_types')->onDelete('cascade');
-            $table->integer('price_jpy');
-            $table->text('notes')->nullable();
-            $table->text('product_url')->nullable();
             $table->timestamps();
         });
-    }    
+    }
 
     /**
      * Reverse the migrations.

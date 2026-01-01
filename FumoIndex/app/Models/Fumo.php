@@ -10,13 +10,13 @@ class Fumo extends Model
     use HasFactory;
 
     protected $fillable = [
-        'fumo_name', 
-        'character_id', 
-        'type_id', 
-        'franchise_id', 
-        'price_jpy', 
-        'notes', 
-        'product_url'
+        'gift_code',
+        'version',
+        'fumo_name',
+        'official_url',
+        'notes',
+        'character_id',
+        'type_id'
     ];
 
     public function character()
@@ -24,15 +24,11 @@ class Fumo extends Model
         return $this->belongsToMany(Character::class, 'fumo_character', 'fumo_id', 'character_id');
     }
 
-    public function fumoType()
+    public function type()
     {
         return $this->belongsTo(FumoType::class, 'type_id');
     }
 
-    public function releases()
-    {
-        return $this->hasMany(Releases::class, 'fumo_id');
-    }
 
 
 
