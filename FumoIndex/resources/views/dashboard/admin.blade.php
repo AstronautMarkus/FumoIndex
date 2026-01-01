@@ -39,22 +39,30 @@
                 </a>
 
                 <a href="{{ route('dashboard.franchises.index') }}" class="group cursor-pointer relative bg-white rounded-2xl shadow-lg border-4 border-gray-300 overflow-hidden flex flex-col items-center p-6 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-red-500">
-                    <div class="w-16 h-16 flex items-center justify-center bg-gray-100 rounded-full mb-4">
-                        <i class="fa-solid fa-cubes text-3xl text-blue-500"></i>
-                    </div>
+                    @if($random_franchise)
+                        <div class="w-16 h-16 flex items-center justify-center bg-gray-100 mb-4 border-2 border-gray-300 overflow-hidden">
+                            <img src="{{ $random_franchise->franchise_image }}" alt="{{ $random_franchise->franchise_name }}" class="max-w-full max-h-full object-contain pointer-events-none" />
+                        </div>
+                    @else
+                        <div class="w-16 h-16 flex items-center justify-center bg-gray-100 rounded-full mb-4">
+                            <i class="fa-solid fa-cubes text-3xl text-blue-500"></i>
+                        </div>
+                    @endif
                     <div class="text-4xl font-bold text-primary mb-2">{{ $franchises->count() }}</div>
                     <div class="text-lg font-semibold text-tertiary">Franchises</div>
                     <div class="absolute inset-0 bg-gradient-to-t from-red-500/30 to-red-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                 </a>
 
                 <a href="{{ route('dashboard.characters.index') }}" class="group cursor-pointer relative bg-white rounded-2xl shadow-lg border-4 border-gray-300 overflow-hidden flex flex-col items-center p-6 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-red-500">
-                    <div class="w-16 h-16 flex items-center justify-center bg-gray-100 mb-4 border-2 border-gray-300">
-                        @if ($random_character)
+                    @if($random_character)    
+                        <div class="w-16 h-16 flex items-center justify-center bg-gray-100 mb-4 border-2 border-gray-300">
                             <img src="{{ $random_character->character_image }}" alt="{{ $random_character->character_name }}" class="w-full h-full object-cover pointer-events-none" />
-                        @else
-                            <i class="fa-solid fa-user-astronaut text-3xl text-green-700"></i>
-                        @endif
-                    </div>
+                        </div>
+                    @else
+                        <div class="w-16 h-16 flex items-center justify-center bg-gray-100 rounded-full mb-4">
+                            <i class="fa-solid fa-person text-3xl text-green-500"></i>
+                        </div>
+                    @endif
                     <div class="text-4xl font-bold text-primary mb-2">{{ $characters->count() }}</div>
                     <div class="text-lg font-semibold text-tertiary">Characters</div>
                     <div class="absolute inset-0 bg-gradient-to-t from-red-500/30 to-red-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>

@@ -26,13 +26,21 @@ public function index()
             $franchises = Franchise::get();
             $characters = Character::get();
             $touhouFranchise = Franchise::where('franchise_name', 'Touhou Project')->first();
+
             $random_character = null;
+            $random_franchise = null;
+            $random_fumo_type = null;
+            $random_fumo = null;
             
             if ($touhouFranchise) {
                 $random_character = Character::inRandomOrder()->where('franchise_id', $touhouFranchise->id)->first();
             }
 
-            return view('dashboard.admin', compact('users', 'fumos', 'fumo_types', 'franchises', 'characters', 'random_character'));
+            if ($franchises) {
+                $random_franchise = $franchises->random();
+            }
+
+            return view('dashboard.admin', compact('users', 'fumos', 'fumo_types', 'franchises', 'characters', 'random_character', 'random_franchise', 'random_fumo_type', 'random_fumo'));
         } else {
             return view('dashboard.user');
         }
