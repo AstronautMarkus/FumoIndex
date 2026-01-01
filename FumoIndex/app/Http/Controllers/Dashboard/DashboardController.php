@@ -36,7 +36,7 @@ public function index()
                 $random_character = Character::inRandomOrder()->where('franchise_id', $touhouFranchise->id)->first();
             }
 
-            if ($franchises) {
+            if ($franchises->count() > 0) {
                 $random_franchise = $franchises->random();
             }
 
