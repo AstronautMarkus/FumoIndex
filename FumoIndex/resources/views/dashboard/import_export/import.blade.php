@@ -3,6 +3,70 @@
 @section('title', 'Import Data')
 
 @section('content')
+
+@if (session('alert_modal'))
+<div id="skippedModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 opacity-100 transition-opacity duration-300" style="pointer-events: auto;">
+    <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 max-w-2xl w-full relative flex flex-col">
+        <button id="closeSkippedModal" class="absolute top-4 right-4 text-primary hover:text-primary-light text-2xl focus:outline-none cursor-pointer" aria-label="Close">
+            <i class="fa fa-times"></i>
+        </button>
+        <h3 class="text-2xl font-bold mb-4 text-primary text-center">Import Skipped Items</h3>
+        <p class="text-gray-700 mb-4 text-base leading-relaxed text-center">
+            Some items were <span class="font-semibold text-red-500">skipped</span> during import.<br>
+            Please review the details below to fix any issues and try again.
+        </p>
+        <div class="overflow-y-auto max-h-64 border border-gray-200 rounded-lg bg-gray-50 p-3 mb-2">
+            <pre class="whitespace-pre-wrap text-xs text-gray-800">{{ session('alert_modal') }}</pre>
+        </div>
+        <p class="text-gray-800 text-xs mt-2 text-center font-medium">
+            If you're importing characters, first check if the <a href="{{ route('dashboard.franchises.index') }}" class="text-blue-500 hover:underline">referenced franchises</a> exist in the database, the slug in the JSON must match exactly as the franchise, for example: <strong>Touhou Project</strong> = <code class="bg-gray-200 px-1 rounded">touhou_project</code>.
+        </p>
+        <button id="closeSkippedModalBtn" class="mt-6 btn btn-primary w-full p-3 text-lg">
+            Got it!
+        </button>
+    </div>
+</div>
+<script>
+let skippedModal = document.getElementById('skippedModal');
+let isSkippedModalAnimating = false;
+
+function showSkippedModal() {
+    if (isSkippedModalAnimating) return;
+    isSkippedModalAnimating = true;
+    skippedModal.classList.remove('hidden');
+    setTimeout(() => {
+        skippedModal.classList.add('opacity-100');
+        skippedModal.classList.remove('opacity-0');
+        skippedModal.style.pointerEvents = 'auto';
+    }, 10);
+    setTimeout(() => {
+        isSkippedModalAnimating = false;
+    }, 300);
+}
+
+function hideSkippedModal() {
+    if (isSkippedModalAnimating) return;
+    isSkippedModalAnimating = true;
+    skippedModal.classList.remove('opacity-100');
+    skippedModal.classList.add('opacity-0');
+    skippedModal.style.pointerEvents = 'none';
+    setTimeout(() => {
+        skippedModal.classList.add('hidden');
+        isSkippedModalAnimating = false;
+    }, 300);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Start with modal visible (opacity-100), but allow closing
+    document.getElementById('closeSkippedModal').onclick = hideSkippedModal;
+    document.getElementById('closeSkippedModalBtn').onclick = hideSkippedModal;
+    skippedModal.onclick = function(e) {
+        if (e.target === this) hideSkippedModal();
+    };
+});
+</script>
+@endif
+
 <div class="flex flex-col items-center justify-center min-h-[60vh]">
     <div class="max-w-4xl mx-auto px-4 w-full">
         <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 mt-10 mb-10">
@@ -18,7 +82,6 @@
                     <p class="text-sm text-tertiary text-center">
                         Only properly formatted JSON files are accepted.
                     </p>
-                    <!-- Formulario oculto para submit -->
                     <form id="importForm" action="{{ route('dashboard.import_export.import_data', ['type' => $type]) }}" method="POST" enctype="multipart/form-data" style="display:none;">
                         @csrf
                         <input type="file" name="import_file" id="hiddenJsonFile" accept=".json" />
@@ -102,7 +165,7 @@ function validateCharactersJson(json) {
             itemWarnings.push('Missing or empty description_source');
         }
         // Extra keys warning
-        const allowed = ['name','franchise_slug','character_image','description','description_source'];
+        const allowed = ['name','franchise_slug','character_image','description','description_source','slug_name'];
         Object.keys(item).forEach(key => {
             if (!allowed.includes(key)) {
                 itemWarnings.push(`Extra key '${key}'`);
@@ -299,8 +362,6 @@ document.getElementById('jsonFile').addEventListener('change', function(event) {
     };
     reader.readAsText(file);
 });
-
-// Copia el archivo seleccionado al input oculto
 const hiddenInput = document.getElementById('hiddenJsonFile');
 document.getElementById('jsonFile').addEventListener('change', function(event) {
     if (hiddenInput && event.target.files.length > 0) {
@@ -308,7 +369,6 @@ document.getElementById('jsonFile').addEventListener('change', function(event) {
     }
 });
 
-// Manejar el click en Upload para enviar el formulario
 document.getElementById('uploadBtn').addEventListener('click', function() {
     const form = document.getElementById('importForm');
     if (form) {

@@ -96,8 +96,8 @@ class ImportExportController extends Controller
                     ) {
                         $results['skipped']++;
                         $results['skipped_items'][] = [
-                            'name' => $item['name'] ?? '(sin nombre)',
-                            'reason' => 'Campos description o description_source ausentes o inválidos'
+                            'name' => $item['name'] ?? '(no name)',
+                            'reason' => 'description and description_source must be strings or null'
                         ];
                         continue;
                     }
@@ -163,14 +163,22 @@ class ImportExportController extends Controller
             return redirect()->back()->with('error', 'Import failed: ' . $e->getMessage());
         }
 
-        $message = ucfirst($type) . " import summary: Imported: {$results['imported']}, Updated: {$results['updated']}, Skipped: {$results['skipped']}";
+        $message = ucfirst($type) . " import summary:\n";
+        $message .= "Imported: {$results['imported']}\n";
+        $message .= "Updated: {$results['updated']}\n";
+        $message .= "Skipped: {$results['skipped']}\n";
         if ($results['skipped'] > 0) {
-            $message .= ". Skipped items: ";
+            $message .= "\nSkipped items:\n";
             foreach ($results['skipped_items'] as $skipped) {
-                $message .= "[{$skipped['name']}: {$skipped['reason']}] ";
+                $message .= "- {$skipped['name']}: {$skipped['reason']}\n";
+            }
+            // Only show the special modal if everything was skipped
+            if ($results['imported'] === 0 && $results['updated'] === 0) {
+                return redirect()->back()->with('alert_modal', $message);
             }
         }
 
-        return redirect()->back()->with('success', $message);
+        // If there are any imported or updated, show normal success
+        return redirect()->back()->with('success', str_replace("\n", ' ', $message));
     }
 }
