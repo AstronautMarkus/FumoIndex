@@ -14,6 +14,7 @@ use App\Http\Controllers\Dashboard\CharactersController;
 use App\Http\Controllers\Dashboard\FranchisesController;
 
 use App\Http\Controllers\Imports\ImportExportController;
+use App\Http\Controllers\Dashboard\FumoTypesController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/characters', [CharacterController::class, 'index'])->name('characters.list');
@@ -34,6 +35,16 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
     Route::get('/characters/{character}/edit', [CharactersController::class, 'edit'])->name('characters.edit');
     Route::put('/characters/{character}', [CharactersController::class, 'update'])->name('characters.update');
     Route::delete('/characters/{character}', [CharactersController::class, 'destroy'])->name('characters.destroy');
+
+    // CRUD routes for fumo_types
+    
+    Route::get('/fumo-types', [FumoTypesController::class, 'index'])->name('fumo_types.index');
+    Route::get('/fumo-types/create', [FumoTypesController::class, 'create'])->name('fumo_types.create');
+    Route::post('/fumo-types', [FumoTypesController::class, 'store'])->name('fumo_types.store');
+    Route::get('/fumo-types/{fumoType}', [FumoTypesController::class, 'show'])->name('fumo_types.show');
+    Route::get('/fumo-types/{fumoType}/edit', [FumoTypesController::class, 'edit'])->name('fumo_types.edit');
+    Route::put('/fumo-types/{fumoType}', [FumoTypesController::class, 'update'])->name('fumo_types.update');
+    Route::delete('/fumo-types/{fumoType}', [FumoTypesController::class, 'destroy'])->name('fumo_types.destroy');
 
     Route::get('/franchises', [FranchisesController::class, 'index'])->name('franchises.index');
     Route::get('/franchises/create', [FranchisesController::class, 'create'])->name('franchises.create');
