@@ -10,39 +10,46 @@
         <div class="flex-1 flex justify-center">
             <ul id="menu" class="hidden md:flex space-x-8 text-white text-lg flex-col md:flex-row md:items-center absolute md:static top-full left-0 w-full md:w-auto bg-primary md:bg-transparent">
                 <li>
-                    <a  class="block px-4 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold">
-                        Admin Feature 1
+                    <a href="{{ route('dashboard.characters.index') }}" class="block px-4 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold">
+                        Characters
                     </a>
                 </li>
 
                 <li>
-                    <a  class="block px-4 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold">
-                        Admin Feature 2
+                    <a href="{{ route('dashboard.franchises.index') }}" class="block px-4 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold">
+                        Franchises
                     </a>
                 </li>
 
                 <li class="relative">
                     <button type="button" class="flex items-center px-4 py-2 font-bold hover:underline transition duration-300 ease-in-out hover:scale-105 focus:outline-none dropdown-toggle cursor-pointer">
-                        Admin Feature Dropdown
+                        Import Data
                         <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M5.23 7.21a.75.75 0 011.06.02L10 11.293l3.71-4.06a.75.75 0 111.08 1.04l-4.25 4.65a.75.75 0 01-1.08 0l-4.25-4.65a.75.75 0 01.02-1.06z"/></svg>
                     </button>
                     <ul class="dropdown-menu absolute left-0 mt-2 w-48 bg-white shadow-lg hidden z-50 text-gray-900 border border-gray-200">
                         <li>
-                            <a  class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Dropdown Feature 1</a>
+                            <a href="{{ route('dashboard.import_export.import_view', ['type' => 'characters']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Import Characters</a>
                         </li>
                         <li>
-                            <a  class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Dropdown Feature 2</a>
+                            <a href="{{ route('dashboard.import_export.import_view', ['type' => 'franchises']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Import Franchises</a>
                         </li>
                     </ul>
                 </li>
 
-                <li>
-                    <a  class="block px-4 py-2 hover:underline transition duration-300 ease-in-out hover:scale-105 font-bold">
-                        Admin Feature 4
-                    </a>
+                <li class="relative">
+                    <button type="button" class="flex items-center px-4 py-2 font-bold hover:underline transition duration-300 ease-in-out hover:scale-105 focus:outline-none dropdown-toggle cursor-pointer">
+                        Export Data
+                        <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M5.23 7.21a.75.75 0 011.06.02L10 11.293l3.71-4.06a.75.75 0 111.08 1.04l-4.25 4.65a.75.75 0 01-1.08 0l-4.25-4.65a.75.75 0 01.02-1.06z"/></svg>
+                    </button>
+                    <ul class="dropdown-menu absolute left-0 mt-2 w-48 bg-white shadow-lg hidden z-50 text-gray-900 border border-gray-200">
+                        <li>
+                            <a href="{{ route('dashboard.import_export.export_view', ['type' => 'characters']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Export Characters</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('dashboard.import_export.export_view', ['type' => 'franchises']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Export Franchises</a>
+                        </li>
+                    </ul>
                 </li>
-
-
 
                 <li class="relative md:hidden">
                         <button type="button" class="flex items-center px-4 py-2 font-bold hover:underline transition duration-300 ease-in-out hover:scale-105 focus:outline-none dropdown-toggle cursor-pointer text-white w-full">
