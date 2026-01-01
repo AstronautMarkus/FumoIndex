@@ -71,7 +71,17 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="max-w-4xl mx-auto px-4 w-full">
         <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 mt-10 mb-10">
             <h2 class="text-3xl font-bold mb-6 text-center text-primary">Import Data</h2>
-            <h3 class="text-xl font-semibold mb-8 text-center text-tertiary">@if ($type === 'characters') Import Characters List to Database @elseif ($type === 'franchises') Import Franchises List to Database @else Import Data @endif</h3>
+            <h3 class="text-xl font-semibold mb-8 text-center text-tertiary">
+                @if ($type === 'characters')
+                    Import Characters List to Database
+                @elseif ($type === 'franchises')
+                    Import Franchises List to Database
+                @elseif ($type === 'fumo_types')
+                    Import Fumo Types List to Database
+                @else
+                    Import Data
+                @endif
+            </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
                 <div class="flex flex-col items-center">
@@ -135,6 +145,68 @@ Import a JSON file to see its content here...
 <script src="https://cdn.jsdelivr.net/npm/json-formatter-js@2.3.4/dist/json-formatter.umd.min.js"></script>
 <script>
 const importType = @json($type ?? null);
+function validateFumoTypesJson(json) {
+    if (!Array.isArray(json)) return { valid: false, errors: ['Root JSON must be an array.'], warningsByItem: [], count: 0, status: 'error' };
+    let errors = [];
+    let warningsByItem = [];
+    json.forEach((item, idx) => {
+        if (typeof item !== 'object' || Array.isArray(item)) {
+            errors.push(`Item #${idx+1} is not an object.`);
+            return;
+        }
+        const keys = Object.keys(item);
+        let itemErrors = [];
+        if (!('fumo_type' in item) || typeof item.fumo_type !== 'string' || !item.fumo_type) {
+            itemErrors.push(`'fumo_type' is required`);
+        }
+        if (!('slug_name' in item) || typeof item.slug_name !== 'string' || !item.slug_name) {
+            itemErrors.push(`'slug_name' is required and must be a string`);
+        }
+        if (!('type_description' in item) || typeof item.type_description !== 'string' || !item.type_description) {
+            itemErrors.push(`'type_description' is required and must be a string`);
+        }
+        // Optional fields: fumo_type_image (nullable), is_primary (bool), width (nullable int), height (nullable int)
+        if ('fumo_type_image' in item && item.fumo_type_image !== null && typeof item.fumo_type_image !== 'string') {
+            itemErrors.push(`'fumo_type_image' must be a string or null`);
+        }
+        if ('is_primary' in item && typeof item.is_primary !== 'boolean') {
+            itemErrors.push(`'is_primary' must be a boolean`);
+        }
+        if ('width' in item && item.width !== null && typeof item.width !== 'number') {
+            itemErrors.push(`'width' must be a number or null`);
+        }
+        if ('height' in item && item.height !== null && typeof item.height !== 'number') {
+            itemErrors.push(`'height' must be a number or null`);
+        }
+        if (itemErrors.length > 0) {
+            errors.push(`Item #${idx+1}${item.slug_name ? ` (${item.slug_name})` : ''}: ${itemErrors.join(', ')}`);
+            return;
+        }
+        // Extra keys warning
+        const allowed = ['fumo_type','slug_name','type_description','fumo_type_image','is_primary','width','height'];
+        let itemWarnings = [];
+        keys.forEach(key => {
+            if (!allowed.includes(key)) {
+                itemWarnings.push(`Extra key '${key}'`);
+            }
+        });
+        if (itemWarnings.length > 0) {
+            warningsByItem.push({
+                idx: idx+1,
+                name: item.slug_name || '(no slug_name)',
+                warnings: itemWarnings
+            });
+        }
+    });
+    let status = errors.length > 0 ? 'error' : (warningsByItem.length > 0 ? 'warning' : 'success');
+    return {
+        valid: errors.length === 0,
+        errors,
+        warningsByItem,
+        count: json.length,
+        status
+    };
+}
 
 function validateCharactersJson(json) {
     if (!Array.isArray(json)) return { valid: false, errors: ['Root JSON must be an array.'], warnings: [], count: 0, franchises: [], warningsByItem: [] };
@@ -336,6 +408,9 @@ document.getElementById('jsonFile').addEventListener('change', function(event) {
             } else if (importType === 'franchises') {
                 result = validateFranchisesJson(json);
                 stats.textContent = `Franchises found: ${result.count}`;
+            } else if (importType === 'fumo_types') {
+                result = validateFumoTypesJson(json);
+                stats.textContent = `Fumo Types found: ${result.count}`;
             } else {
                 stats.textContent = '';
             }

@@ -36,6 +36,9 @@
                             <li>
                                 <a href="{{ route('dashboard.import_export.import_view', ['type' => 'franchises']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Import Franchises</a>
                             </li>
+                            <li>
+                                <a href="{{ route('dashboard.import_export.import_view', ['type' => 'fumo_types']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Import Fumo Types</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -64,6 +67,9 @@
                             </li>
                             <li>
                                 <a href="{{ route('dashboard.import_export.export_view', ['type' => 'franchises']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Export Franchises</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('dashboard.import_export.export_view', ['type' => 'fumo_types']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Export Fumo Types</a>
                             </li>
                         </ul>
                     </div>

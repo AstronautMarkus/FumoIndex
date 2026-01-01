@@ -63,6 +63,26 @@ class ImportExportController extends Controller
                 'Content-Disposition' => 'attachment; filename="franchises.json"',
             ]);
         }
+        elseif ($type === 'fumo_types') {
+            $fumoTypes = \App\Models\FumoType::all()->map(function ($fumoType) {
+                return [
+                    'fumo_type' => $fumoType->fumo_type,
+                    'slug_name' => $fumoType->slug_name,
+                    'type_description' => $fumoType->type_description,
+                    'fumo_type_image' => $fumoType->fumo_type_image,
+                    'is_primary' => (bool) $fumoType->is_primary,
+                    'width' => $fumoType->width,
+                    'height' => $fumoType->height,
+                ];
+            });
+
+            $json = $fumoTypes->toJson(JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+
+            return response($json, 200, [
+                'Content-Type' => 'application/json',
+                'Content-Disposition' => 'attachment; filename="fumo_types.json"',
+            ]);
+        }
 
         abort(404);
     }
@@ -87,7 +107,7 @@ class ImportExportController extends Controller
             DB::beginTransaction();
             if ($type === 'characters') {
                 foreach ($data as $item) {
-                    // Check required fields
+                    // ...existing code for characters...
                     if (
                         !array_key_exists('description', $item) ||
                         (!is_null($item['description']) && !is_string($item['description'])) ||
@@ -153,7 +173,68 @@ class ImportExportController extends Controller
                         $results['imported']++;
                     }
                 }
-            } 
+            }
+            elseif ($type === 'fumo_types') {
+                foreach ($data as $item) {
+                    // Validate required fields
+                    $requiredFields = ['fumo_type', 'slug_name', 'type_description'];
+                    $missing = [];
+                    foreach ($requiredFields as $field) {
+                        if (!array_key_exists($field, $item) || $item[$field] === null || $item[$field] === '') {
+                            $missing[] = $field;
+                        }
+                    }
+                    if (count($missing) > 0) {
+                        $results['skipped']++;
+                        $results['skipped_items'][] = [
+                            'name' => $item['slug_name'] ?? '(no slug_name)',
+                            'reason' => 'Missing required fields: ' . implode(', ', $missing)
+                        ];
+                        continue;
+                    }
+
+                    // Validate types
+                    if (!is_string($item['fumo_type']) || !is_string($item['slug_name']) || !is_string($item['type_description'])) {
+                        $results['skipped']++;
+                        $results['skipped_items'][] = [
+                            'name' => $item['slug_name'] ?? '(no slug_name)',
+                            'reason' => 'fumo_type, slug_name, and type_description must be strings'
+                        ];
+                        continue;
+                    }
+
+                    // Optional fields
+                    $fumo_type_image = array_key_exists('fumo_type_image', $item) ? $item['fumo_type_image'] : null;
+                    $is_primary = array_key_exists('is_primary', $item) ? (bool)$item['is_primary'] : true;
+                    $width = array_key_exists('width', $item) ? $item['width'] : null;
+                    $height = array_key_exists('height', $item) ? $item['height'] : null;
+
+                    // Find by slug_name
+                    $fumoType = \App\Models\FumoType::where('slug_name', $item['slug_name'])->first();
+                    if ($fumoType) {
+                        $fumoType->update([
+                            'fumo_type' => $item['fumo_type'],
+                            'type_description' => $item['type_description'],
+                            'fumo_type_image' => $fumo_type_image,
+                            'is_primary' => $is_primary,
+                            'width' => $width,
+                            'height' => $height,
+                        ]);
+                        $results['updated']++;
+                    } else {
+                        \App\Models\FumoType::create([
+                            'fumo_type' => $item['fumo_type'],
+                            'slug_name' => $item['slug_name'],
+                            'type_description' => $item['type_description'],
+                            'fumo_type_image' => $fumo_type_image,
+                            'is_primary' => $is_primary,
+                            'width' => $width,
+                            'height' => $height,
+                        ]);
+                        $results['imported']++;
+                    }
+                }
+            }
             else {
                 abort(404);
             }
