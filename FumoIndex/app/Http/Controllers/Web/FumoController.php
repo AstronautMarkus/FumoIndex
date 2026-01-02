@@ -19,6 +19,15 @@ class FumoController extends Controller
     public function show($gift_code)
     {
         $fumo = Fumo::where('gift_code', $gift_code)->firstOrFail();
-        return view('show.fumo', compact('fumo'));
+
+        // Collect unique franchises from fumo's characters
+        $franchises = collect();
+        foreach ($fumo->character as $character) {
+            if ($character->franchise && !$franchises->contains('id', $character->franchise->id)) {
+                $franchises->push($character->franchise);
+            }
+        }
+
+        return view('show.fumo', compact('fumo', 'franchises'));
     }
 }

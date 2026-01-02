@@ -4,64 +4,62 @@
 
 @section('content')
     <div class="flex flex-col items-center justify-center mt-8 mb-6">
+
         <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 w-full max-w-6xl flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start">
-            <div class="w-56 h-56 md:w-64 md:h-64 rounded-full border-4 border-secondary flex items-center justify-center overflow-hidden mr-0 md:mr-12 mb-4 md:mb-0 bg-gradient-to-b from-gray-100 to-gray-300">
-                <img src="{{ $character->character_image }}" alt="{{ $character->character_name }}" class="w-full h-full object-cover pointer-events-none" />
-            </div>
-            <div class="flex flex-col flex-1 items-center md:items-start w-full">
-                <h1 class="text-3xl md:text-5xl font-bold mb-2 text-center md:text-left text-primary">{{ $character->character_name }}</h1>
-                <h2 class="text-xl md:text-3xl mb-4 text-center md:text-left text-tertiary">{{ $franchise->franchise_name }}</h2>
-                <div class="border-2 border-gray-300 rounded p-4 md:p-6 mb-4 w-full max-w-xl bg-white">
-                    <span class="text-xl md:text-2xl font-semibold mb-2 block text-tertiary">Description:</span>
-                    @if($character->character_description)
-                        <p class="text-base md:text-lg text-gray-800">{{ $character->character_description }}</p>
-                    @else
-                        <div class="flex flex-col items-center justify-center">
-                            <p class="text-base md:text-lg text-gray-600 mb-2">No description for this character right now.</p>
-                            <a href="/contribute" class="ml-4 px-3 md:px-4 py-4 btn btn-tertiary">Contribute a description!</a>
-                        </div>
-                    @endif
+
+            <div class="flex-shrink-0 w-full md:w-1/2 flex justify-center items-center mb-6 md:mb-0">
+                <div class="w-[32rem] h-[32rem] rounded-2xl flex items-center justify-center overflow-hidden bg-gradient-to-b from-gray-100 to-gray-300">
+                    <img src="{{ $character->character_image }}" alt="{{ $character->character_name }}" class="w-full h-full object-cover pointer-events-none" />
                 </div>
+            </div>
+
+            <div class="flex flex-col flex-1 w-full md:w-1/2 items-center md:items-start px-0 md:px-8">
+                <h1 class="text-3xl md:text-5xl font-bold mb-2 text-center md:text-left text-primary">{{ $character->character_name }}</h1>
+
+                <h2 class="text-xl md:text-3xl mb-4 text-center md:text-left text-tertiary">
+                    {{ $franchise->franchise_name }}
+                </h2>
+
+                @if($character->character_description)
+                    <p class="text-base md:text-lg mb-6 text-center md:text-left text-gray-800">
+                        {{ $character->character_description }}
+                    </p>
+                @else
+                    <p class="text-base md:text-lg mb-6 text-center md:text-left text-gray-800">
+                        No description for this character right now. Please consider contributing one!
+                    </p>
+                @endif
+
                 @if($character->description_source)
-                    <p class="text-xs md:text-sm text-gray-500 mt-2 text-center md:text-left">Source: <a href="{{ $character->description_source }}" class="text-blue-500 hover:underline">{{ $character->description_source }}</a></p>
-                @endif                    
+                    <p class="text-xs md:text-sm text-gray-500 mt-2 text-center md:text-left">
+                        Source: <a href="{{ $character->description_source }}" class="text-blue-500 hover:underline">{{ $character->description_source }}</a>
+                    </p>
+                @endif
+
+                <h2 class="text-2xl font-semibold mb-4 text-center md:text-left text-tertiary mt-6">Franchise</h2>
+                <div class="w-full mb-8">
+                    <ul class="list-none text-base md:text-lg text-gray-800 space-y-2">
+                        <li class="flex items-center space-x-3">
+                            @if ($franchise->franchise_image)
+                                <img src="{{ $franchise->franchise_image }}" alt="{{ $franchise->franchise_name }}" class="h-10 rounded-full object-cover pointer-events-none" />
+                            @endif
+                            <div>
+                                <span class="font-semibold text-primary">{{ $franchise->franchise_name }}</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </div>
 
-        <div class="w-full flex justify-center mt-8">
-            <a href="{{ route('characters.list') }}" class="px-3 md:px-4 py-4 btn btn-primary">
-                Back to characters list
+        <div class="flex justify-center mb-8 px-4 md:px-0 w-[95%] mt-6">
+            <a href="{{ route('characters.list') }}" class="btn flex items-center justify-center text-nowrap btn-primary text-2xl gap-2 p-3">
+                Back to characters list <i class="fa-solid fa-arrow-left"></i>
             </a>
-
-            <a href="{{ route('characters.list') . '?franchise=' . $franchise->slug_name }}" class="ml-4 px-3 md:px-4 py-4 btn btn-tertiary">
+            <a href="{{ route('characters.list') . '?franchise=' . $franchise->slug_name }}" class="ml-4 btn flex items-center justify-center text-nowrap btn-tertiary text-2xl gap-2 p-3">
                 Back to {{ $franchise->franchise_name }} franchise
             </a>
-        </div>
-
-        <div class="w-full max-w-6xl mt-12">
-            <h3 class="text-2xl font-bold mb-4 text-primary text-center">
-                {{ explode(' ', trim($character->character_name))[0] }}'s Fumos
-            </h3>
-
-            @forelse($character->fumos as $fumo)
-                <div class="flex flex-wrap justify-center gap-6">
-                    <div class="relative bg-white rounded-2xl shadow-lg border-4 border-gray-300 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-red-500 flex flex-col items-center w-64 group">
-                        <div class="aspect-square p-2 w-full flex items-center justify-center mb-2">
-                            <img src="/img/helpers/default.png" alt="Default" class="w-full h-full object-cover rounded-xl pointer-events-none" />
-                        </div>
-                        <div class="relative -mt-2 mx-2 mb-4 w-full">
-                            <div class="bg-black text-white text-xs font-bold py-2 px-3 rounded-lg text-center relative overflow-hidden">
-                                <span class="relative z-10">Lorem Ipsum</span>
-                                <div class="absolute inset-0 bg-gradient-to-r from-gray-800 to-black opacity-80"></div>
-                            </div>
-                        </div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-red-500/30 to-red-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-                    </div>
-                </div>
-            @empty
-                <p class="text-center text-gray-600">{{ explode(' ', trim($character->character_name))[0] }} has no fumos yet. Please check back later!</p>
-            @endforelse
-
         </div>
     </div>
 @endsection

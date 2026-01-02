@@ -126,7 +126,7 @@
 
                 @foreach($categories as $category)
                     <div class="group cursor-pointer">
-                        <div class="relative bg-gradient-to-b from-gray-100 to-gray-300 rounded-2xl shadow-lg border-4 border-gray-300 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-red-500 flex flex-col items-center h-40">
+                        <a href="{{ route('fumo_types.show', ['slug_name' => $category['slug_name']]) }}" class="relative bg-gradient-to-b from-gray-100 to-gray-300 rounded-2xl shadow-lg border-4 border-gray-300 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-red-500 flex flex-col items-center h-40">
                             <div class="aspect-square p-2 w-32 flex items-center justify-center relative z-10">
                                 <img src="{{ $category['fumo_type_image'] }}" alt="{{ $category['fumo_type'] }}" class="w-full h-full object-contain rounded-xl pointer-events-none" />
                             </div>
@@ -137,7 +137,7 @@
                                 </div>
                             </div>
                             <div class="absolute inset-0 bg-gradient-to-t from-red-500/30 to-red-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-                        </div>
+                        </a>
                     </div>
                 @endforeach
 

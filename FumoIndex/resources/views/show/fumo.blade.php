@@ -111,17 +111,15 @@
                 <h2 class="text-2xl font-semibold mb-4 text-center md:text-left text-tertiary">Franchise(s)</h2>
                 <div class="w-full mb-8">
                     <ul class="list-none text-base md:text-lg text-gray-800 space-y-2">
-                        @foreach ($fumo->character as $character)
-                            @if ($character->franchise)
-                                <li class="flex items-center space-x-3">
-                                    @if ($character->franchise->franchise_image)
-                                        <img src="{{ $character->franchise->franchise_image }}" alt="{{ $character->franchise->franchise_name }}" class="h-10 rounded-full object-cover pointer-events-none" />
-                                    @endif
-                                    <div>
-                                        <span class="font-semibold text-primary">{{ $character->franchise->franchise_name }}</span>
-                                    </div>
-                                </li>
-                            @endif
+                        @foreach ($franchises as $franchise)
+                            <li class="flex items-center space-x-3">
+                                @if ($franchise->franchise_image)
+                                    <img src="{{ $franchise->franchise_image }}" alt="{{ $franchise->franchise_name }}" class="h-10 rounded-full object-cover pointer-events-none" />
+                                @endif
+                                <div>
+                                    <span class="font-semibold text-primary">{{ $franchise->franchise_name }}</span>
+                                </div>
+                            </li>
                         @endforeach
                     </ul>
                 </div>
