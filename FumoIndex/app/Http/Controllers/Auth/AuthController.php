@@ -19,7 +19,7 @@ class AuthController extends Controller
         $remember = $request->has('remember');
 
         if (auth()->attempt($credentials, $remember)) {
-            return redirect()->route('dashboard.index')->with('success', 'You have successfully logged in. Welcome back!');
+            return redirect()->route('home')->with('success', 'You have successfully logged in. Welcome back!');
         }
 
         return back()->withErrors([
