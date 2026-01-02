@@ -42,19 +42,18 @@
                     <input id="character_image" type="file" name="character_image" class="input input-bordered w-full pl-10" accept="image/png">
                     <i class="fa fa-image absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
                 </div>
-                <p class="mt-4 text-tertiary font-semibold">Current image:</p>
-                <div class="grid grid-cols-2 gap-6 w-full">
+                <div class="grid grid-cols-2 gap-6 w-full mt-4">
                     <div class="flex flex-col items-center">
                         <p class="text-tertiary font-semibold mb-2">Current image:</p>
                         @if($character->character_image)
-                            <img src="{{ $character->character_image }}" alt="{{ $character->character_name }}" class="w-36 object-cover pointer-events-none" id="current-image">
+                            <img src="{{ $character->character_image }}" alt="{{ $character->character_name }}" class="w-36 object-cover pointer-events-none border-2 border-secondary" id="current-image">
                         @else
                             <span class="text-gray-400">No image</span>
                         @endif
                     </div>
                     <div class="flex flex-col items-center">
                         <p class="text-tertiary font-semibold mb-2">New image:</p>
-                        <img src="" alt="New image preview" class="w-36 object-cover pointer-events-none hidden" id="new-image-preview">
+                        <img src="" alt="New image preview" class="w-36 object-cover pointer-events-none border-2 border-secondary hidden" id="new-image-preview">
                         <button type="button" id="cancel-image-btn" class="btn btn-primary mt-2 py-4 px-4 hidden">Cancel</button>
                     </div>
                 </div>
