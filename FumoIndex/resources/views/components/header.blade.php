@@ -78,9 +78,11 @@
                             <li>
                                 <a href="" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Profile</a>
                             </li>
-                            <li>
-                                <a href="{{ route('dashboard.index') }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Dashboard</a>
-                            </li>
+                            @if(Auth::user()->is_admin)
+                                <li>
+                                    <a href="{{ route('dashboard.index') }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Dashboard</a>
+                                </li>
+                            @endif
                         </ul>
                     </li>
                     <li class="md:hidden">
@@ -129,9 +131,11 @@
                             <li>
                                 <a href="" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Profile</a>
                             </li>
-                            <li>
-                                <a href="{{ route('dashboard.index') }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Dashboard</a>
-                            </li>
+                            @if(Auth::user()->is_admin)
+                                <li>
+                                    <a href="{{ route('dashboard.index') }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Dashboard</a>
+                                </li>
+                            @endif
                         </ul>
                     </li>
                     <li>
