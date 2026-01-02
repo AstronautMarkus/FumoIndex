@@ -28,10 +28,13 @@
                     </button>
                     <ul class="dropdown-menu absolute left-0 mt-2 w-48 bg-white shadow-lg hidden z-50 text-gray-900 border border-gray-200">
                         <li>
-                            <a href="{{ route('dashboard.import_export.import_view', ['type' => 'characters']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Import Characters</a>
+                            <a href="{{ route('dashboard.import_export.import_view', ['type' => 'franchises']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">1. Franchises</a>
                         </li>
                         <li>
-                            <a href="{{ route('dashboard.import_export.import_view', ['type' => 'franchises']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Import Franchises</a>
+                            <a href="{{ route('dashboard.import_export.import_view', ['type' => 'fumo_types']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">2. Fumo Types</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('dashboard.import_export.import_view', ['type' => 'characters']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">3. Characters</a>
                         </li>
                     </ul>
                 </li>
@@ -43,13 +46,13 @@
                     </button>
                     <ul class="dropdown-menu absolute left-0 mt-2 w-48 bg-white shadow-lg hidden z-50 text-gray-900 border border-gray-200">
                         <li>
-                            <a href="{{ route('dashboard.import_export.export_view', ['type' => 'characters']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Export Characters</a>
+                            <a href="{{ route('dashboard.import_export.export_view', ['type' => 'franchises']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">1. Franchises</a>
                         </li>
                         <li>
-                            <a href="{{ route('dashboard.import_export.export_view', ['type' => 'franchises']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Export Franchises</a>
+                            <a href="{{ route('dashboard.import_export.export_view', ['type' => 'fumo_types']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">2. Fumo Types</a>
                         </li>
                         <li>
-                            <a href="{{ route('dashboard.import_export.export_view', ['type' => 'fumo_types']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Export Fumo Types</a>
+                            <a href="{{ route('dashboard.import_export.export_view', ['type' => 'characters']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">3. Characters</a>
                         </li>
                     </ul>
                 </li>

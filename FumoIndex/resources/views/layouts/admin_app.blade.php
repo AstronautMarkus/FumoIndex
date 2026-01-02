@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>@yield('title') - The Fumo Index</title>
+        <title>@yield('title') - The Fumo Index (Admin)</title>
         <link rel="shortcut icon" href="{{ asset('img/FumoIndex.svg') }}" type="image/x-icon">
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
