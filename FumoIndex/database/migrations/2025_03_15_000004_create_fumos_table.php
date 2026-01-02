@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('version', 10);
             $table->string('fumo_name', 45);
             $table->string('fumo_image')->nullable();
+            $table->string('description', 255)->nullable();
             $table->string('official_url', 255)->nullable();
             $table->string('notes', 255)->nullable();
             $table->foreignId('type_id')->constrained('fumo_types')->onDelete('cascade');
