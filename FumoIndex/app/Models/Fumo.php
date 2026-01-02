@@ -14,8 +14,8 @@ class Fumo extends Model
         'version',
         'fumo_name',
         'official_url',
+        'fumo_image',
         'notes',
-        'character_id',
         'type_id'
     ];
 
@@ -28,9 +28,6 @@ class Fumo extends Model
     {
         return $this->belongsTo(FumoType::class, 'type_id');
     }
-
-
-
 
 }
 

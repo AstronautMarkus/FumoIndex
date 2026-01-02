@@ -15,6 +15,8 @@ use App\Http\Controllers\Dashboard\FranchisesController;
 
 use App\Http\Controllers\Imports\ImportExportController;
 use App\Http\Controllers\Dashboard\FumoTypesController;
+use App\Http\Controllers\Dashboard\FumosController;
+use App\Http\Controllers\Utils\CharacterAndFranchisesController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/characters', [CharacterController::class, 'index'])->name('characters.list');
@@ -27,6 +29,7 @@ Route::get('/terms-and-conditions', function () { return view('terms_and_conditi
 Route::get('/fumos', [FumoController::class, 'index'])->name('fumos');
 
 Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(function () {
+
     Route::get('/', [DashboardController::class, 'index'])->name('index');
     Route::get('/characters', [CharactersController::class, 'index'])->name('characters.index');
     Route::get('/characters/create', [CharactersController::class, 'create'])->name('characters.create');
@@ -35,8 +38,6 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
     Route::get('/characters/{character}/edit', [CharactersController::class, 'edit'])->name('characters.edit');
     Route::put('/characters/{character}', [CharactersController::class, 'update'])->name('characters.update');
     Route::delete('/characters/{character}', [CharactersController::class, 'destroy'])->name('characters.destroy');
-
-    // CRUD routes for fumo_types
     
     Route::get('/fumo-types', [FumoTypesController::class, 'index'])->name('fumo_types.index');
     Route::get('/fumo-types/create', [FumoTypesController::class, 'create'])->name('fumo_types.create');
@@ -54,6 +55,14 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
     Route::put('/franchises/{franchise}', [FranchisesController::class, 'update'])->name('franchises.update');
     Route::delete('/franchises/{franchise}', [FranchisesController::class, 'destroy'])->name('franchises.destroy');
 
+    Route::get('/fumos', [FumosController::class, 'index'])->name('fumos.index');
+    Route::get('/fumos/create', [FumosController::class, 'create'])->name('fumos.create');
+    Route::post('/fumos', [FumosController::class, 'store'])->name('fumos.store');
+    Route::get('/fumos/{fumo}', [FumosController::class, 'show'])->name('fumos.show');
+    Route::get('/fumos/{fumo}/edit', [FumosController::class, 'edit'])->name('fumos.edit');
+    Route::put('/fumos/{fumo}', [FumosController::class, 'update'])->name('fumos.update');
+    Route::delete('/fumos/{fumo}', [FumosController::class, 'destroy'])->name('fumos.destroy');
+
     Route::prefix('import-export')->name('import_export.')->group(function () {
         Route::get('/', [ImportExportController::class, 'importExportView'])->name('index');
         Route::get('/import/{type}', [ImportExportController::class, 'importView'])->name('import_view');
@@ -61,6 +70,13 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
         Route::get('/export-data/{type}', [ImportExportController::class, 'exportData'])->name('export_data');
         Route::post('/import-data/{type}', [ImportExportController::class, 'importData'])->name('import_data');
     });
+
+    Route::prefix('utils')->name('utils.')->group(function () {
+        Route::get('/franchises', [CharacterAndFranchisesController::class, 'franchises'])->name('franchises');
+        Route::get('/characters/{franchise_slug}', [CharacterAndFranchisesController::class, 'characters'])->name('characters');
+    });
+
+
 });
 
 Route::prefix('auth')->name('auth.')->group(function () {

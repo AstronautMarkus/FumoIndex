@@ -20,10 +20,16 @@
                     <div class="absolute inset-0 bg-gradient-to-t from-red-500/30 to-red-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                 </a>
 
-                <a class="group cursor-pointer relative bg-white rounded-2xl shadow-lg border-4 border-gray-300 overflow-hidden flex flex-col items-center p-6 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-red-500">
+                <a href="{{ route('dashboard.fumos.index') }}" class="group cursor-pointer relative bg-white rounded-2xl shadow-lg border-4 border-gray-300 overflow-hidden flex flex-col items-center p-6 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-red-500">
+                    @if($random_fumo)
+                    <div class="w-16 h-16 flex items-center justify-center bg-gray-100 mb-4 border-2 border-gray-300 overflow-hidden">
+                        <img src="{{ $random_fumo->fumo_image }}" alt="{{ $random_fumo->fumo_name }}" class="pointer-events-none h-16 object-cover">
+                    </div> 
+                    @else
                     <div class="w-16 h-16 flex items-center justify-center bg-gray-100 rounded-full mb-4">
                         <img src="/img/icons/fumo.png" alt="Fumo" class="h-16 pointer-events-none">
                     </div>
+                    @endif
                     <div class="text-4xl font-bold text-primary mb-2">{{ $fumos->count() }}</div>
                     <div class="text-lg font-semibold text-tertiary">Fumos</div>
                     <div class="absolute inset-0 bg-gradient-to-t from-red-500/30 to-red-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
