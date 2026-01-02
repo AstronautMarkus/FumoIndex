@@ -58,6 +58,6 @@ class AuthController extends Controller
 
         auth()->login($user);
 
-        return redirect()->route('dashboard.index')->with('success', 'Registration successful. Welcome to FumoIndex!');
+        return redirect()->route('home')->with('success', 'Registration successful. Welcome to FumoIndex!');
     }
 }
