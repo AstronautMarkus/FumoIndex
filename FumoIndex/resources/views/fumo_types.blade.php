@@ -22,6 +22,16 @@
                                 <div class="bg-black text-white text-xs font-bold py-2 px-3 rounded-lg text-center relative overflow-hidden">
                                     <span class="relative z-10">{{ $type->fumo_type }}</span>
                                     <div class="absolute inset-0 bg-black opacity-80"></div>
+                                    <div class="absolute -top-1 -left-1 w-2 h-2 text-blue-400/70">
+                                        <svg viewBox="0 0 24 24" fill="currentColor" class="w-full h-full">
+                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                        </svg>
+                                    </div>
+                                    <div class="absolute -top-1 -right-1 w-2 h-2 text-blue-400/70">
+                                        <svg viewBox="0 0 24 24" fill="currentColor" class="w-full h-full">
+                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                        </svg>
+                                    </div>
                                 </div>
                             </div>
                             <div class="absolute inset-0 bg-gradient-to-t from-blue-500/30 to-blue-400/20 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
@@ -44,6 +54,16 @@
                                 <div class="bg-black text-white text-xs font-bold py-2 px-3 rounded-lg text-center relative overflow-hidden">
                                     <span class="relative z-10 font-bold">{{ $type->fumo_type }}</span>
                                     <div class="absolute inset-0 bg-black opacity-80"></div>
+                                    <div class="absolute -top-1 -left-1 w-2 h-2 text-purple-400/70">
+                                        <svg viewBox="0 0 24 24" fill="currentColor" class="w-full h-full">
+                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                        </svg>
+                                    </div>
+                                    <div class="absolute -top-1 -right-1 w-2 h-2 text-purple-400/70">
+                                        <svg viewBox="0 0 24 24" fill="currentColor" class="w-full h-full">
+                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                        </svg>
+                                    </div>
                                 </div>
                             </div>
                             <div class="absolute inset-0 bg-gradient-to-t from-purple-500/30 to-purple-400/20 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>

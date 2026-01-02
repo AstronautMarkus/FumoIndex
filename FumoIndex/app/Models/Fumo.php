@@ -28,6 +28,5 @@ class Fumo extends Model
     {
         return $this->belongsTo(FumoType::class, 'type_id');
     }
-
 }
 

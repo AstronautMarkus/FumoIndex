@@ -44,6 +44,10 @@ public function index()
                 $random_fumo_type = $fumo_types->random();
             }
 
+            if ($fumos->count() > 0) {
+                $random_fumo = $fumos->random();
+            }
+
             return view('dashboard.admin', compact('users', 'fumos', 'fumo_types', 'franchises', 'characters', 'random_character', 'random_franchise', 'random_fumo_type', 'random_fumo'));
         } else {
             return view('dashboard.user');

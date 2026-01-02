@@ -12,7 +12,7 @@ class FumoController extends Controller
 {
     public function index()
     {
-        $fumoList = Fumo::with(['character', 'fumoType', 'releases'])->paginate(10);
-        return view('fumos', compact('fumoList'));
+        $fumos = Fumo::with(['character', 'type'])->paginate(10);
+        return view('fumos', compact('fumos'));
     }
 }
