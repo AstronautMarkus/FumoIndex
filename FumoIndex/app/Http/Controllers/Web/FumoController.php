@@ -15,4 +15,10 @@ class FumoController extends Controller
         $fumos = Fumo::with(['character', 'type'])->paginate(10);
         return view('fumos', compact('fumos'));
     }
+
+    public function show($gift_code)
+    {
+        $fumo = Fumo::where('gift_code', $gift_code)->firstOrFail();
+        return view('show.fumo', compact('fumo'));
+    }
 }

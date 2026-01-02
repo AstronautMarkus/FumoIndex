@@ -17,6 +17,6 @@ class FumoType extends Model
 
     public function fumos()
     {
-        return $this->hasMany(Fumo::class);
+        return $this->hasMany(Fumo::class, 'type_id');
     }
 }

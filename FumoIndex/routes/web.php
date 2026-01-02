@@ -27,6 +27,7 @@ Route::get('/fumo-types', [FumoTypeController::class, 'index'])->name('fumo_type
 Route::get('/fumo-types/{slug_name}', [FumoTypeController::class, 'show'])->name('fumo_types.show');
 Route::get('/terms-and-conditions', function () { return view('terms_and_conditions');})->name('terms_and_conditions');
 Route::get('/fumos', [FumoController::class, 'index'])->name('fumos');
+Route::get('/fumos/{gift_code}', [FumoController::class, 'show'])->name('fumos.show');
 
 Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(function () {
 
