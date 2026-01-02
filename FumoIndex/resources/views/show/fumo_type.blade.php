@@ -6,7 +6,7 @@
 <div class="flex flex-col items-center justify-center mt-8 mb-6">
     <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 w-full max-w-6xl flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start">
         <div class="w-72 h-72 md:w-96 md:h-96 rounded-full border-4 border-secondary flex items-center justify-center overflow-hidden mr-0 md:mr-12 mb-4 md:mb-0 bg-gradient-to-b from-gray-100 to-gray-300">
-            <img src="{{ asset('img/fumo_types/' . $fumoType->type_image) }}" alt="{{ $fumoType->fumo_type }}" class="w-full h-full object-cover pointer-events-none" />
+            <img src="{{ $fumoType->fumo_type_image }}" alt="{{ $fumoType->fumo_type }}" class="w-full h-full object-cover pointer-events-none" />
         </div>
         <div class="flex flex-col flex-1 items-center md:items-start w-full">
             <h1 class="text-3xl md:text-5xl font-bold mb-2 text-center md:text-left text-primary">
@@ -32,10 +32,12 @@
             </div>
             <div class="w-full flex justify-center gap-6 mb-4">
                 <div class="text-sm text-gray-600">
-                    <strong>Width:</strong> {{ $fumoType->width ?? 'N/A' }}
+                    <strong>Width:</strong>
+                    {{ $fumoType->width ? $fumoType->width . 'cm' : 'N/A' }}
                 </div>
                 <div class="text-sm text-gray-600">
-                    <strong>Height:</strong> {{ $fumoType->height ?? 'N/A' }}
+                    <strong>Height:</strong>
+                    {{ $fumoType->height ? $fumoType->height . 'cm' : 'N/A' }}
                 </div>
             </div>
         </div>

@@ -10,7 +10,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // Get only primary categories, evite hardcoding hehehe
         $categories = FumoType::where('is_primary', true)->get();
         $faqs = [
             [
@@ -40,10 +39,6 @@ class HomeController extends Controller
             [
                 'question' => 'Where is Fumo Index data stored?',
                 'answer' => 'We mainly separate the information into parts. Photos for pages, Fumo types, and similar content are stored locally on our provider\'s server. For data such as the Fumos themselves or community photos, we use S3 to keep the service secure and scalable.'
-            ],
-            [
-                'question' => 'I want a Mima Fumo :(',
-                'answer' => 'Me too, son.'
             ]
         ];
         return view('home', compact('categories', 'faqs'));

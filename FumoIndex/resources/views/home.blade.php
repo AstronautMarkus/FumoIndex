@@ -128,7 +128,7 @@
                     <div class="group cursor-pointer">
                         <div class="relative bg-gradient-to-b from-gray-100 to-gray-300 rounded-2xl shadow-lg border-4 border-gray-300 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-red-500 flex flex-col items-center h-40">
                             <div class="aspect-square p-2 w-32 flex items-center justify-center relative z-10">
-                                <img src="/img/fumo_types/{{ $category['type_image'] }}" alt="{{ $category['fumo_type'] }}" class="w-full h-full object-contain rounded-xl pointer-events-none" />
+                                <img src="{{ $category['fumo_type_image'] }}" alt="{{ $category['fumo_type'] }}" class="w-full h-full object-contain rounded-xl pointer-events-none" />
                             </div>
                             <div class="relative -mt-2 mx-2 mb-2 w-full z-10">
                                 <div class="bg-black text-white text-xs font-bold py-2 px-3 rounded-lg text-center relative overflow-hidden">
@@ -203,7 +203,7 @@
             <h2 class="text-2xl font-bold text-center mb-4 text-primary">About This Project <i class="fa-solid fa-circle-info"></i></h2>
             <ul class="list-disc pl-6 text-lg text-gray-800 space-y-4">
                 <li>
-                    <span class="font-semibold text-primary">By a fan, for the fans:</span> This site is made with love by Touhou and Fumo enthusiasts for the whole community.
+                    <span class="font-semibold text-primary">By fans, for fans:</span> This site is made with love by Touhou and FumoFumo enthusiasts for the whole community.
                 </li>
                 <li>
                     <span class="font-semibold text-primary">Info written by fans:</span> Please note that this information may not be entirely accurate. Our research is based primarily on <a href="https://www.gift-gift.jp" class="text-primary font-semibold hover:underline">Gift</a>. In case of any confusion, it's always best to read their articles, if you know Japanese.

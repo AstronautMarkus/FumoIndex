@@ -9,6 +9,8 @@
 
         <div class="w-full">
             <h2 class="text-2xl font-bold mb-4 text-primary text-center">Primary Fumo Types</h2>
+            <p class="text-center mb-6 text-gray-600">Primary Types are the main classifications of Fumos. These types are the ones most commonly sold, and most Fumos belong to one of these types.</p>
+
             <div class="flex flex-wrap justify-center gap-6 mb-10">
                 @forelse($primaryFumoTypes as $type)
                     <a href="{{ route('fumo_types.show', ['slug_name' => $type->slug_name]) }}" class="no-underline">
