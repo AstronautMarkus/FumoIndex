@@ -77,8 +77,13 @@ class FumosController extends Controller
 
     public function show(Fumo $fumo)
     {
-        $fumo->load(['type', 'character']);
-        return view('dashboard.show.fumo', compact('fumo'));
+        $fumo->load(['type', 'character.franchise']);
+        $franchises = $fumo->character
+            ->filter(fn($c) => $c->franchise)
+            ->pluck('franchise')
+            ->unique('id')
+            ->values();
+        return view('dashboard.show.fumo', compact('fumo', 'franchises'));
     }
 
     public function edit(Fumo $fumo)

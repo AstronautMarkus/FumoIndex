@@ -41,7 +41,7 @@
                     <ul class="list-none text-base md:text-lg text-gray-800 space-y-2">
                         <li class="flex items-center space-x-3">
                             @if ($franchise->franchise_image)
-                                <img src="{{ $franchise->franchise_image }}" alt="{{ $franchise->franchise_name }}" class="h-10 rounded-full object-cover pointer-events-none" />
+                                <img src="{{ $franchise->franchise_image }}" alt="{{ $franchise->franchise_name }}" class="h-10 object-cover pointer-events-none" />
                             @endif
                             <div>
                                 <span class="font-semibold text-primary">{{ $franchise->franchise_name }}</span>
