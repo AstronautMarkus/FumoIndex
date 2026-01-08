@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="flex flex-col items-center justify-center mt-8 mb-6">
-    <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 w-full max-w-5xl flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start relative">
+    <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 w-full max-w-7xl flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start relative">
         <a href="{{ route('dashboard.characters.edit', $character->id) }}"
            class="absolute top-4 right-4 px-3 md:px-4 py-2 btn btn-tertiary z-10 hidden md:inline-block">
             Edit Character
