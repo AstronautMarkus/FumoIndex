@@ -19,10 +19,11 @@
                         You can import your Fumo Index data in bulk using a <strong>JSON</strong> file. Make sure the file is properly formatted to avoid errors during the import process.
 
                     </div>
-                    <ul class="text-sm text-gray-600 mb-4 list-disc list-inside text-left w-full">
+                    <ul class="text-sm text-gray-600 mb-4 list-decimal list-inside text-left w-full">
                         <span class="font-semibold text-primary">Import Type List:</span>
-                        <li>Characters</li>
                         <li>Franchises</li>
+                        <li>Fumo Types</li>
+                        <li>Characters</li>
                     </ul>
                     <div class="relative w-full mt-auto flex flex-col items-center">
                         <button type="button" class="btn btn-primary text-white px-4 py-2 shadow dropdown-toggle-import w-full flex justify-center items-center">
@@ -31,13 +32,19 @@
                         </button>
                         <ul class="dropdown-menu-import absolute left-0 mt-2 w-48 bg-white shadow-lg hidden z-50 text-gray-900 border border-gray-200">
                             <li>
-                                <a href="{{ route('dashboard.import_export.import_view', ['type' => 'characters']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Import Characters</a>
+                                <a href="{{ route('dashboard.import_export.import_view', ['type' => 'franchises']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">
+                                    <span class="font-bold mr-2">1.</span> Franchises
+                                </a>
                             </li>
                             <li>
-                                <a href="{{ route('dashboard.import_export.import_view', ['type' => 'franchises']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Import Franchises</a>
+                                <a href="{{ route('dashboard.import_export.import_view', ['type' => 'fumo_types']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">
+                                    <span class="font-bold mr-2">2.</span> Fumo Types
+                                </a>
                             </li>
                             <li>
-                                <a href="{{ route('dashboard.import_export.import_view', ['type' => 'fumo_types']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Import Fumo Types</a>
+                                <a href="{{ route('dashboard.import_export.import_view', ['type' => 'characters']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">
+                                    <span class="font-bold mr-2">3.</span> Characters
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -51,10 +58,11 @@
                     <div class="text-md text-tertiary text-center mb-4">
                         You can export your Fumo Index data in bulk as a <strong>JSON</strong> file. This allows you to back up your data or transfer it to another instance of Fumo Index.
                     </div>
-                    <ul class="text-sm text-gray-600 mb-4 list-disc list-inside text-left w-full">
+                    <ul class="text-sm text-gray-600 mb-4 list-decimal list-inside text-left w-full">
                         <span class="font-semibold text-primary">Export Type List:</span>
-                        <li>Characters</li>
                         <li>Franchises</li>
+                        <li>Fumo Types</li>
+                        <li>Characters</li>
                     </ul>
                     <div class="relative w-full mt-auto flex flex-col items-center">
                         <button type="button" class="btn btn-primary text-white px-4 py-2 shadow dropdown-toggle-export w-full flex justify-center items-center">
@@ -63,13 +71,19 @@
                         </button>
                         <ul class="dropdown-menu-export absolute left-0 mt-2 w-48 bg-white shadow-lg hidden z-50 text-gray-900 border border-gray-200">
                             <li>
-                                <a href="{{ route('dashboard.import_export.export_view', ['type' => 'characters']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Export Characters</a>
+                                <a href="{{ route('dashboard.import_export.export_view', ['type' => 'franchises']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">
+                                    <span class="font-bold mr-2">1.</span> Franchises
+                                </a>
                             </li>
                             <li>
-                                <a href="{{ route('dashboard.import_export.export_view', ['type' => 'franchises']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Export Franchises</a>
+                                <a href="{{ route('dashboard.import_export.export_view', ['type' => 'fumo_types']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">
+                                    <span class="font-bold mr-2">2.</span> Fumo Types
+                                </a>
                             </li>
                             <li>
-                                <a href="{{ route('dashboard.import_export.export_view', ['type' => 'fumo_types']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Export Fumo Types</a>
+                                <a href="{{ route('dashboard.import_export.export_view', ['type' => 'characters']) }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">
+                                    <span class="font-bold mr-2">3.</span> Characters
+                                </a>
                             </li>
                         </ul>
                     </div>
