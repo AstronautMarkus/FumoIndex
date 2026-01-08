@@ -9,11 +9,21 @@
 
 
 
-            <div class="flex-shrink-0 w-full md:w-1/2 flex justify-center items-center mb-6 md:mb-0">
+            <div class="flex-shrink-0 w-full md:w-1/2 flex flex-col justify-center items-center mb-6 md:mb-0">
                 <div class="w-[32rem] h-[32rem] rounded-2xl flex items-center justify-center overflow-hidden bg-gradient-to-b from-gray-100 to-gray-300">
                     <img src="{{ $fumo->fumo_image }}" alt="{{ $fumo->fumo_name }}" class="w-full h-full object-cover pointer-events-none" />
                 </div>
+                @if ($fumo->images->count() > 0)
+                    <div class="mt-4 flex flex-row flex-wrap justify-center gap-4 w-full">
+                        @foreach ($fumo->images as $image)
+                            <div class="w-24 h-24 rounded-lg overflow-hidden bg-gray-200">
+                                <img src="{{ $image->image_url }}" alt="Additional image for {{ $fumo->fumo_name }}" class="w-full h-full object-cover pointer-events-none" />
+                            </div>
+                        @endforeach
+                    </div>
+                @endif
             </div>
+            
 
             <div class="flex flex-col flex-1 w-full md:w-1/2 items-center md:items-start px-0 md:px-8">
                 <h1 class="text-3xl md:text-5xl font-bold mb-2 text-center md:text-left text-primary">{{ $fumo->fumo_name }}</h1>
@@ -114,7 +124,7 @@
                         @foreach ($franchises as $franchise)
                             <li class="flex items-center space-x-3">
                                 @if ($franchise->franchise_image)
-                                    <img src="{{ $franchise->franchise_image }}" alt="{{ $franchise->franchise_name }}" class="h-10 rounded-full object-cover pointer-events-none" />
+                                    <img src="{{ $franchise->franchise_image }}" alt="{{ $franchise->franchise_name }}" class="h-10 object-cover pointer-events-none" />
                                 @endif
                                 <div>
                                     <span class="font-semibold text-primary">{{ $franchise->franchise_name }}</span>

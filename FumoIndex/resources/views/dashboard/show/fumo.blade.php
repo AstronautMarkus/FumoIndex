@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="flex flex-col items-center justify-center mt-8 mb-6">
-    <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 w-full max-w-5xl flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start relative">
+    <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 w-full max-w-7xl flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start relative">
         <a href="{{ route('dashboard.fumos.edit', $fumo->id) }}"
            class="absolute top-4 right-4 px-3 md:px-4 py-2 btn btn-tertiary z-10 hidden md:inline-block">
             Edit Fumo
@@ -13,13 +13,24 @@
            class="w-full mb-4 px-3 md:px-4 py-2 btn btn-tertiary md:hidden">
             Edit Fumo
         </a>
+
         @if($fumo->fumo_image)
-            <div class="flex-shrink-0 w-full md:w-1/3 flex justify-center items-center mb-6 md:mb-0">
-                <div class="w-56 md:w-64 rounded-2xl flex items-center justify-center overflow-hidden bg-gradient-to-b from-gray-100 to-gray-300">
+            <div class="flex-shrink-0 w-full md:w-1/2 flex flex-col justify-center items-center mb-6 md:mb-0">
+                <div class="w-[32rem] h-[32rem] rounded-2xl flex items-center justify-center overflow-hidden bg-gradient-to-b from-gray-100 to-gray-300">
                     <img src="{{ $fumo->fumo_image }}" alt="{{ $fumo->fumo_name }}" class="w-full h-full object-cover pointer-events-none" />
                 </div>
+                @if ($fumo->images->count() > 0)
+                    <div class="mt-4 flex flex-row flex-wrap justify-center gap-4 w-full">
+                        @foreach ($fumo->images as $image)
+                            <div class="w-24 h-24 rounded-lg overflow-hidden bg-gray-200">
+                                <img src="{{ $image->image_url }}" alt="Additional image for {{ $fumo->fumo_name }}" class="w-full h-full object-cover pointer-events-none" />
+                            </div>
+                        @endforeach
+                    </div>
+                @endif
             </div>
         @endif
+
         <div class="flex flex-col flex-1 w-full md:w-2/3 items-center md:items-start px-0 md:px-8">
             <h1 class="text-3xl md:text-5xl font-bold mb-2 text-center md:text-left text-primary">{{ $fumo->fumo_name }}</h1>
             <h2 class="text-xl md:text-3xl mb-4 text-center md:text-left text-tertiary">
