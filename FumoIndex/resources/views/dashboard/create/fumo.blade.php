@@ -52,6 +52,7 @@
                     <i class="fa fa-images absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
                 </div>
                 <small class="text-gray-500">You can upload multiple PNG images for the Fumo gallery.</small>
+                <div id="gallery-preview" class="flex flex-wrap gap-4 mt-4"></div>
                 @error('gallery_images')
                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                 @enderror
@@ -198,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     });
 
-    // Image preview logic
+    // Main image preview logic
     const imageInput = document.getElementById('fumo_image');
     const previewImg = document.getElementById('new-image-preview');
     const cancelBtn = document.getElementById('cancel-image-btn');
@@ -229,6 +230,44 @@ document.addEventListener('DOMContentLoaded', function() {
         previewImg.classList.add('hidden');
         cancelBtn.classList.add('hidden');
         previewLabel.classList.add('hidden');
+    });
+
+    // Gallery images preview logic
+    const galleryInput = document.getElementById('gallery_images');
+    const galleryPreview = document.getElementById('gallery-preview');
+    let galleryFiles = [];
+
+    galleryInput.addEventListener('change', function(e) {
+        galleryPreview.innerHTML = '';
+        galleryFiles = Array.from(this.files);
+        galleryFiles.forEach((file, idx) => {
+            if (file && file.type === 'image/png') {
+                const reader = new FileReader();
+                reader.onload = function(evt) {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'flex flex-col items-center';
+                    const img = document.createElement('img');
+                    img.src = evt.target.result;
+                    img.className = 'w-24 h-24 object-cover border-2 border-secondary mb-2';
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'btn btn-tertiary btn-xs';
+                    btn.textContent = 'Remove';
+                    btn.onclick = function() {
+                        galleryFiles.splice(idx, 1);
+                        // Create a new FileList and update input
+                        const dataTransfer = new DataTransfer();
+                        galleryFiles.forEach(f => dataTransfer.items.add(f));
+                        galleryInput.files = dataTransfer.files;
+                        galleryInput.dispatchEvent(new Event('change'));
+                    };
+                    wrapper.appendChild(img);
+                    wrapper.appendChild(btn);
+                    galleryPreview.appendChild(wrapper);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
     });
 });
 </script>
