@@ -28,5 +28,10 @@ class Fumo extends Model
     {
         return $this->belongsTo(FumoType::class, 'type_id');
     }
+
+    public function images()
+    {
+        return $this->hasMany(FumoImage::class);
+    }
 }
 

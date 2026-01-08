@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="flex flex-col items-center justify-center mt-16 mb-6">
-    <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 w-full max-w-4xl flex flex-col items-center">
+    <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 w-full max-w-6xl flex flex-col items-center">
         <h1 class="text-3xl md:text-4xl font-bold mb-6 text-primary text-center">Add Fumo</h1>
         <form method="POST" action="{{ route('dashboard.fumos.store') }}" enctype="multipart/form-data" class="w-full flex flex-col gap-4">
             @csrf
@@ -42,6 +42,20 @@
                     </div>
                 </div>
                 @error('fumo_image')
+                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+            <div>
+                <label for="gallery_images" class="block text-tertiary font-semibold mb-1">Gallery Images <span class="text-primary">(Optional, PNG, multiple)</span></label>
+                <div class="relative">
+                    <input id="gallery_images" type="file" name="gallery_images[]" class="input input-bordered w-full pl-10" accept="image/png" multiple>
+                    <i class="fa fa-images absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                </div>
+                <small class="text-gray-500">You can upload multiple PNG images for the Fumo gallery.</small>
+                @error('gallery_images')
+                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                @enderror
+                @error('gallery_images.*')
                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                 @enderror
             </div>
