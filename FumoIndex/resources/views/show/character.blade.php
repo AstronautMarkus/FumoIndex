@@ -53,6 +53,34 @@
             </div>
         </div>
 
+        @if($character->fumos)
+            <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 w-full max-w-6xl flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start mt-4">
+                <div class="w-full">
+                    <h2 class="text-2xl font-semibold mb-6 text-center md:text-left text-tertiary">{{ $character->character_name }} Fumo list</h2>
+                    <div class="flex flex-wrap justify-center gap-6">
+                        @foreach($character->fumos->take(5) as $fumo)
+                            <a href="{{ route('fumos.show', ['gift_code' => $fumo->gift_code]) }}" class="group cursor-pointer">
+                                <div class="relative bg-white rounded-2xl shadow-lg border-4 border-gray-300 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-red-500 flex flex-col items-center">
+                                    <div class="aspect-square p-2 w-40 flex items-center justify-center relative"> 
+                                        <img src="{{ $fumo->fumo_image }}" alt="{{ $fumo->fumo_name }}" class="max-w-full max-h-full object-contain pointer-events-none rounded" />
+                                        <div class="absolute inset-0 bg-gradient-to-t from-red-500/30 to-red-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+
+                                        <div class="absolute bottom-0 left-0 w-full px-2 pb-2">
+                                            <div class="bg-black/80 text-white text-xs font-bold py-2 px-3 rounded-lg text-center relative overflow-hidden">
+                                                <span class="relative z-10">{{ $fumo->fumo_name }}</span>
+                                                <div class="absolute inset-0 bg-gradient-to-r from-gray-800 to-black opacity-80"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </a>
+                        @endforeach
+                    </div>
+                </div>     
+            </div>
+        @endif
+
         <div class="flex justify-center mb-8 px-4 md:px-0 w-[95%] mt-6">
             <a href="{{ route('characters.list') }}" class="btn flex items-center justify-center text-nowrap btn-primary text-2xl gap-2 p-3">
                 Back to characters list <i class="fa-solid fa-arrow-left"></i>
