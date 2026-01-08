@@ -55,7 +55,7 @@
                         </h3>
                     </div>
                     <div class="flex flex-wrap justify-center gap-6">
-                            @foreach($characters as $character)
+                            @forelse($characters as $character)
                                 <a href="{{ url('characters/' . $character->slug_name) }}" class="group cursor-pointer">
                                     <div class="relative bg-white rounded-2xl shadow-lg border-4 border-gray-300 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-red-500 flex flex-col items-center">
                                         <div class="aspect-square p-2 w-40 flex items-center justify-center"> 
@@ -70,7 +70,9 @@
                                         <div class="absolute inset-0 bg-gradient-to-t from-red-500/30 to-red-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                                     </div>
                                 </a>
-                            @endforeach
+                            @empty
+                                <p class="text-center text-gray-500">This franchise has no characters yet.</p>
+                            @endforelse
                     </div>
 
                     <div class="mt-8 flex justify-center">
