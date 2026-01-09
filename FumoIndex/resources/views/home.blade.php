@@ -21,9 +21,9 @@
                 <div class="text-2xl text-white">The ultimate guide to all things Fumo!</div>
             </div>
             <div class="flex w-full md:w-auto justify-between flex-col md:flex-row gap-10 mt-16">
-                <a href="{{ route('what_is_a_fumo') }}" class="btn flex items-center justify-center text-nowrap btn-outline text-2xl gap-2 p-3">
+                <a href="{{ route('what_is_a_fumo') }}" class="btn flex items-center justify-center text-nowrap btn-secondary text-2xl gap-2 p-3">
                     <div class="flex w-full justify-center text-center">
-                        What's a Fumo?
+                        What is a Fumo?
                     </div>
                 </a>
                 <a href="{{ route('fumos') }}" class="btn flex items-center justify-center text-nowrap btn-primary text-2xl gap-2 p-3">
@@ -182,7 +182,7 @@
             <div class="w-full flex flex-col gap-4">
                 @foreach($faqs as $index => $faq)
                     <div x-data="{ open: false }" class="w-full">
-                        <button @click="open = !open" class="w-full text-left bg-secondary border-2 border-secondary px-6 py-4 font-semibold text-lg text-primary transition-colors duration-200 hover:bg-secondary-light hover:border-secondary-light focus:outline-none cursor-pointer" style="border-radius:0;">
+                        <button @click="open = !open" class="w-full text-left bg-secondary border-2 border-secondary px-6 py-4 font-semibold text-lg transition-colors duration-200 hover:bg-secondary-light hover:border-secondary-light focus:outline-none cursor-pointer" style="border-radius:0;">
                             {{ $faq['question'] }}
                             <span class="float-right">
                                 <i :class="open ? 'fa-solid fa-chevron-up' : 'fa-solid fa-chevron-down'"></i>
@@ -203,19 +203,19 @@
             <h2 class="text-2xl font-bold text-center mb-4 text-primary">About This Project <i class="fa-solid fa-circle-info"></i></h2>
             <ul class="list-disc pl-6 text-lg text-gray-800 space-y-4">
                 <li>
-                    <span class="font-semibold text-primary">By fans, for fans:</span> This site is made with love by Touhou and FumoFumo enthusiasts for the whole community.
+                    <span class="font-semibold text-primary"><i class="fa-solid fa-users"></i> By fans, for fans:</span> This site is made with love by Touhou and FumoFumo enthusiasts for the whole community.
                 </li>
                 <li>
-                    <span class="font-semibold text-primary">Info written by fans:</span> Please note that this information may not be entirely accurate. Our research is based primarily on <a href="https://www.gift-gift.jp" class="text-primary font-semibold hover:underline">Gift</a>. In case of any confusion, it's always best to read their articles, if you know Japanese.
+                    <span class="font-semibold text-primary"><i class="fa-solid fa-pen-nib"></i> Info written by fans:</span> Please note that this information may not be entirely accurate. Our research is based primarily on <a href="https://www.gift-gift.jp" class="text-primary font-semibold hover:underline"><i class="fa-solid fa-link"></i> Gift</a>. In case of any confusion, it's always best to read their articles, if you know Japanese.
                 </li>
                 <li>
-                    <span class="font-semibold text-primary">Open Source:</span> All code is open source, and we welcome contributions and improvements from anyone in the community.
+                    <span class="font-semibold text-primary"><i class="fa-brands fa-github"></i> Open Source:</span> All code is open source, and we welcome contributions and improvements from anyone in the community.
                 </li>
                 <li>
-                    <span class="font-semibold text-primary">No content belongs to us:</span> All images, information, and resources are property of their respective creators and rights holders.
+                    <span class="font-semibold text-primary"><i class="fa-solid fa-image"></i> No content belongs to us:</span> All images, information, and resources are property of their respective creators and rights holders.
                 </li>
                 <li>
-                    <strong><span class="font-semibold text-primary">We do not sell merchandise:</span> This is a fan project, NOT a store. Like a... Wiki? We do not sell or trade any Fumos or related merchandise. XD</strong>
+                    <strong><span class="font-semibold text-primary"><i class="fa-solid fa-store-slash"></i> We do not sell merchandise:</span> This is a fan project, NOT a store. Like a... Wiki? We do not sell or trade any Fumos or related merchandise. XD</strong>
                 </li>
             </ul>
             <div class="flex justify-center mt-8">

@@ -34,7 +34,7 @@
 .btn-outline {
     @apply bg-white;
     @apply text-primary;
-    @apply hover:shadow-md;
+    @apply hover:bg-gray-200;
 }
 
 .link-light {
