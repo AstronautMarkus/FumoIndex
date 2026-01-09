@@ -53,7 +53,7 @@
             </div>
         </div>
 
-        @if($character->fumos)
+        @if($character->fumos && $character->fumos->count() > 0)
             <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 w-full max-w-6xl flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start mt-4">
                 <div class="w-full">
                     <h2 class="text-2xl font-semibold mb-6 text-center md:text-left text-tertiary">{{ $character->character_name }} Fumo list</h2>
