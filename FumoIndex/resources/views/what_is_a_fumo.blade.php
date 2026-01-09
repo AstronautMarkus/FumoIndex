@@ -17,7 +17,6 @@
                 <div class="w-full md:w-50 h-48 md:h-50 bg-gray-200 flex items-center justify-center rounded shadow overflow-hidden">
                 <img src="{{ asset('img/pages/what_is_a_fumo/marisa-2008.webp') }}" alt="Marisa Fumo" class="object-cover w-full h-full pointer-events-none" />
                 </div>
-                <span class="text-sm italic mt-2">- Marisa Kirisame Fumo (2008)</span>
             </div>
         </div>
         <h2 class="text-2xl md:text-3xl font-semibold mb-2 text-center text-primary">These plushies have the following qualities:</h2>
@@ -37,16 +36,6 @@
             <div class="w-full md:w-[540px] h-48 md:h-[400px] bg-gray-200 flex items-center justify-center rounded shadow mb-2 overflow-hidden">
                 <img src="{{ asset('img/pages/what_is_a_fumo/marisa_reimu_deka.jpg') }}" alt="Marisa & Reimu Deka Fumo" class="object-cover w-full h-full pointer-events-none" />
             </div>
-            <span class="text-sm italic">- Marisa & Reimu, Deka version</span>
-        </div>
-        <div class="max-w-3xl mb-6 px-4 md:px-0 w-[95%]">
-            <p class="text-lg">
-                Fumos started out as a simple video game plush, but now they're a household name on the internet. However, if you're interested in learning more, you can check out the following articles:
-            </p>
-        </div>
-        <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 mb-8 w-[95%] px-4 md:px-0">
-            <a href="#" class="btn flex items-center justify-center text-nowrap btn-primary text-2xl gap-2 p-3">The Fumo Origins</a>
-            <a href="#" class="btn flex items-center justify-center text-nowrap btn-primary text-2xl gap-2 p-3">How to get Fumos</a>
         </div>
     </div>
 </div>
@@ -304,7 +293,7 @@
 
     </div>
 
-    <blockquote class="border-l-4 border-primary pl-4 italic mt-8 text-lg text-center max-w-4xl mx-auto">
+    <blockquote class="border-l-4 border-primary pl-4 italic mt-8 text-lg text-center max-w-4xl mx-auto bg-container p-4 rounded">
         In summary, Fumos are more than just plushies—they are a unique part of anime and game culture, beloved by collectors worldwide. Whether you choose official or bootleg, understanding their origins and differences helps you make informed decisions and appreciate the creativity behind each one. Happy collecting!
     </blockquote>
 
