@@ -16,12 +16,12 @@
 
 .btn-secondary {
     @apply bg-secondary;
-    @apply text-white;
+    @apply text-black;
     @apply hover:bg-secondary-light;
 }
 .btn-tertiary {
     @apply bg-tertiary;
-    @apply text-white;
+    @apply text-black;
     @apply hover:bg-tertiary-light;
 }
 
