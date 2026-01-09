@@ -75,7 +75,7 @@
                                 <div class="text-sm text-gray-600">{{ Auth::user()->email }}</div>
                             </li>
                             <li>
-                                <a href="" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Profile</a>
+                                <a href="{{ route('dashboard.profile') }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Profile</a>
                             </li>
                             <li>
                                 <a href="{{ route('home') }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Go to Main Page</a>
@@ -108,7 +108,7 @@
                                 <div class="text-sm text-gray-600">{{ Auth::user()->email }}</div>
                             </li>
                             <li>
-                                <a href="" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Profile</a>
+                                <a href="{{ route('dashboard.profile') }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Profile</a>
                             </li>
                             <li>
                                 <a href="{{ route('home') }}" class="block px-4 py-2 hover:bg-gray-100 transition duration-200">Go to Main Page</a>
