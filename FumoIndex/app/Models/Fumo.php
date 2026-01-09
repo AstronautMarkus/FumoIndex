@@ -13,6 +13,7 @@ class Fumo extends Model
         'gift_code',
         'version',
         'fumo_name',
+        'slug',
         'official_url',
         'fumo_image',
         'notes',

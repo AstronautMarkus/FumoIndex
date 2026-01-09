@@ -42,7 +42,7 @@ class FumosController extends Controller
         $validated = $request->validate([
             'gift_code' => 'required|string|max:50|unique:fumos,gift_code',
             'version' => 'required|string|max:10',
-            'fumo_name' => 'required|string|max:45',
+            'fumo_name' => 'required|string|max:45|unique:fumos,fumo_name',
             'official_url' => 'nullable|url|max:255',
             'notes' => 'nullable|string|max:255',
             'type_id' => 'required|exists:fumo_types,id',
@@ -54,6 +54,11 @@ class FumosController extends Controller
         ]);
 
         $slugName = Str::slug($validated['fumo_name'], '_');
+        // Block if a Fumo with this slug already exists
+        if (Fumo::where('slug', $slugName)->exists()) {
+            return back()->withErrors(['fumo_name' => 'A Fumo with this name/slug already exists.'])->withInput();
+        }
+
         $imagePath = "images/fumos/{$slugName}.png";
         $fumoImageUrl = null;
         if ($request->hasFile('fumo_image')) {
@@ -66,6 +71,7 @@ class FumosController extends Controller
             'gift_code' => $validated['gift_code'],
             'version' => $validated['version'],
             'fumo_name' => $validated['fumo_name'],
+            'slug' => $slugName,
             'official_url' => $validated['official_url'] ?? null,
             'notes' => $validated['notes'] ?? null,
             'type_id' => $validated['type_id'],
@@ -119,7 +125,7 @@ class FumosController extends Controller
         $validated = $request->validate([
             'gift_code' => 'required|string|max:50|unique:fumos,gift_code,' . $fumo->id,
             'version' => 'required|string|max:10',
-            'fumo_name' => 'required|string|max:45',
+            'fumo_name' => 'required|string|max:45|unique:fumos,fumo_name,' . $fumo->id,
             'official_url' => 'nullable|url|max:255',
             'notes' => 'nullable|string|max:255',
             'type_id' => 'required|exists:fumo_types,id',
@@ -132,8 +138,13 @@ class FumosController extends Controller
             'delete_gallery.*' => 'integer|exists:fumo_images,id',
         ]);
 
+
         $oldSlugName = Str::slug($fumo->fumo_name, '_');
         $slugName = Str::slug($validated['fumo_name'], '_');
+        // Block if a Fumo with this slug already exists (except this one)
+        if (Fumo::where('slug', $slugName)->where('id', '!=', $fumo->id)->exists()) {
+            return back()->withErrors(['fumo_name' => 'A Fumo with this name/slug already exists.'])->withInput();
+        }
         $oldImagePath = "images/fumos/{$oldSlugName}.png";
         $newImagePath = "images/fumos/{$slugName}.png";
         $fumoImageUrl = $fumo->fumo_image;
@@ -159,6 +170,7 @@ class FumosController extends Controller
             'gift_code' => $validated['gift_code'],
             'version' => $validated['version'],
             'fumo_name' => $validated['fumo_name'],
+            'slug' => $slugName,
             'official_url' => $validated['official_url'] ?? null,
             'notes' => $validated['notes'] ?? null,
             'type_id' => $validated['type_id'],

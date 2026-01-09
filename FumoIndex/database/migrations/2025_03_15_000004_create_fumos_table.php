@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('gift_code', 50)->unique();
             $table->string('version', 10);
-            $table->string('fumo_name', 45);
+            $table->string('fumo_name', 45)->unique();
+            $table->string('slug', 60)->unique();
             $table->string('fumo_image')->nullable();
             $table->string('description', 255)->nullable();
             $table->string('official_url', 255)->nullable();
