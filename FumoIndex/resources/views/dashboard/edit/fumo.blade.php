@@ -103,12 +103,12 @@
                         <option value="">Select type</option>
                         <optgroup label="Primary Categories">
                             @foreach($primaryFumoTypes as $type)
-                                <option value="{{ $type->id }}" {{ old('type_id', $fumo->type_id) == $type->id ? 'selected' : '' }}>{{ $type->fumo_type }}</option>
+                                <option value="{{ $type->id }}" {{ old('type_id', $fumo->type_id) == $type->id ? 'selected' : '' }}>{{ $type->fumo_type }} ({{ $type->height}}cm)</option>
                             @endforeach
                         </optgroup>
                         <optgroup label="Secondary Categories">
                             @foreach($secondaryFumoTypes as $type)
-                                <option value="{{ $type->id }}" {{ old('type_id', $fumo->type_id) == $type->id ? 'selected' : '' }}>{{ $type->fumo_type }}</option>
+                                <option value="{{ $type->id }}" {{ old('type_id', $fumo->type_id) == $type->id ? 'selected' : '' }}>{{ $type->fumo_type }} ({{ $type->height}}cm)</option>
                             @endforeach
                         </optgroup>
                     </select>

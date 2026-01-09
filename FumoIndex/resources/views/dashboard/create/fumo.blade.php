@@ -77,12 +77,12 @@
                         <option value="">Select type</option>
                         <optgroup label="Primary Categories">
                             @foreach($primaryFumoTypes as $type)
-                                <option value="{{ $type->id }}" {{ old('type_id') == $type->id ? 'selected' : '' }}>{{ $type->fumo_type }}</option>
+                                <option value="{{ $type->id }}" {{ old('type_id') == $type->id ? 'selected' : '' }}>{{ $type->fumo_type }} ({{ $type->height}}cm)</option>
                             @endforeach
                         </optgroup>
                         <optgroup label="Secondary Categories">
                             @foreach($secondaryFumoTypes as $type)
-                                <option value="{{ $type->id }}" {{ old('type_id') == $type->id ? 'selected' : '' }}>{{ $type->fumo_type }}</option>
+                                <option value="{{ $type->id }}" {{ old('type_id') == $type->id ? 'selected' : '' }}>{{ $type->fumo_type }} ({{ $type->height}}cm)</option>
                             @endforeach
                         </optgroup>
                     </select>
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
         previewImg.src = '';
         previewImg.classList.add('hidden');
         cancelBtn.classList.add('hidden');
-        previewLabel.classList.add('hidden');
+        previewLabel.classList.add('hidden`');
     });
 
     // Gallery images preview logic
