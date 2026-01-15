@@ -15,6 +15,7 @@ use App\Http\Controllers\Dashboard\FranchisesController;
 use App\Http\Controllers\Dashboard\FumoTypesController;
 use App\Http\Controllers\Dashboard\FumosController;
 use App\Http\Controllers\Dashboard\ProfileController;
+use App\Http\Controllers\Dashboard\UsersController;
 
 use App\Http\Controllers\Imports\ImportExportController;
 use App\Http\Controllers\Utils\CharacterAndFranchisesController;
@@ -44,7 +45,7 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
     Route::get('/characters/{character}/edit', [CharactersController::class, 'edit'])->name('characters.edit');
     Route::put('/characters/{character}', [CharactersController::class, 'update'])->name('characters.update');
     Route::delete('/characters/{character}', [CharactersController::class, 'destroy'])->name('characters.destroy');
-    
+
     Route::get('/fumo-types', [FumoTypesController::class, 'index'])->name('fumo_types.index');
     Route::get('/fumo-types/create', [FumoTypesController::class, 'create'])->name('fumo_types.create');
     Route::post('/fumo-types', [FumoTypesController::class, 'store'])->name('fumo_types.store');
@@ -68,6 +69,9 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
     Route::get('/fumos/{fumo}/edit', [FumosController::class, 'edit'])->name('fumos.edit');
     Route::put('/fumos/{fumo}', [FumosController::class, 'update'])->name('fumos.update');
     Route::delete('/fumos/{fumo}', [FumosController::class, 'destroy'])->name('fumos.destroy');
+
+    Route::get('/users', [UsersController::class, 'index'])->name('users.index');
+    Route::get('/users/{id}', [UsersController::class, 'show'])->name('users.show');
 
     Route::prefix('import-export')->name('import_export.')->group(function () {
         Route::get('/', [ImportExportController::class, 'importExportView'])->name('index');

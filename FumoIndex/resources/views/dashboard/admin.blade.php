@@ -8,10 +8,10 @@
         <div class="bg-container backdrop-blur-sm rounded-3xl shadow-2xl border-4 border-secondary p-8 mt-10 mb-10">
             <h2 class="text-3xl font-bold mb-2 text-center text-primary">Admin Dashboard</h2>
             <h3 class="text-xl font-semibold mb-6 text-center text-tertiary">Overview of The Fumo Index Statistics</h3>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
 
-                <a class="group cursor-pointer relative bg-white rounded-2xl shadow-lg border-4 border-gray-300 overflow-hidden flex flex-col items-center p-6 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-red-500">
+                <a href="{{ route('dashboard.users.index') }}" class="group cursor-pointer relative bg-white rounded-2xl shadow-lg border-4 border-gray-300 overflow-hidden flex flex-col items-center p-6 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-red-500">
                     <div class="w-16 h-16 flex items-center justify-center bg-gray-100 rounded-full mb-4">
                         <i class="fa-solid fa-users text-3xl text-primary"></i>
                     </div>
@@ -24,7 +24,7 @@
                     @if($random_fumo)
                     <div class="w-16 h-16 flex items-center justify-center bg-gray-100 mb-4 border-2 border-gray-300 overflow-hidden">
                         <img src="{{ $random_fumo->fumo_image }}" alt="{{ $random_fumo->fumo_name }}" class="pointer-events-none h-16 object-cover">
-                    </div> 
+                    </div>
                     @else
                     <div class="w-16 h-16 flex items-center justify-center bg-gray-100 rounded-full mb-4">
                         <img src="/img/icons/fumo.png" alt="Fumo" class="h-16 pointer-events-none">
@@ -66,7 +66,7 @@
                 </a>
 
                 <a href="{{ route('dashboard.characters.index') }}" class="group cursor-pointer relative bg-white rounded-2xl shadow-lg border-4 border-gray-300 overflow-hidden flex flex-col items-center p-6 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-red-500">
-                    @if($random_character)    
+                    @if($random_character)
                         <div class="w-16 h-16 flex items-center justify-center bg-gray-100 mb-4 border-2 border-gray-300">
                             <img src="{{ $random_character->character_image }}" alt="{{ $random_character->character_name }}" class="w-full h-full object-cover pointer-events-none" />
                         </div>
